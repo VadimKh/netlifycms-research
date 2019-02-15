@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: VadimKh/netlifycms-research
+publish_mode: editorial_workflow
+
+media_folder: "static/images"
+public_folder: "/images/uploads"
+site_url: https://fivetran.com
+
+logo_url: https://static.fivetran.com/img/misc/logo-blue.svg
+
+collections:
+  - name: docs
+    label: Docs
+    folder: "posts"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
