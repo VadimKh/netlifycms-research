@@ -1,0 +1,8 @@
+article:
+  - content: |-
+      Tra ta ta
+
+      <h1 style="background: red">SUPER TEST</h1>
+    name: Super Test
+    photo: /images/uploads/1812-casestudy-falcon-io.png
+    position: Super Position
