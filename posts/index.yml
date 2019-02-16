@@ -1,12 +1,5 @@
 article:
   - content: |-
-      Tra ta ta
-
-      <h1 style="background: red">SUPER TEST</h1>
-    name: Super Test
-    photo: /images/uploads/1812-casestudy-falcon-io.png
-    position: Super Position
-  - content: |-
       asdjalskdjalkdj lkajs dlkajdl ald
       asd
       as
@@ -18,3 +11,10 @@ article:
     name: Super test 2
     photo: /images/uploads/1812-casestudy-falcon-io.png
     position: askdjalksdj
+  - content: |-
+      Tra ta ta
+
+      <h1 style="background: red">SUPER TEST</h1>
+    name: Super Test
+    photo: /images/uploads/1812-casestudy-falcon-io.png
+    position: Super Position
