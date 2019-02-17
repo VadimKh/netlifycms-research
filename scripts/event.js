@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const sanitize = require('./utils')
 
-const rootDir = path.join(__dirname, '../')
+const rootDir = path.join(__dirname, '../../app')
 
 const OLD_EVENT_FOLDER = path.join(rootDir, './app/resources/events')
 const EVENT_YAML_PATH = path.join(OLD_EVENT_FOLDER, 'Events.yaml')
