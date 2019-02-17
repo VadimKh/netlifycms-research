@@ -1,26 +1,28 @@
 header: Centralise Your Data Faster with Fivetran & Snowflake Partner Connect
-featuredImage: /images/library/replace-me-soon.png
-path: /events-webinars/partner-connect-jan-19
-description: Join our webinar to learn how to start loading your data from various data
-  sources into Snowflake with just a few clicks.
-date: 2019-01-01
-time: at 4:00 PM GMT / 8:00 AM PST
-pardotForm: https://go.fivetran.com/l/514721/2018-12-12/f513pn
+selfHosted: true
 published: 1
-pageTitle: Centralise Your Data Faster with Fivetran & Snowflake Partner Connect
-pageDescription: Join our webinar to learn how to start loading your data from various data
+date: 2019-01-01T00:00:00.000Z
+time: 'at 4:00 PM GMT / 8:00 AM PST12'
+featuredImage: /images/library/replace-me-soon.png
+description: >-
+  Join our webinar to learn how to start loading your data from various data
   sources into Snowflake with just a few clicks.
 tag: Webinar
-partners:
-  - logo: /img/fivetran-logo-web.svg
-    link: https://fivetran.com
-  - logo: /img/snowflake-logo-blue.png
-    link: https://www.snowflake.com/
-selfHosted: true
+path: /events-webinars/partner-connect-jan-19
+pardotForm: 'https://go.fivetran.com/l/514721/2018-12-12/f513pn'
+pageTitle: Centralise Your Data Faster with Fivetran & Snowflake Partner Connect
+pageDescription: >-
+  Join our webinar to learn how to start loading your data from various data
+  sources into Snowflake with just a few clicks.
 content: >+
   ## Overview
 
-  Join our webinar to learn how to start loading your data from various data sources into Snowflake with just a few clicks. With Partner Connect, a new workflow for Snowflake users, you can easily set up Fivetran data connectors through the Snowflake UI for effortless data replication. The new feature aligns with the Fivetran commitment to reduce the obstacles normally encountered with ETL.
+  Join our webinar to learn how to start loading your data from various data
+  sources into Snowflake with just a few clicks. With Partner Connect, a new
+  workflow for Snowflake users, you can easily set up Fivetran data connectors
+  through the Snowflake UI for effortless data replication. The new feature
+  aligns with the Fivetran commitment to reduce the obstacles normally
+  encountered with ETL.
 
 
   **Date:** Thursday, January 24th 2019  
@@ -64,3 +66,8 @@ content: >+
   </div>
 
 
+partners:
+  - link: 'https://fivetran.com'
+    logo: /img/fivetran-logo-web.svg
+  - link: 'https://www.snowflake.com/'
+    logo: /img/snowflake-logo-blue.png
