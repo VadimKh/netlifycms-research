@@ -9,15 +9,15 @@ backend:
     uploadMedia: "#netlifycms: Upload “{{path}}”"
     deleteMedia: "#netlifycms: Delete “{{path}}”"
 publish_mode: editorial_workflow
-media_folder: "static/images"
-public_folder: "/images/uploads"
+media_folder: "client/resources/images/library"
+public_folder: "/images/library"
 site_url: https://fivetran.com
 logo_url: https://static.fivetran.com/img/misc/logo-blue.svg
 collections:
   - name: events-webinars-self
     label: Events & Webinars (self-hosted)
     preview_path: blog/events-webinars
-    folder: app/resources/events
+    folder: client/resources/website/data/events
     create: true
     extension: yml
     identifier_field: header
