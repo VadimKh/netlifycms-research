@@ -1,21 +1,143 @@
 backend:
   name: github
   repo: VadimKh/netlifycms-research
+  squash_merges: true
+  commit_messages:
+    create: "#netlifycms: Create {{collection}} “{{slug}}”"
+    update: "#netlifycms: Update {{collection}} “{{slug}}”"
+    delete: "#netlifycms: Delete {{collection}} “{{slug}}”"
+    uploadMedia: "#netlifycms: Upload “{{path}}”"
+    deleteMedia: "#netlifycms: Delete “{{path}}”"
 publish_mode: editorial_workflow
-
 media_folder: "static/images"
 public_folder: "/images/uploads"
 site_url: https://fivetran.com
-
 logo_url: https://static.fivetran.com/img/misc/logo-blue.svg
-
 collections:
-  - name: docs
-    label: Docs
-    folder: "posts"
+  - name: events-webinars-self
+    label: Events & Webinars (self-hosted)
+    preview_path: blog/events-webinars
+    folder: app/resources/events
     create: true
+    extension: yml
+    identifier_field: header
+    filter: {field: "selfHosted", value: true}
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - name: header
+        label: Header
+        widget: string
+      - name: selfHosted
+        widget: hidden
+        default: true
+      - name: published
+        label: Published
+        widget: boolean
+        default: true
+      - name: date
+        label: Date
+        widget: date
+      - name: time
+        label: Time
+        type: string
+        hint: Used on the event page
+      - name: featuredImage
+        label: Featured Image
+        widget: image
+      - name: description
+        label: Description
+        widget: text
+      - name: tag
+        label: Tag
+        hint: "Choose one of the follwing values: webinar | conference | workshop | event"
+        widget: string
+        required: false
+      - name: path
+        label: Link
+        widget: string
+        hint: "Link to the event on the fivetran website. Should be like this: /events-webinars/partner-connect-jan-19"
+      - name: pardotForm
+        label: Link to Pardot form handler
+        hint: "Should be like this: https://go.fivetran.com/l/514721/2018-12-12/f513pn"
+        widget: string
+        patter: ["https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)", "Should be valid URL"]
+      - name: pageTitle
+        label: SEO page title
+        widget: string
+      - name: pageDescription
+        label: SEO page description
+        widget: text
+      - name: content
+        label: Content
+        widget: markdown
+      - name: partners
+        label: Partners
+        widget: list
+        requried: false
+        fields:
+          - name: logo
+            label: Logo
+            widget: image
+          - name: link
+            label: Link
+            widget: string
+            patter: ["https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)", "Should be valid URL"]
+      - name: customerSpeakers
+        label: Customer Speakers
+        widget: list
+        requried: false
+        fields:
+          - name: logo
+            label: Logo
+            widget: image
+          - name: link
+            label: Link
+            widget: string
+            patter: ["https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)", "Should be valid URL"]
+      - name: info
+        label: Info
+        widget: list
+        requried: false
+        fields:
+          - name: key
+            label: Label
+            widget: string
+          - name: value
+            label: Value
+            widget: string
+  - name: events-webinars-outer
+    label: Events & Webinars (outer-hosted)
+    preview_path: blog/events-webinars
+    folder: app/resources/events
+    create: true
+    extension: yml
+    identifier_field: header
+    filter: {field: "selfHosted", value: false}
+    fields:
+      - name: header
+        label: Header
+        widget: string
+      - name: selfHosted
+        widget: hidden
+        default: false
+      - name: published
+        label: Published
+        widget: boolean
+        default: true
+      - name: date
+        label: Date
+        widget: date
+      - name: featuredImage
+        label: Featured Image
+        widget: image
+      - name: description
+        label: Description
+        widget: text
+      - name: tag
+        label: Tag
+        hint: "Choose one of the follwing values: webinar | conference | workshop | event"
+        widget: string
+        required: false
+      - name: link
+        label: Link (outer-hosted event)
+        type: string
+        patter: ["https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)", "Should be valid URL"]
