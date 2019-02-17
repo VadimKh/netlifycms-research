@@ -3,11 +3,11 @@ backend:
   repo: VadimKh/netlifycms-research
   squash_merges: true
   commit_messages:
-    create: "#netlifycms: Create {{collection}} “{{slug}}”"
-    update: "#netlifycms: Update {{collection}} “{{slug}}”"
-    delete: "#netlifycms: Delete {{collection}} “{{slug}}”"
-    uploadMedia: "#netlifycms: Upload “{{path}}”"
-    deleteMedia: "#netlifycms: Delete “{{path}}”"
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
 publish_mode: editorial_workflow
 media_folder: "client/resources/images/library"
 public_folder: "/images/library"
@@ -107,7 +107,7 @@ collections:
   - name: events-webinars-outer
     label: Events & Webinars (outer-hosted)
     preview_path: blog/events-webinars
-    folder: app/resources/events
+    folder: client/resources/website/data/events
     create: true
     extension: yml
     identifier_field: header
