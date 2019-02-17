@@ -1,0 +1,123 @@
+- header: "From Zero to Snowflake in 90 Minutes - Portland"
+  featuredImage: /img/events-zero-to-snowflake-portland.PNG
+  link: "https://www.snowflake.com/zero-to-snowflake/portland-or-2/?utm_source=fivetran-sd&utm_medium=referral&utm_campaign=zero-to-snowflake-fivetran-sd"
+  description: "Join Snowflake, Decisive Data and Fivetran in this hands-on crash course! Learn how the only cloud-built data warehouse offers instant elasticity, secure data sharing, per-second pricing and many other features to enable the data-driven enterprise."
+  date: 2019-01-24
+  tag: Event
+  published: 1
+
+- header: "Centralise Your Data Faster with Fivetran & Snowflake Partner Connect"
+  featuredImage: /img/replace-me-soon.png
+  path: "/events-webinars/partner-connect-jan-19"
+  description: "Join our webinar to learn how to start loading your data from various data sources into Snowflake with just a few clicks."
+  date: 2019-01-01
+  time: at 4:00 PM GMT / 8:00 AM PST
+  pardotForm: https://go.fivetran.com/l/514721/2018-12-12/f513pn
+  published: 1
+  pageTitle: "Centralise Your Data Faster with Fivetran & Snowflake Partner Connect"
+  pageDescription: "Join our webinar to learn how to start loading your data from various data sources into Snowflake with just a few clicks."
+  file: webinar-partner-connect-jan-19.md
+  tag: Webinar
+  partners:
+    - logo: /img/fivetran-logo-web.svg
+      link: "https://fivetran.com"
+    - logo: /img/snowflake-logo-blue.png
+      link: "https://www.snowflake.com/"
+
+- header: "Phoenix Microstrategy World"
+  featuredImage: /img/events-microstrategy.png
+  link: "http://events.microstrategy.com/events/microstrategy-world-2019/event-summary-2c0e177416a0487b95c82069ccaa35ce.aspx"
+  description: "World 2019 will be your best opportunity of the year to hear Microstrategy success stories and network with your peers, get a sneak preview of new features, and gain quick skills with onsite workshops."
+  date: 2019-02-04
+  published: 1
+
+- header: "Building a realtime cloud data warehouse in 4 simple steps"
+  featuredImage: /img/event-build-realtime-cloud-data-warehouse.PNG
+  link: "https://www.eventbrite.ie/e/building-a-realtime-cloud-data-warehouse-in-4-simple-steps-tickets-54691294133"
+  description: "Join us for a breakfast session on cloud data warehousing! Learn how to model, load, and discover insights from a real-time cloud data warehouse in 4 simple steps."
+  date: 2019-02-07
+  published: 1
+
+- header: "Eliminate Hadoop Complexity with Modern Cloud Data Warehouse"
+  featuredImage: /img/webinar-partner-workshop-big-data-demsion-labs.PNG
+  link: "https://bddlabs.com/webinar10/?id=pzlyglhbepotwpvbigdatadim_data&storyid=Story_fe5e95fb-bc2a-42f7-ab8a-29aa2ea91105&title=Blank%20Template"
+  description: "BigData Dimension Labs, in association with Fivetran, is conducting a webinar where attendees would get a chance to learn: Why geeks say Hadoop is dying, nsights on Data Replication on cloud and How to eliminate Hadoop complexity with modern cloud data warehouse"
+  date: 2019-02-13
+  published: 1
+
+- header: "Looker Join the Tour - Los Angeles"
+  featuredImage: /img/event-join-the-tour-la.PNG
+  link: "https://looker.com/events/join-the-tour/los-angeles"
+  description: "Come join the exciting opportunity to meet with Looker experts, data mavericks and industry thought leaders, all on-hand to share proven insights on how to become more data-driven."
+  date: 2019-03-05
+  published: 1
+
+- header: "Snowflake Data for Breakfast - Austin"
+  featuredImage: /img/event-data-for-breakfast-austin.png
+  link: "https://www.snowflake.com/data-for-breakfast/austin/?utm_source=fivetran&amp;utm_medium=referral&amp;utm_campaign=datafor-breakfast-fivetran"
+  description: "To stay competitive in today’s world is to stay agile by making swift, intelligent, data-driven decisions. Join us at the Austin stop on our Data for Breakfast tour to see how you can enable your organization to be data-driven."
+  date: 2019-03-05
+  published: 1
+
+- header: "Looker Join the Tour - Denver"
+  featuredImage: /img/event-join-the-tour-denver.PNG
+  link: "https://looker.com/events/join-the-tour/denver"
+  description: "Come join the exciting opportunity to meet with Looker experts, data mavericks and industry thought leaders, all on-hand to share proven insights on how to become more data-driven."
+  date: 2019-03-05
+  published: 1
+
+- header: "Big Data World 2019 London"
+  featuredImage: /img/event-big-data-world-2019.png
+  link: "https://www.bigdataworld.com/"
+  description: "Designed to help industry professionals such as CDOs, data analysts, and executives, including Key LOB decision makers and influencers shape their data strategies. Big Data World is not an event for theoreticians, but a real \"how to\" event offering practical benefits."
+  date: 2019-03-12
+  published: 1
+
+- header: "Data Innovation Summit 2019 - Stockholm"
+  featuredImage: /img/event-data-innovation-summit-stockholm.png
+  link: "https://datainnovationsummit.com/"
+  description: "This year’s event will focus on practical case studies on Applied Innovation, Analytics and Visualisation, Machine Learning, Artificial Intelligence, Data Management, Data engineering, IOT insight and technology."
+  date: 2019-03-14
+  published: 1
+
+- header: "Looker Join the Tour - Seattle"
+  featuredImage: /img/event-join-the-tour-seattle.PNG
+  link: "https://looker.com/events/join-the-tour/seattle"
+  description: "Come join the exciting opportunity to meet with Looker experts, data mavericks and industry thought leaders, all on-hand to share proven insights on how to become more data-driven."
+  date: 2019-03-19
+  published: 1
+
+- header: "Data Festival 2019"
+  featuredImage: /img/event-data-festival-germany.jpg
+  link: "https://www.datafestival.de/en/"
+  description: "The focus will be on Data Science & Machine Learning, Data Engineering & Architecture, Data Visualization & Analytics, Fast Data, Infrastructure & Databases as well as Agile Development, Blockchain, Data Ethics and Data Privacy."
+  date: 2019-03-19
+  published: 1
+
+- header: "Snowflake Data for Breakfast - Plano"
+  featuredImage: /img/events-data-for-breakfast-plano.PNG
+  link: "https://www.snowflake.com/data-for-breakfast/plano/?utm_source=fivetran&amp;utm_medium=referral&amp;utm_campaign=dataforbreakfast-fivetran"
+  description: "To stay competitive in today’s world is to stay agile by making swift, intelligent, data-driven decisions. Join us at the Plano stop on our Data for Breakfast tour to see how you can enable your organization to be data-driven."
+  date: 2019-03-21
+  published: 1
+
+- header: "Snowflake Data for Breakfast - San Francisco"
+  featuredImage: /img/event-data-for-breakfast-sf-2.PNG
+  link: "https://www.snowflake.com/data-for-breakfast/san-francisco/?utm_source=fivetran&amp;utm_medium=referral&amp;utm_campaign=dataforbreakfast-fivetran"
+  description: "To stay competitive in today’s world is to stay agile by making swift, intelligent, data-driven decisions. Join us at the San Francisco stop on our Data for Breakfast tour to see how you can enable your organization to be data-driven."
+  date: 2019-03-26
+  published: 1
+
+- header: "Snowflake Data for Breakfast - Houston"
+  featuredImage: /img/events-data-for-breakfast-houston.PNG
+  link: "https://www.snowflake.com/data-for-breakfast/houston/?utm_source=fivetran&amp;utm_medium=referral&amp;utm_campaign=dataforbreakfast-fivetran"
+  description: "To stay competitive in today’s world is to stay agile by making swift, intelligent, data-driven decisions. Join us at the Houston stop on our Data for Breakfast tour to see how you can enable your organization to be data-driven."
+  date: 2019-03-26
+  published: 1
+
+- header: "Snowflake Data for Breakfast - Palo Alto"
+  featuredImage: /img/events-data-for-breakfast-palo-alto.PNG
+  link: "https://www.snowflake.com/data-for-breakfast/palo-alto/?utm_source=fivetran&amp;utm_medium=referral&amp;utm_campaign=dataforbreakfast-fivetran"
+  description: "To stay competitive in today’s world is to stay agile by making swift, intelligent, data-driven decisions. Join us at the Palo Alto stop on our Data for Breakfast tour to see how you can enable your organization to be data-driven."
+  date: 2019-03-27
+  published: 1
