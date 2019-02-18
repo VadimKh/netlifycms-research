@@ -2,26 +2,137 @@ backend:
   name: github
   repo: VadimKh/netlifycms-research
   squash_merges: true
-  commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "Upload “{{path}}”"
-    deleteMedia: "Delete “{{path}}”"
+  base_url: https://admin.fivetran.com
 publish_mode: editorial_workflow
 media_folder: "client/resources/images/library"
 public_folder: "/images/library"
 site_url: https://staging.fivetran.com
 logo_url: https://static.fivetran.com/img/misc/logo-blue.svg
 collections:
-  # - name: articles
-  #   label: Articles
-  #   preview_path: blog
-  #   folder: client/resources/website/data/blog
-  #   create: true
-  #   extension: yml
-  #   identifier_field: header
-  
+  - name: articles
+    label: Articles
+    preview_path: blog
+    folder: client/resources/website/data/blog
+    create: true
+    extension: yml
+    identifier_field: header
+    filter: {field: "isDownload", value: false}
+    fields:
+      - name: header
+        label: Header
+        widget: string
+      - name: isDownload
+        widget: hidden
+        default: false
+      - name: path
+        label: path
+        widget: string
+        hint: "Path should be like this: /blog/microstrategy-world-2019"
+      - name: date
+        label: Date
+        widget: date
+      - name: content
+        label: Content
+        widget: markdown
+      - name: description
+        label: Description
+        widget: text
+      - name: featuredImage
+        label: Featured Image
+        widget: image
+      - name: authorsName
+        label: Authors
+        widget: list
+        allow_add: true
+        field: { label: Author, name: author, widget: relation, collection: authors, displayFields: fullName, searchFields: [fullName, name], valueField: name }
+      - name: categoryTitle
+        label: Category (will be display as tag)
+        widget: string
+      - name: categories
+        label: Categories
+        widget: select
+        multiple: true
+        options: 
+          - Articles
+          - Case Studies
+          - Videos
+          - Downloads
+          - Analyst Recipes
+      - name: pageTitle
+        label: SEO title
+        required: false
+        widget: string
+      - name: pageDescription
+        label: SEO description
+        required: false
+        widget: text
+      - name: tags
+        label: Tags
+        widget: list
+        field: { label: Tag, name: tag, widget: string, required: false}
+        required: false
+      - name: redirects
+        label: Redirects
+        widget: list
+        allow_add: true
+        field: { label: Redirect, name: redirect, widget: string, required: false}
+        required: false
+      - name: published
+        label: Published
+        widget: boolean
+        default: true
+      - name: featured
+        label: Featured
+        widget: boolean 
+  - name: downloads
+    label: Downloads
+    preview_path: blog
+    folder: client/resources/website/data/blog
+    create: true
+    extension: yml
+    identifier_field: header
+    filter: {field: "isDownload", value: true}
+    fields:
+      - name: header
+        label: Header
+        widget: string
+      - name: isDownload
+        widget: hidden
+        default: true
+      - name: download
+        label: Download
+        widget: file
+      - name: date
+        label: Date
+        widget: date
+      - name: description
+        label: Description
+        widget: text
+      - name: featuredImage
+        label: Featured Image
+        widget: image
+      - name: categoryTitle
+        label: Category (will be display as tag)
+        widget: string
+      - name: categories
+        label: Categories
+        widget: select
+        multiple: true
+        options: 
+          - Articles
+          - Case Studies
+          - Videos
+          - Downloads
+          - Analyst Recipes
+      - name: tags
+        label: Tags
+        widget: list
+        field: { label: Tag, name: tag, widget: string, required: false}
+        required: false
+      - name: published
+        label: Published
+        widget: boolean
+        default: true
   - name: authors
     label: Authors
     folder: client/resources/website/data/authors
@@ -38,23 +149,6 @@ collections:
       - name: avatar
         label: Avatar
         widget: image
-
-
-  #   - header: "A Digest of George Fraser’s Talk at MicroStrategy World"
-  # featuredImage: /microstrategy-world-2019/microstrategy-world-2019.png
-  # file: microstrategy-world-2019.md
-  # path: /blog/microstrategy-world-2019
-  # description: "Fivetran CEO George Fraser gave a talk about the merits of cloud data warehousing at MicroStrategy World 2019."
-  # pageTitle: "A Digest of George Fraser’s Talk at MicroStrategy World"
-  # pageDescription: "Fivetran CEO George Fraser gave a talk about the merits of cloud data warehousing at MicroStrategy World 2019."
-  # date: 2019-02-14
-  # published: 1
-  # featured: 0
-  # authorsName:
-  #   - charles
-  # categoryTitle: Article
-  # categories:
-  #   - Articles
   - name: events-webinars-self
     label: Events & Webinars (self-hosted)
     preview_path: events-webinars
