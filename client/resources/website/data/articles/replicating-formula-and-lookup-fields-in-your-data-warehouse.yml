@@ -1,0 +1,152 @@
+header: Replicating Formula and Lookup Fields in Your Data Warehouse
+featuredImage: /images/library/182ajw13ncmgfeatured.png
+path: /blog/how-to-replicate-formula-and-lookup-fields-in-your-data-warehouse
+description: Why Saleforce’s formula and lookup fields can cause problems when integrating
+  your data pipeline, and what you can do to get the information to your
+  warehouse.
+pageTitle: Replicating Formula and Lookup Fields in Your Data Warehouse | Fivetran
+pageDescription: In this post we will illustrate why Saleforce’s formula and lookup fields can
+  cause problems when integrating your data pipeline and what you can do instead
+  to get this information in your warehouse.
+tags:
+  - analyst recipe
+  - salesforce
+  - sql
+date: 2017-09-12
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Analyst Recipe
+categories:
+  - Analyst Recipes
+redirects:
+  - /how-to-replicate-formula-and-lookup-fields-in-your-data-warehouse-1fd9a034fa3f
+isDownload: false
+content: >
+  Salesforce supports a variety of field types. While most fields are easy for
+  your warehouse to read using a data pipeline, two of these — formula and
+  lookup fields — will cause havoc in your warehouse if you treat them like
+  normal fields. In this post we will illustrate why these fields can cause
+  problems and what you can do instead to get this information in your
+  warehouse.
+
+
+  ![Replicating Formula and Lookup Fields in Your Data Warehouse](/images/library/1_zJWjjagBU3PcUjdAsX9v6w.png)
+
+
+  ### First, let’s define both field types
+
+
+  Formula fields allows users to calculate values based on other values or fields such as merge fields. This is helpful for giving your sales and support teams insightful metrics within the Salesforce app. Examples include: how many days a ticket has been open, or lifetime contracts value for an account.
+
+
+  Lookup fields on the other hand display a value from a different record on your current record. A link is created between the two records so you can associate them with one another. For example, you might have a custom object for feature requests linked to opportunities through the lookup field.
+
+
+  While both can be powerful for your [Salesforce](https://www.salesforce.com/) users, overtime they will cause data integrity problems for your business analysts if you bring them over into your warehouse.
+
+
+  For demonstration, suppose this is our original leads table:
+
+
+  ![Replicating Formula and Lookup Fields in Your Data Warehouse](/images/library/1_MGN-9lR6X668hbXjLYzWWA.png)
+
+
+  **Let’s say we then add a formula field:**
+
+  > *IsGreat = CONTAINS(Name, ‘Great’)*
+
+
+  **and a lookup field:**
+
+  > *AccountName = SELECT Name FROM Account WHERE Id = Lead.AccountId.*
+
+
+  ![Replicating Formula and Lookup Fields in Your Data Warehouse](/images/library/1_ohT5jQ9zYYg2odofKyIMFw.png)
+
+
+  If we bring this new data into our warehouse, it will first appear to be working and syncing as it should. But let’s remember, the only constant in this world is change. Inevitably you might need to edit your formula or the objects referenced in your lookup field will be modified. This is terrible news for data integrity in your warehouse.
+
+
+  ### Formula fields don’t update when the formula changes
+
+
+  Suppose someone changes the formula field in Salesforce to *IsGreat = CONTAINS(Name, ‘Amazing’)* from *IsGreat = CONTAINS(Name, ‘Great’) *and adds a new lead. This is what our table will now look like in Salesforce:
+
+
+  ![Replicating Formula and Lookup Fields in Your Data Warehouse](/images/library/1_y1Ttw23cnnRthaxRTeHzRw.png)
+
+
+  As you can see, the formula field for older leads will change, but since *LastModified *isn’t in the formula, it remains static. Data connectors that sync incrementally use the *LastModified* field to understand when to update data in your warehouse. If *LastModified* doesn’t change, the data in your warehouse now has a mixture of the old definition of *IsGreat* and the new definition. The table in your warehouse will appear like this:
+
+
+  ![Replicating Formula and Lookup Fields in Your Data Warehouse](/images/library/1_5CxEf4D6A0J3T7CwJUf9vg.png)
+
+
+  ### Instead, write SQL queries using the underlying values
+
+
+  To avoid discrepancies in your analytics, a better solution is to recreate the formula fields using SQL queries off of the original values in your data warehouse. We recommend that you leave the Salesforce formula fields out of your warehouse and only work off of the underlying data. This ensures that you maintain a single version of truth.
+
+
+  In our example, you would use the following SQL query to replicate the formula field in your warehouse.
+
+  > *SELECT name LIKE ‘%Great%’ AS is_great FROM lead*
+
+
+  While this method requires a bit of extra work, in the long run you will avoid inaccurate reporting and analytics. Set it up this way in views and you really only have to replicate the formulas once.
+
+
+  ### Lookup fields don’t update when the target object changes
+
+
+  If you think formula fields are a big issue for maintaining data integrity, lookup fields are even worse.
+
+
+  Suppose we change the account name from ‘FooCorp’ to ‘Foo Corp Private Limited’ in our example. This will change Account.LastModified but not Lead.LastModified, so again the value in your data warehouse will be incorrect:
+
+
+  ![Replicating Formula and Lookup Fields in Your Data Warehouse](/images/library/1_gDIqW8Z6gy2A6JvM1qtlEA.png)
+
+
+  ### Use joins so the target object updates automatically
+
+
+  Rather than replicating the values in your Salesforce lookup field, it’s better to do a simply join in your warehouse instead. Essentially you’re rebuilding the lookup relationship instead of loading static data. Here’s an example of what your SQL query will look like:
+
+  > SELECT *, account.name AS account_name 
+
+  FROM lead 
+
+  JOIN account ON lead.account_id = account.id
+
+
+  Not only do joins ensure your destination data updates in unison with your source data, joins encourage transparency. Anyone reading the query will understand the lookup relationship since the logic isn’t left behind in Salesforce. The query will show where *account_name* comes from.
+
+
+  And again, you can set it up in a view once for future queries.
+
+
+  ### If you really want to, you can still use formula and lookup fields
+
+
+  While we recommend replicating the formula and lookup logic in your warehouse instead of syncing the fields, you do have one other option.
+
+
+  As you might have noticed, the main reason why these fields don’t update correctly is because of their dependency on the *LastModified* field to trigger a sync in your warehouse. While updating incrementally requires that you use the *LastModified* field, you could instead update your warehouse using a full historical sync. Instead of loading only changed data in your warehouse, you re-load everything in your source Salesforce account. This method will capture the changed formula and lookup field data accurately.
+
+
+  For most cases, we don’t recommend full historical syncs because they are are inefficient and can eat up your API limits. This is especially true if your Salesforce account has a large volume of rows. While it isn’t recommended to update this way regularly, it can be an alternative for occasional changes to formula and lookup fields.
+
+
+  To recap, we recommend that you build SQL queries and views using the underlying data instead of formula and lookup fields. It’s an easy way to keep your analytics team agile and will do wonders for the integrity of your data warehouse.
+
+
+  If it’s absolutely necessary to bring formula and lookup fields into your warehouse, a full historical sync can be used instead of incrementally updating.
+
+
+  ## About Fivetran:
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business. To learn more visit our website at [fivetran.com](https://fivetran.com/?utm_campaign=lookup_formulafields&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).

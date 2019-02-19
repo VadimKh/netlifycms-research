@@ -1,0 +1,261 @@
+header: How to Write Cloud Functions in Python
+featuredImage: /images/library/python-cloud-function.png
+path: /blog/python-cloud-function
+description: We walk you through the process of setting up a cloud function connector using
+  Python and Google Cloud Platform Functions.
+pageTitle: How to Write Cloud Functions in Python | Fivetran Blog
+pageDescription: Walk through the full process of setting up a Fivetran cloud function
+  connector using Python and Google Cloud Platform Functions.
+tags:
+  - python
+  - functions
+  - google cloud functions
+  - bigquery
+date: 2018-10-01
+published: 1
+featured: 0
+authorsName:
+  - charles
+categoryTitle: Analyst Recipe
+categories:
+  - Analyst Recipes
+isDownload: false
+content: >
+  ## Adventures on Google Cloud Platform
+
+
+  At Fivetran, our core products are connectors for common data sources such as APIs, file storage systems, and database management systems. The standardized connector approach, while extremely handy for popular and well-known sources of data, doesn’t always work for obscure or custom APIs and file formats.
+
+
+  Enter the [cloud functions connectors](https://fivetran.com/docs/functions). The cloud functions connector allows you to: 
+
+  1. Write your own script to extract and process data
+
+  2. Host the script on a serverless computing platform
+
+  3. Take advantage of automatic syncing and deduplication, as with any other Fivetran standardized connector
+
+
+  Let’s walk through the full process of setting up a cloud functions connector. We have [covered this topic before](https://fivetran.com/blog/serverless-etl-with-cloud-functions) using Node.js; in this example we will use Python. Why Python? Because [countless analysts and data scientists](https://www.kaggle.com/lakenp/worldwide-preferences-for-languages-python-vs-r/output) worldwide routinely use it for quantitative analysis and machine learning. This post presumes that the reader has a working knowledge of Python and the ingestion of API feeds.
+
+
+  ## The Pieces You’ll Need, and What to Do With Them
+
+  ### A Data Source
+
+
+  I chose to use Yelp’s business search API as it is not currently supported by Fivetran, presents a plausible business use case, and is just complex enough to make an interesting example. I decided to search for [makerspaces](https://spaces.makerspace.com/) within the general vicinity of San Francisco.
+
+
+  Yelp’s business search API returns a list of business profiles and a summary of results. We’re only concerned with the business profiles, which look like this:
+
+
+  ```json
+
+  {
+    "businesses": [
+      {
+        "id": "8nVI-kU5JlAP4EIzIVtwlQ",
+        "alias": "noisebridge-san-francisco",
+        "name": "Noisebridge",
+        "image_url": "https:\/\/s3-media1.fl.yelpcdn.com\/bphoto\/RBhhlYAl4cVcMc-upiBcZA\/o.jpg",
+        "is_closed": false,
+        "url": "https:\/\/www.yelp.com\/biz\/noisebridge-san-francisco?adjust_creative=x8TUK-FIcJqcb_Q262-Stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=x8TUK-FIcJqcb_Q262-Stw",
+        "review_count": 32,
+        "categories": [
+          {
+            "alias": "nonprofit",
+            "title": "Community Service\/Non-Profit"
+          },
+          {
+            "alias": "makerspaces",
+            "title": "Makerspaces"
+          }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+          "latitude": 37.76238,
+          "longitude": -122.41905
+        },
+        "location": {
+          "address1": "2169 Mission St",
+          "address2": "",
+          "address3": "",
+          "city": "San Francisco",
+          "zip_code": "94110",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "2169 Mission St",
+            "San Francisco, CA 94110"
+          ]
+        },
+        "phone": "",
+        "display_phone": "",
+        "distance": 1525.9308928508
+      },
+      {
+        "id": "ri9lRarikS9fswsFWCt-FA",
+  ```
+
+
+  Note that nested within each “business” is a list of categories. Since categories are potentially an important unit of analysis in their own right and multiple businesses can share categories, we have to account for a many-to-many relationship. I decided that a sensible relational schema would include two tables with primary keys - “businesses” and “categories” - and a join table, “business_category.”
+
+
+  ### Credentials in JSON
+
+
+  You will need credentials, in this case, a Client ID and API Key, both obtained by signing up through Yelp Developers. The Yelp API once used OAuth 2.0 and access tokens, but now only [requires the submission of an API key](https://www.yelp.com/developers/documentation/v3/authentication). Your mileage may vary with other APIs. You will want to create a JSON object containing the credentials under “secrets,” along with an initially blank “state”:
+
+
+  ```json
+
+  {
+    "secrets":
+    { "client_id" : "D1s-i5-4-pl4c3h0Ldr",
+    "api_key": "y0u-dnT-thNk-eYed-Ncl00d-a-r34l-k37-d1d-j00" },
+    "state": {}
+  }
+
+  ```
+
+
+  These credentials will be passed into your script.
+
+
+  ### Writing the Script
+
+
+  Name your script “main.py” as it is the exact file name Google Cloud Platform looks for. You will also be asked to provide the name of a function to execute; I called mine “handler.” This function will take a parameter called “request” and return a tuple containing, in order, the data you want to ingest, the status code 200 (to affirm that it’s “OK”), and a header specifying JSON as the format.
+
+
+  Google Cloud Platform’s Python 3 system uses Flask under the hood, and using the JSON object with your credentials as a “triggering event” will pass the credentials into a <flask.Request> object. Use Flask’s “get_json()” method to extract the credentials:
+
+
+  ```python
+
+  def handler(request):
+
+      root_url = "https://api.yelp.com/v3/businesses/search"
+      location = "San+Francisco"
+      type = "makerspaces"
+
+      # GET THE CREDENTIALS FROM THE TRIGGERING EVENT
+      request_json = request.get_json()
+      api_key = request_json['secrets']['api_key']
+
+      url = "{0}?location={1}&categories={2}".format(root_url, location, type)
+
+      # REQUEST DATA FROM API
+      response_text = make_request(url, api_key)
+  ```
+
+
+  After getting the data from the API, you will structure it as a JSON with the mandatory fields “state,” “insert,” and “schema.” “State” is an index marker that indicates the last record returned. “Insert” contains the data to actually load into each table, in which each key is a table field. “Schema” is a directory of tables to create. The “hasMore” key is used to handle pagination. Note that “schema.businesses” and “schema.categories” have primary keys, but “schema.business_category” does not. Below is a truncated sample of what I generated:
+
+
+  ```json
+
+  {
+    "insert": {
+      "business_category": [
+        {
+          "alias": "nonprofit",
+          "id": "8nVI-kU5JlAP4EIzIVtwlQ"
+        },
+        {
+          "alias": "makerspaces",
+          "id": "8nVI-kU5JlAP4EIzIVtwlQ"
+        }
+      ],
+      "businesses": [
+        {
+          "rating": 4.5,
+          "city": "San Francisco",
+          "address1": "2169 Mission St",
+          "address2": "",
+          "address3": "",
+          "phone": "",
+          "display_phone": "",
+          "id": "8nVI-kU5JlAP4EIzIVtwlQ",
+          "is_closed": false,
+          "distance": 1525.9308928508,
+          "review_count": 32,
+          "name": "Noisebridge",
+          "url": "https:\/\/www.yelp.com\/biz\/noisebridge-san-francisco?adjust_creative=x8TUK-FIcJqcb_Q262-Stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=x8TUK-FIcJqcb_Q262-Stw",
+          "country": "US",
+          "longitude": -122.41905,
+          "alias": "noisebridge-san-francisco",
+          "state": "CA",
+          "image_url": "https:\/\/s3-media1.fl.yelpcdn.com\/bphoto\/RBhhlYAl4cVcMc-upiBcZA\/o.jpg",
+          "latitude": 37.76238,
+          "zip_code": "94110"
+        }
+      ],
+      "categories": [
+        {
+          "alias": "nonprofit",
+          "title": "Community Service\/Non-Profit"
+        },
+        {
+          "alias": "makerspaces",
+          "title": "Makerspaces"
+        }
+      ]
+    },
+    "state": "8nVI-kU5JlAP4EIzIVtwlQ",
+    "hasMore": false,
+    "schema": {
+      "business_category": {
+
+      },
+      "businesses": {
+        "primary_key": [
+          "id"
+        ]
+      },
+      "categories": {
+        "primary_key": [
+          "alias"
+        ]
+      }
+    }
+  }
+
+  ```
+
+
+  The function must return a tuple with a text response as well as status code and headers. This tuple is inputted into Flask’s “make_response” method and should include a 200 status code and a header specifying JSON as a format like so:
+
+
+  ```python
+  	return assemble_response_json(insert, state), 200, {"Content-Type": "application/json"}
+  ```
+
+
+  ### A Bucket and Cloud Function On Google Cloud Platform
+
+
+  Before you load and test your function in the cloud, you will need access to a project within Google Cloud Platform, as well as access to Google Cloud Platform’s “Storage” and “Cloud Functions” features. The buckets within “Storage” are used to house the function after it has been uploaded. Create a bucket if you don’t have one.
+
+
+
+  You will also need to create an instance of a function. Be sure to connect your function with the appropriate bucket and to point it at the appropriate function in your script. You can copy-and-paste your code into the inline editor or zip and upload it. Once uploaded, you can test the function and examine its outputs. You will need to supply your JSON credentials as a “Triggering event.”
+
+
+  A fuller explanation is provided in the [documentation](https://fivetran.com/docs/functions/google-cloud-functions/setup-guide). There are some important differences between our example here and the actions described in Step 2. We do not need a function code; “index.js” only applies to a project done in Node.js; and you have added the header to the function’s output already, as the third element of the tuple returned by “handler.”
+
+
+  ### Make the Connector
+
+
+  While you’re in the “Cloud Functions” section of Google Cloud Platform, make sure to go to the “Trigger” tab and copy the URL. Keep your JSON credentials handy, too. Go to your Fivetran dashboard and create a new connector of the type “Google Cloud Function.” You can name your destination schema what you like. Paste the URL from Google Cloud Platform’s “Trigger” tab into the “Function Trigger” box, and paste the “Secrets” values from your JSON credentials into the “Secrets” box. 
+
+
+  ### Warehousing Your Data
+
+
+  If you have successfully saved and tested your connector, then it should begin syncing immediately. You will be able to access it much like any other data you have warehoused on BigQuery.
+
+
+  Hopefully, this guide is straightforward enough for any analyst to follow. You can view the full source code [here](https://github.com/fivetran/functions/blob/master/yelp/google_cloud/main.py). And if you would like to have the power of automated data ingestion and warehousing at your fingertips, then check out Fivetran [here](https://fivetran.com/demo).

@@ -1,0 +1,44 @@
+header: Fivetran Raises $15 Million in Series A Funding
+featuredImage: /images/library/funding-announcement.png
+path: /blog/funding-announcement
+description: We’re thrilled to announce our Series A funding, led by Matrix Partners. With
+  this new support, we’re poised to rapidly expand our critical role in the
+  modern data stack.
+pageTitle: Fivetran Raises $15 Million in Series A Funding
+pageDescription: We’re thrilled to announce our Series A funding led by Matrix Partners. With
+  this new support we’re poised to rapidly expand our critical role in the
+  modern data stack.
+date: 2018-12-04
+published: 1
+featured: 0
+authorsName:
+  - fivetran
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /blog/funding-announcement-blog
+isDownload: false
+content: >-
+  We’re thrilled to [announce $15 million in new Series A
+  funding](https://fivetran.com/blog/press-release-series-a), led by Matrix
+  Partners, with general partner Ilya Sukhar joining our board of directors.
+   
+  Fivetran has been primarily revenue-funded since we identified a need to replace the antiquated, engineering-intensive ETL model of data warehousing with prebuilt, zero-maintenance data connectors. The market response has been strong: Over the past 12 months, we’ve doubled our customer base — it’s now at 500 and growing fast — and tripled our revenue. 
+   
+  This momentum demonstrates that the most sophisticated companies have decided to make Fivetran, along with cloud-first data solutions like Snowflake, Looker, BigQuery, Periscope and others, the backbone of their analytical infrastructure.
+
+
+  As a new ecosystem of cloud-based, seamlessly integrated data systems emerges, Fivetran is well-positioned to tackle the first stage of modern data warehousing. Our connectors replicate siloed data sources into a central data warehouse, enabling companies to leverage powerful analytics and business intelligence tools.
+
+
+  With this new support from Matrix, we’re poised to rapidly expand our critical role in the modern data stack. We’re using the funding to scale our operations substantially and add new enterprise features and data sources.
+
+
+  ### A Special Thanks to Our Customers
+
+
+  As we celebrate this milestone, we’re very aware that our growth would not have been possible without the support and trust of our customers — thank you for helping us get here! You’ve helped lay the foundation of a very bright future.
+
+
+  To learn more, check out the [press release](https://fivetran.com/blog/press-release-series-a) and [a note from our founders](https://fivetran.com/blog/funding-note).

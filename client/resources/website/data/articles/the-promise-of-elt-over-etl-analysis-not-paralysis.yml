@@ -1,0 +1,51 @@
+header: "The Promise of ELT Over ETL: Analysis, Not Paralysis"
+featuredImage: /images/library/elt-vs-etl.png
+path: /blog/elt_vs_etl
+description: ELT, rather than ETL, is the wave of the future.
+pageTitle: "ELT vs ETL Differences: Analysis, Not Paralysis | Fivetran Blog"
+pageDescription: We discuss why ELT, rather than ETL, is the wave of the future.
+date: 2018-11-14
+published: 1
+featured: 0
+authorsName:
+  - charles
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >
+  _ELT allows the more brittle components of the ETL process to be outsourced
+  and automated by shifting the “transformation” step to the end of the data
+  pipeline. By automating the “extract” and “load” stages, Fivetran enables
+  rapid deployment, easy maintenance, and agile decision-making. Analysts can
+  consult the data in its canonical, unaltered form, and conveniently use
+  cloud-based business intelligence tools to extract insights. Data teams can
+  devote their time and talent to understanding customers and improving products
+  instead of agonizing over data infrastructure._
+
+
+  ## ETL Is Inflexible, Risky and Complex
+
+  Traditionally, the data pipeline process consisted of extracting, transforming, and loading data into a warehouse. There are serious disadvantages to this sequence. 
+
+
+  For one, the process is inherently inflexible — it forces analysts to predict every use of the data before a report is ever created. Every change is costly and potentially affects data and code downstream of the initial extraction. Furthermore, every transformation performed on the data obscures some of the underlying information. This is risky, as anyone familiar with the concept of binning or [Simpson’s Paradox](https://www.youtube.com/watch?v=ebEkn-BiW5k) knows. It’s dangerous to draw conclusions from data that hasn’t been properly sliced.
+
+
+  Moreover, building an ETL-based data pipeline is often beyond the technical capabilities (or desires) of analysts. It typically necessitates the close involvement of IT and engineering talent, along with bespoke code to extract and transform each source of data. The alternative to a complex engineering project is to conduct analyses and reports on [an ad hoc, time-intensive, and ultimately unsustainable basis](https://fivetran.com/blog/case-study-falcon-io).
+
+
+  The ETL approach was once necessary because of the high costs of on-premises computation and storage. With the rapid growth of cloud-based options and the plummeting cost of cloud-based computation and storage, there is little reason to continue this practice.
+
+
+  ## ELT Supports Agile Decision-Making and Data Literacy
+
+  The Fivetran approach flips the two latter steps of the traditional ETL process. When analysts can load data before transforming it, they don’t have to determine beforehand exactly what insights they want to generate. Instead, the underlying source data is directly and faithfully replicated to a data warehouse, comprising a “single source of truth.” Analysts can then perform transformations on the data as needed. The transformations won’t compromise the integrity of the warehoused data, giving analysts a free hand. This makes the business intelligence process incomparably more flexible. 
+
+
+  When used in combination with cloud-based business intelligence tools such as [Looker](https://fivetran.com/directory/looker), [Mode](https://fivetran.com/directory/mode), and [Tableau](https://fivetran.com/directory/tableau), the ELT approach further broadens access to a common set of analytics across  organizations. Business intelligence dashboards become accessible even to relatively non-technical users.
+
+
+  ## Fivetran and ELT Increase Data Literacy and Cost-Efficiency
+
+  Fivetran offers an off-the-shelf solution that obviates the complexity of ETL by postponing the data transformation step. The Fivetran approach allows organizations to outsource and automate the entire process of building and maintaining a data pipeline. It spares your analysts, data scientists, and engineers the [vast outlays of time and money](https://fivetran.com/blog/build-vs-buy) required to engineer, build, and maintain a data pipeline. With Fivetran specialists handling the process, your analysts and data scientists can focus on what they’re good at: [analyzing data, rather than finding, cleaning, and reorganizing it](https://www.infoworld.com/article/3228245/data-science/the-80-20-data-science-dilemma.html).

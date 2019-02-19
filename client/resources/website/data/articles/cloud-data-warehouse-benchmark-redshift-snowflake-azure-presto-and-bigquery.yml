@@ -1,0 +1,317 @@
+header: "Cloud Data Warehouse Benchmark: Redshift, Snowflake, Azure, Presto and
+  BigQuery"
+featuredImage: /images/library/isdvbttkalfeatured.png
+path: /blog/warehouse-benchmark
+description: The Fivetran data warehousing benchmark compares price, performance and
+  differentiated features for Azure, BigQuery, Presto, Redshift and Snowflake.
+pageTitle: "Data Warehouse Benchmark: Redshift, Snowflake, Azure, Presto, BigQuery |
+  Fivetran"
+pageDescription: Fivetran performed a data warehouse benchmark comparing Amazon Redshift,
+  Snowflake, Azure SQL Data Warehouse, Presto, and Google BigQuery.
+tags:
+  - data strategy
+  - redshift
+  - snowflake
+  - azure
+  - presto
+  - bigquery
+  - dwh
+date: 2018-09-10
+published: 1
+featured: 1
+authorsName:
+  - george
+  - eric
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /warehouse-benchmark-dce9f4c529c1
+isDownload: false
+content: >
+  _Updated Sept. 2018_
+
+
+  Fivetran is a data pipeline that syncs data from apps, databases and file stores into our customers’ data warehouses. The question we get asked most often is “what data warehouse should I choose?” In order to better answer this question, we’ve performed a benchmark comparing the speed and cost of five of the most popular data warehouses:
+
+  - Amazon Redshift
+
+  - Snowflake
+
+  - Azure SQL Data Warehouse
+
+  - Presto
+
+  - Google BigQuery
+
+
+  Benchmarks are all about making choices: what kind of data will I use? How much? What kind of queries? How you make these choices matters *a lot*: change the shape of your data or the structure of your queries and the fastest warehouse can become the slowest. We’ve tried to make these choices in a way that represents a typical [Fivetran](https://fivetran.com/?utm_source=fivetran&utm_medium=blog&utm_campaign=warehouse_benchmark_2018) user, so that the results will be useful to the kind of company that uses Fivetran.
+
+
+  A typical [Fivetran](https://fivetran.com/?utm_source=fivetran&utm_medium=blog&utm_campaign=warehouse_benchmark_2018) user might sync Salesforce, Zendesk, Marketo, Adwords and their production MySQL database into a data warehouse. These data sources aren’t that large: a typical source will contain tens to hundreds of gigabytes. They are *complex*: they contain hundreds of tables in a normalized schema, and our customers write complex SQL queries to summarize this data. 
+
+
+  The source code for this benchmark is available at [https://github.com/fivetran/benchmark](https://github.com/fivetran/benchmark)
+
+
+  ## What Data Did We Query?
+
+
+  We generated the the TPC-DS [1] dataset at 100GB and 1TB scales. TPC-DS has 24 tables in a snowflake schema; the tables represent web, catalog, and store sales of an imaginary retailer. The largest fact table had 400 million rows at 100GB scale and 4 billion rows at 1TB scale [2].
+
+
+  ## What Queries Did We Run?
+
+
+  We ran 99 TPC-DS queries [3] in August-September of 2018. These queries are complex: they have lots of joins, aggregations, and subqueries. We ran each query only once, to prevent the warehouse from caching previous results.
+
+
+  Because we ran each query only once, these times include both the time to *compile* the query and *run* the query. Redshift in particular is highly sensitive to this assumption; it spent more time compiling these queries than running them. We explore this issue further in our <a href="#" popup="#downloadForm">deep dive</a>.
+
+
+  ## How Did We Configure the Warehouses?
+
+
+  We set up each warehouse in a small and large configuration for the 100 GB and 1TB scales:
+
+
+  |   | **100 GB** |  | **1TB** |  |
+
+  |  ------ | ------ | ------ | ------ | ------ |
+
+  |   | **Configuration** | **Cost / Hour** | **Configuration** | **Cost / Hour** |
+
+  |  **Redshift** | 8x dc2.large | $2.00 | 4x dc2.8xlarge | $19.20 |
+
+  |  **Snowflake** | X-Small | $2.00 | Large | $16.00 |
+
+  |  **Azure** [4] | DW200 | $2.42 | DW1500c | $18.12 |
+
+  |  **Presto** [5] | 4x n1-standard-8 | $1.23 | 32x n1-standard-8 | $9.82 |
+
+  |  **BigQuery** [6] | On-demand |  | On-demand |  |
+
+
+  ## How Did We Tune the Warehouses?
+
+
+  These data warehouses each offer advanced features like sort keys, clustering keys, and date-partitioning. We chose *not* to use any of these features in this benchmark [7]. We *did* apply column compression encodings in Redshift; Snowflake, Azure and BigQuery apply compression automatically; Presto used ORC files in HDFS, which is a compressed format.
+
+
+  We explore various tuning optimizations in our <a href="#" popup="#downloadForm">deep dive</a>.
+
+
+  <!-- NOTE: need to show download form inside article -->
+
+  <div class="flip-cards my-5">
+      <div class="flip-cards-container">
+          <div class="card py-3 px-5 h-auto flip-cards-front bg-white">
+              <div class="row justify-content-around justify-content-md-between">
+                  <div class="col-6 order-md-2 col-md-3 d-flex align-items-center mb-3 mb-md-0">
+                      <div class="avatar avatar-full-width avatar-light-blue">
+                          <div class="avatar-content">
+                              <img src="https://static.fivetran.com/img/pdf-icon.png">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-8 d-flex align-items-center justify-content-around justify-content-md-start">
+                      <div>
+                          <h3>Get the extended benchmark</h3>
+                          <p class="text mb-3">Sign up to download the full-length report</p>
+                          <a href="#" flip class="btn btn-small">↓ SIGN UP TO DOWNLOAD PDF</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card py-3 px-5 h-auto flip-cards-back bg-white">
+              <form 
+                  action="https://go.fivetran.com/l/514721/2018-10-08/dlybs6" 
+                  pardot-form 
+                  novalidate 
+                  redirect="/blog/warehouse-benchmark/download-requested"
+                  success-message="Thank you. Your PDF is on the way to your inbox!"
+              >
+              <div class="row">
+                  <div class="form-group col-md-6 mb-gutter">
+                      <input class="input" name="name" required type="text" placeholder="First Name">
+                  </div>
+                  <div class="form-group col-md-6 mb-gutter">
+                      <input class="input" name="lastname" type="text" placeholder="Last Name">
+                  </div>
+                  <div class="form-group col-md-6 mb-gutter">
+                      <input class="input" name="email" required type="email" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6 mb-gutter">
+                      <div class="select-container">
+                          <select name="country" class="autocomplete-select select" placeholder="Country"><option value="Andorra">Andorra</option><option value="United Arab Emirates">United Arab Emirates</option><option value="Afghanistan">Afghanistan</option><option value="Antigua and Barbuda">Antigua and Barbuda</option><option value="Anguilla">Anguilla</option><option value="Albania">Albania</option><option value="Armenia">Armenia</option><option value="Netherlands Antilles">Netherlands Antilles</option><option value="Angola">Angola</option><option value="Antarctica">Antarctica</option><option value="Argentina">Argentina</option><option value="American Samoa">American Samoa</option><option value="Austria">Austria</option><option value="Australia">Australia</option><option value="Aruba">Aruba</option><option value="Åland Islands">Åland Islands</option><option value="Azerbaijan">Azerbaijan</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Barbados">Barbados</option><option value="Bangladesh">Bangladesh</option><option value="Belgium">Belgium</option><option value="Burkina Faso">Burkina Faso</option><option value="Bulgaria">Bulgaria</option><option value="Bahrain">Bahrain</option><option value="Burundi">Burundi</option><option value="Benin">Benin</option><option value="Saint Barthélemy">Saint Barthélemy</option><option value="Bermuda">Bermuda</option><option value="Brunei">Brunei</option><option value="Bolivia">Bolivia</option><option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option><option value="Brazil">Brazil</option><option value="Bahamas">Bahamas</option><option value="Bhutan">Bhutan</option><option value="Bouvet Island">Bouvet Island</option><option value="Botswana">Botswana</option><option value="Belarus">Belarus</option><option value="Belize">Belize</option><option value="Canada">Canada</option><option value="Cocos Islands">Cocos Islands</option><option value="The Democratic Republic Of Congo">The Democratic Republic Of Congo</option><option value="Central African Republic">Central African Republic</option><option value="Congo">Congo</option><option value="Switzerland">Switzerland</option><option value="Côte d'Ivoire">Côte d'Ivoire</option><option value="Cook Islands">Cook Islands</option><option value="Chile">Chile</option><option value="Cameroon">Cameroon</option><option value="China">China</option><option value="Colombia">Colombia</option><option value="Costa Rica">Costa Rica</option><option value="Cuba">Cuba</option><option value="Cape Verde">Cape Verde</option><option value="Curaçao">Curaçao</option><option value="Christmas Island">Christmas Island</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Germany">Germany</option><option value="Djibouti">Djibouti</option><option value="Denmark">Denmark</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="Algeria">Algeria</option><option value="Ecuador">Ecuador</option><option value="Estonia">Estonia</option><option value="Egypt">Egypt</option><option value="Western Sahara">Western Sahara</option><option value="Eritrea">Eritrea</option><option value="Spain">Spain</option><option value="Ethiopia">Ethiopia</option><option value="Finland">Finland</option><option value="Fiji">Fiji</option><option value="Falkland Islands">Falkland Islands</option><option value="Micronesia">Micronesia</option><option value="Faroe Islands">Faroe Islands</option><option value="France">France</option><option value="Gabon">Gabon</option><option value="United Kingdom">United Kingdom</option><option value="Grenada">Grenada</option><option value="Georgia">Georgia</option><option value="French Guiana">French Guiana</option><option value="Guernsey">Guernsey</option><option value="Ghana">Ghana</option><option value="Gibraltar">Gibraltar</option><option value="Greenland">Greenland</option><option value="Gambia">Gambia</option><option value="Guinea">Guinea</option><option value="Guadeloupe">Guadeloupe</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Greece">Greece</option><option value="South Georgia And The South Sandwich Islands">South Georgia And The South Sandwich Islands</option><option value="Guatemala">Guatemala</option><option value="Guam">Guam</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Hong Kong">Hong Kong</option><option value="Heard Island And McDonald Islands">Heard Island And McDonald Islands</option><option value="Honduras">Honduras</option><option value="Croatia">Croatia</option><option value="Haiti">Haiti</option><option value="Hungary">Hungary</option><option value="Indonesia">Indonesia</option><option value="Ireland">Ireland</option><option value="Israel">Israel</option><option value="Isle Of Man">Isle Of Man</option><option value="India">India</option><option value="British Indian Ocean Territory">British Indian Ocean Territory</option><option value="Iraq">Iraq</option><option value="Iran">Iran</option><option value="Iceland">Iceland</option><option value="Italy">Italy</option><option value="Jersey">Jersey</option><option value="Jamaica">Jamaica</option><option value="Jordan">Jordan</option><option value="Japan">Japan</option><option value="Kenya">Kenya</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Cambodia">Cambodia</option><option value="Kiribati">Kiribati</option><option value="Comoros">Comoros</option><option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option><option value="North Korea">North Korea</option><option value="South Korea">South Korea</option><option value="Kuwait">Kuwait</option><option value="Cayman Islands">Cayman Islands</option><option value="Kazakhstan">Kazakhstan</option><option value="Laos">Laos</option><option value="Lebanon">Lebanon</option><option value="Saint Lucia">Saint Lucia</option><option value="Liechtenstein">Liechtenstein</option><option value="Sri Lanka">Sri Lanka</option><option value="Liberia">Liberia</option><option value="Lesotho">Lesotho</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Latvia">Latvia</option><option value="Libya">Libya</option><option value="Morocco">Morocco</option><option value="Monaco">Monaco</option><option value="Moldova">Moldova</option><option value="Montenegro">Montenegro</option><option value="Saint Martin">Saint Martin</option><option value="Madagascar">Madagascar</option><option value="Marshall Islands">Marshall Islands</option><option value="Macedonia">Macedonia</option><option value="Mali">Mali</option><option value="Myanmar">Myanmar</option><option value="Mongolia">Mongolia</option><option value="Macao">Macao</option><option value="Northern Mariana Islands">Northern Mariana Islands</option><option value="Martinique">Martinique</option><option value="Mauritania">Mauritania</option><option value="Montserrat">Montserrat</option><option value="Malta">Malta</option><option value="Mauritius">Mauritius</option><option value="Maldives">Maldives</option><option value="Malawi">Malawi</option><option value="Mexico">Mexico</option><option value="Malaysia">Malaysia</option><option value="Mozambique">Mozambique</option><option value="Namibia">Namibia</option><option value="New Caledonia">New Caledonia</option><option value="Niger">Niger</option><option value="Norfolk Island">Norfolk Island</option><option value="Nigeria">Nigeria</option><option value="Nicaragua">Nicaragua</option><option value="Netherlands">Netherlands</option><option value="Norway">Norway</option><option value="Nepal">Nepal</option><option value="Nauru">Nauru</option><option value="Niue">Niue</option><option value="New Zealand">New Zealand</option><option value="Oman">Oman</option><option value="Panama">Panama</option><option value="Peru">Peru</option><option value="French Polynesia">French Polynesia</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Philippines">Philippines</option><option value="Pakistan">Pakistan</option><option value="Poland">Poland</option><option value="Saint Pierre And Miquelon">Saint Pierre And Miquelon</option><option value="Pitcairn">Pitcairn</option><option value="Puerto Rico">Puerto Rico</option><option value="Palestine">Palestine</option><option value="Portugal">Portugal</option><option value="Palau">Palau</option><option value="Paraguay">Paraguay</option><option value="Qatar">Qatar</option><option value="Reunion">Reunion</option><option value="Romania">Romania</option><option value="Serbia">Serbia</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Solomon Islands">Solomon Islands</option><option value="Seychelles">Seychelles</option><option value="Sudan">Sudan</option><option value="Sweden">Sweden</option><option value="Singapore">Singapore</option><option value="Saint Helena">Saint Helena</option><option value="Slovenia">Slovenia</option><option value="Svalbard And Jan Mayen">Svalbard And Jan Mayen</option><option value="Slovakia">Slovakia</option><option value="Sierra Leone">Sierra Leone</option><option value="San Marino">San Marino</option><option value="Senegal">Senegal</option><option value="Somalia">Somalia</option><option value="Suriname">Suriname</option><option value="South Sudan">South Sudan</option><option value="Sao Tome And Principe">Sao Tome And Principe</option><option value="El Salvador">El Salvador</option><option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option><option value="Syria">Syria</option><option value="Swaziland">Swaziland</option><option value="Turks And Caicos Islands">Turks And Caicos Islands</option><option value="Chad">Chad</option><option value="French Southern Territories">French Southern Territories</option><option value="Togo">Togo</option><option value="Thailand">Thailand</option><option value="Tajikistan">Tajikistan</option><option value="Tokelau">Tokelau</option><option value="Timor-Leste">Timor-Leste</option><option value="Turkmenistan">Turkmenistan</option><option value="Tunisia">Tunisia</option><option value="Tonga">Tonga</option><option value="Turkey">Turkey</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tuvalu">Tuvalu</option><option value="Taiwan">Taiwan</option><option value="Tanzania">Tanzania</option><option value="Ukraine">Ukraine</option><option value="Uganda">Uganda</option><option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option><option value="United States" selected="selected">United States</option><option value="Uruguay">Uruguay</option><option value="Uzbekistan">Uzbekistan</option><option value="Vatican">Vatican</option><option value="Saint Vincent And The Grenadines">Saint Vincent And The Grenadines</option><option value="Venezuela">Venezuela</option><option value="British Virgin Islands">British Virgin Islands</option><option value="U.S. Virgin Islands">U.S. Virgin Islands</option><option value="Vietnam">Vietnam</option><option value="Vanuatu">Vanuatu</option><option value="Wallis And Futuna">Wallis And Futuna</option><option value="Samoa">Samoa</option><option value="Yemen">Yemen</option><option value="Mayotte">Mayotte</option><option value="South Africa">South Africa</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option></select>
+                      </div>
+                  </div>
+                  <div class="col-12">
+                      <button type="submit" class="btn mx-auto" pardot-submit>↓ SIGN UP TO DOWNLOAD PDF</button>
+                  </div>
+              </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+
+  <!-- End html part -->
+
+
+  ## Results
+
+
+  ### Which Warehouse Was the Fastest?
+
+  <img src="/images/library/fastest.png" alt="Which data warehouse is the fastest?" title="Fastest Data Warehouse"/>
+
+
+  All warehouses had excellent execution speed, suitable for ad-hoc, interactive querying. 
+
+
+  Redshift's slower times were primarily due to its slower query planner; in a scenario where you run similar queries repeatedly, the second query will be much faster. 
+
+
+  Azure's slower times at the 100 GB scale are due to the Gen1 architecture used; the Gen2 architecture is not yet available in a small warehouse size.
+
+
+  ### Which Warehouse Was the Cheapest?
+
+
+  <img src="/images/library/cheapest.png" alt="Which data warehouse is the cheapest?" title="Data Warehouse Price Comparison"/>
+
+
+  BigQuery charges per-query, so we are showing the actual costs billed by Google Cloud. To calculate cost-per-query for other warehouses, we made an assumption about how much time a typical warehouse spends idle. For example, if you run a Snowflake X-Small warehouse for 1 hour at $2 / hour, and during that time you run 1 query that takes 30 minutes, that query cost you $2 and your warehouse was idle 50% of the time. On the other hand, if you run two 30-minute queries and the warehouse spends 0% of the time idle, each query only costs you $1. We looked at the actual usage data of a sample of Fivetran users with Redshift warehouses. The median Redshift cluster was idle **82% of the time** [8].
+
+
+  This comparison depends heavily on our assumption about idleness [9]. If you have a very “spiky” workload, BigQuery would be much cheaper than the other warehouses. If you have a very “steady” workload, BigQuery would be much more expensive.
+
+
+  ### Which Warehouse Is "Best"?
+
+
+  Speed and cost are not the only considerations; these warehouses have important qualitative differences. Based on our experience with real customers, we believe there are 5 key features that differentiate data warehouses:
+
+
+  - Elasticity: how quickly can a data warehouse increase and decrease capacity in response to changing workloads?
+
+  - Availability: how does the warehouse provide high uptime?
+
+  - JSON support: can you store and query JSON data?
+
+  - Can you tune WHERE clauses by partitioning the data?
+
+  - Can you tune JOINs by specifying data distribution?
+
+
+  We've summarized how Redshift, Snowflake and BigQuery compare on these criteria; we don't yet have enough customers with Azure and Presto to include them in a qualitative comparison:
+
+
+  <img src="/images/library/q5a4vr94uorfeatured.png" alt="Compare data warehouses and their features" title="Data Warehouses Features Comparison" />
+
+
+  ## Why Are Our Results Different Than Previous Benchmarks?
+
+
+  ## [Amazon’s Redshift vs BigQuery benchmark](https://aws.amazon.com/blogs/big-data/fact-or-fiction-google-big-query-outperforms-amazon-redshift-as-an-enterprise-data-warehouse/)
+
+
+  In October 2016, Amazon ran a version of the TPC-DS queries on both BigQuery and Redshift. Amazon reported that Redshift was 6x faster and that BigQuery execution times were typically greater than 1 minute. The key differences between their benchmark and ours are:
+
+
+  - They used a 10x larger dataset (10TB versus 1 TB) and a 2x larger Redshift cluster ($38.40 / hour versus $19.20 / hour).
+
+  - They tuned the warehouse using sort and dist keys, whereas we did not.
+
+  - BigQuery Standard-SQL was still in beta in October 2016, it may have gotten faster by late 2018 when we ran this benchmark.
+
+
+  Benchmarks from vendors that claim their own product is the best should be taken with a grain of salt. There are many details not specified in Amazon’s blog post. For example, they used a huge Redshift cluster — -did they allocate all memory to a single user to make this benchmark complete super-fast, even though that’s not a realistic configuration? We don’t know. It would be great if AWS would publish the code necessary to reproduce their benchmark, so we could evaluate how realistic it is.
+
+
+  ## [Periscope’s Redshift vs. Snowflake vs. BigQuery Benchmark](https://www.periscopedata.com/blog/interactive-analytics-redshift-bigquery-snowflake.html)
+
+
+  Also in October 2016, Periscope Data compared Redshift, Snowflake and BigQuery using three variations of an hourly-aggregation query that joined a 1-billion row fact table to a small dimension table. They found that Redshift was about the same speed as BigQuery, but Snowflake was 2x slower. The key differences between their benchmark and ours are:
+
+
+  - They ran the same queries multiple times, which eliminated Redshift's slow compilation times
+
+  - Their queries were much simpler than our TPC-DS queries
+
+
+  The problem with doing a benchmark with “easy” queries is that every warehouse is going to do pretty well on this test; it doesn’t really matter if Snowflake does an easy query fast and Redshift does an easy query **really really fast**. What matters is whether you can do the hard queries fast enough.
+
+
+  Periscope also compared costs, but they used a somewhat different approach to calculate cost-per-query. Like us, they looked at their customer’s actual usage data; but instead of using percentage-of-time idle, they looked at the number of queries-per-hour. They determined that most (but not all) Periscope customers would find Redshift cheaper, but it was not a huge difference. 
+
+
+  ## [Mark Litwintschik’s 1.1 Billion Taxi Rides Benchmark](http://tech.marksblogg.com/benchmarks.html)
+
+
+  Mark Litwintshik benchmarked BigQuery in April 2016 and Redshift in June 2016. He ran 4 simple queries against a single table with 1.1 billion rows. He found that BigQuery was about the same speed as a Redshift cluster about 2x bigger than ours ($41 / hour). Both warehouses completed his queries in 1–3 seconds, so this probably represents the “performance floor”: there is a minimum execution time for even the simplest queries.
+
+
+  ## Conclusion
+
+
+  These warehouses all have excellent price and performance. We shouldn’t be surprised that they are similar: the basic techniques for making a fast columnar data warehouse have been well-known since [the C-Store paper](http://people.brandeis.edu/~nga/papers/VLDB05.pdf) was published in 2005. These data warehouses undoubtedly use the standard performance tricks: columnar storage, cost-based query planning, pipelined execution, and just-in-time compilation. We should be skeptical of any benchmark claiming one data warehouse is orders-of-magnitude faster than another. 
+
+
+  The most important differences between warehouses are the qualitative differences caused by their design choices: some warehouses emphasize tunability, others ease-of-use. If you're evaluating data warehouses, you should demo multiple systems, and choose the one that strikes the right balance for you.
+
+
+  ## Notes
+
+
+  [1] TPC-DS is an industry-standard benchmarking meant for data warehouses. Even though we used TPC-DS data and queries, this benchmark is *not* an official TPC-DS benchmark, because we only used one scale, we modified the queries slightly, and we didn’t tune the data warehouses or generate alternative versions of the queries.
+
+
+  [2] This is a small scale by the standards of data warehouses, but most Fivetran users are interested data sources like Salesforce or MySQL, which have complex schemas but modest size.
+
+
+  [3] We had to modify the queries slightly to get them to run across all warehouses. The modifications we made were small, mostly changing type names. We used BigQuery standard-SQL, not legacy-SQL.
+
+
+  [4] The DW1500c configuration for Azure uses Microsoft's Gen2 architecture; the Gen2 architecture is not yet available in a small warehouse size appropriate for the 100 GB scale, so we used the Gen1 DW200 configuration at that scale. 
+
+
+  [5] Presto is an open-source query engine, so it isn't really comparable to the commercial data warehouses in this benchmark. But it has the potential to become an important open-source alternative in this space. We used [v0.195e](https://github.com/starburstdata/presto/tree/195e) of the [Starburst](https://www.starburstdata.com/) distribution of Presto. Cost is based on the on-demand cost of the instances on Google Cloud.
+
+
+  [6] BigQuery is a pure shared-resource query service, so there is no equivalent “configuration”; you simply send queries to BigQuery, and it sends you back results.
+
+
+  [7] If you know what kind of queries are going to run on your warehouse, you can use these features to tune your tables and make specific queries much faster. However, typical Fivetran users run all kinds of unpredictable queries on their warehouses, so there will always be a lot of queries that don’t benefit from tuning.
+
+
+  [8] Some readers may be surprised these data warehouses are idle most of the time. Fivetran users tend to use their warehouses for interactive queries, where a human is waiting for the result, so they need queries to return in a few seconds. To achieve this performance target, you need to provision a large warehouse relative to the size of your data, and that warehouse is going to be idle most of the time. Also, note that this doesn’t mean these warehouses are doing nothing for hours; it means that there are many small gaps of idleness interspersed between queries.
+
+
+  [9] The formula for calculating cost-per-query is **[Query cost] = [Query execution time] * [Cluster cost] / (1 — [Cluster idle time])**
+
+
+  [10] Redshift takes minutes-to-hours to restore a cluster; in practice this means you will run your cluster 24/7, even if you only use it for part of each day.
+
+
+  [11] Snowflake bills per-second, with a minimum of 1 minute, so you can save money by configuring your cluster to turn off during periods of inactivity.
+
+
+  [12] BigQuery bills per-query, so you only pay for *exactly* what you use.
+
+
+  [13] Redshift automatically backs up to S3, but in the event of a node failure you will lose a few hours of data and experience downtime while you wait for a restore.
+
+
+  [14] Redshift doesn't have an UNNEST or FLATTEN operator, so it's impractical to work with nested JSON arrays.
+
+
+  [15] Snowflake supports JSON data natively via its VARIANT type
+
+
+  [16] You can convert JSON to typed STRUCT/ARRAY types by writing a user-defined-function in Javascript.
+
+
+  [17] BigQuery only allows partitioning on date columns, and date-partitioning limits how you can use DML operations; but it works well for event tables.

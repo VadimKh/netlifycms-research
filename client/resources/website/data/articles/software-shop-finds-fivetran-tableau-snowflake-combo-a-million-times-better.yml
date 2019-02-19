@@ -1,0 +1,137 @@
+header: |
+  Software Shop Finds Fivetran-Tableau-Snowflake Combo a "Million Times Better"
+featuredImage: /images/library/inverse-square-case-study.jpg
+path: /blog/inverse-square-case-study
+description: Learn how Inverse-Square adopted integrated, automated analytics.
+pageTitle: "Inverse-Square Data Stack: Tableau, Snowflake, Fivetran | Fivetran Blog"
+pageDescription: Learn how Inverse-Square adopted integrated, automated analytics with
+  Fivetran, Snowflake and Tableau.
+tags:
+  - case study
+  - inverse-square
+  - dwh
+  - bi
+  - source
+  - tableau
+  - snowflake
+  - azure blob storage
+  - azure
+  - quickbooks
+date: 2018-10-17
+published: 1
+featured: 0
+authorsName:
+  - john
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >
+  “One of the big selling points for our custom application-development services
+  is that we can eliminate manual reporting for our customers," says Patrick
+  Laskowski, business analyst at [Inverse-Square](https://inverse-square.com/).
+  Founded in 2011, the software firm has reached a critical size — it can now
+  leverage the industry best practices it often recommends to its clients.
+  Rather than manual reporting in Excel, Inverse-Square has adopted a modern
+  data stack consisting of Tableau, Snowflake and Fivetran for internal
+  analytics.
+
+
+  ### Company Mission 
+
+  “Inverse-Square builds customized, unique software applications for equally unique customers who can’t find ‘that thing.’” 
+
+  — Patrick Laskowski, business analyst, Inverse-Square
+
+
+  ### Primary Challenge
+
+  Before the Tableau-Snowflake-Fivetran combination, Inverse-Square had been running its reports in Excel, which required manually importing its [LiquidPlanner](https://www.liquidplanner.com/) customer-project files, along with [QuickBooks Online](https://quickbooks.intuit.com/online/) data, into “constantly changing” spreadsheet models. This process made trend-analysis incredibly time-consuming.
+
+
+  ### Data-Stack Solution
+
+  Sources: [Azure Blob Storage](https://fivetran.com/docs/files/azure-blob-storage), [QuickBooks Online](https://fivetran.com/directory/quickbooks)
+
+  Pipeline: [Fivetran connectors](https://fivetran.com/directory)
+
+  Warehouse: [Snowflake](https://fivetran.com/docs/warehouses/snowflake)
+
+  Analytics Platform: [Tableau](https://www.tableau.com/) data visualization
+
+
+  ### Results
+
+
+  “Fivetran just does our job for us, and we can do more with less,” Laskowski says. At the same time, the Tableau analytics platform has replaced and [outpaced Excel](https://www.betterbuys.com/bi/tableau-vs-excel/) at Inverse-Square. In essence, the company came to achieve more with a centralized, automated data stack than its previous process of one-off reporting. Laskowski is able to take advantage of Fivetran automation to easily "update our Quickbooks tables in Snowflake. Then, using Tableau, generate reports to track revenue, profit over time, etc.” Beyond that, by centralizing data sources into Snowflake, "I can combine LiquidPlanner customer information and QuickBooks together, two data sources that previously didn’t join easily.”
+
+
+  ### "Building custom software is like building custom vehicles. You've got bicycles, and you've got spaceships."
+
+
+  Located in Indianapolis, Inverse-Square develops custom software applications for clients who have trouble meeting their highly specific requirements with off-the-shelf solutions. Perhaps not surprisingly, says Laskowski, “Every single system that we have is brand new, and a unique challenge in its own right.” 
+
+
+  Building unique software solutions that range from simple "bicycles" to complex "spaceships," Inverse-Square is primarily a Microsoft shop, relying heavily on the .NET platform. One example project, Laskowski explains, is a marketing-operations system for a “huge medical-devices company. The system runs 24 hours a day and serves markets worldwide.” Another major Inverse-Square application runs “probably $30 million of show cattle” through an auction system. The customer is about to celebrate its “fifth big fall season” using the custom cattle-auction application.
+
+
+  ## The Limitations of Manual Analytics Tools
+
+
+  Prior to implementing Fivetran cloud data pipelines to link its separate financial and customer-project data sources to a Snowflake warehouse, Inverse-Square was producing all its management reporting in Excel. Although Excel is highly flexible, the tool provides few automations. 
+
+
+  When fresh data became available, the old process required exporting QuickBooks Online data, along with LiquidPlanner project-management files, and importing those data streams into Excel. Most reports would then need to be recreated — resulting in lost employee time and reduced operations team productivity. Additionally, the standalone reporting capabilities of QuickBooks were limited and ultimately unable to provide the analytical scope which Laskowski and management had come to require. There was no practical way, for example, to create and run saved queries which could link internal financial data in QuickBooks with “external” customer-project information in LiquidPlanner.
+
+
+  Last but by no means least was the aforementioned Excel “flexibility” problem, which kept rearing its head at Inverse-Square: “All that flexibility with Excel meant that we rarely looked at the same chart for more than a month or two at a time,” Laskowski says. “Then we’d start over and look at something new.” In short, the lack of automation and predefined views meant that trend analysis was not possible. In effect, he observes, “there was no way to reward people for their good behaviors or to grow from any errors.”
+
+
+  ## The Power of Automated Replication
+
+
+  After a five-minute setup, Fivetran was able to replicate all of Inverse-Square’s application data into the columnar [Snowflake cloud warehouse](https://www.snowflake.com/), and then move the analytics layer into Tableau. Fivetran cloud pipelines are zero- configuration, zero-maintenance and fully managed.
+
+
+  **_Fivetran core concepts:_** _Inverse-Square called upon Fivetran to solve its data analytics challenges by reaching out to their financial and project-management systems to grab relevant QuickBooks and LiquidPlanner data — at the schema or table level, depending on the integration. Each Fivetran integration has a different way of connecting schemas and tables. [Learn more about core concepts >>](https://fivetran.com/docs/getting-started/core-concepts)_
+
+
+  “Previously, data and visualizations were always changing,” explains Laskowski, because operations had a practice of holding onto Excel spreadsheet-report models for no more than two months. Now that Fivetran has centralized LiquidPlanner and QuickBooks data in Snowflake, “we can leave these things in place,” Laskowski says.
+
+
+
+  **_Webinar: Why Use Fivetran to Connect Your Data Sources to Snowflake?_** _Why did rapid-development platform Outsystems chose Fivetran to connect its cloud data sources to the Snowflake warehouse? So it could enhance business decision-making by integrating up-to-date information refreshed automatically from all its data sources. [Watch the webinar.](https://fivetran.com/blog/webinar-outsystems-snowflake-computing)_
+
+
+
+  Before Fivetran, Inverse-Square operations had to regularly export LiquidPlanner and QuickBooks Online data and import it into Excel for reporting purposes. Now the data replication process is automatic. And fast. Today, Laskowski can use Tableau to query predefined views of consolidated data in the Snowflake warehouse, review trends, reduce costs, and seek out new revenue opportunities.
+
+
+  ## New Analytics Possibilities
+
+
+  Using Fivetran, you can sync data into cloud warehouses as frequently as every five minutes. But, since Inverse-Square bills clients monthly, having no need for real-time updates, the company’s QuickBooks tables replicate each night, automatically, in Snowflake, together with the LiquidPlanner project files. 
+
+
+  "I think the biggest benefits of using Fivetran are to put the data somewhere else in the data warehouse," Laskowski says. "We love that we can keep our clients working 'over here,' and then, when we want a report, they’ve got up-to-yesterday’s data in Tableau: accurate, but very quick. And not slowing down. I love that.
+
+
+  “Now I can use Tableau analytics, having grabbed all my data, and I can create the appropriate views in Snowflake to generate reports showing revenue, profit over time. We can do much more than was possible with just the QuickBooks reporting.” 
+
+
+  Laskowski is quick to point out the performance superiority of querying QuickBooks tables after they have been replicated by Fivetran into Snowflake. Compared to querying QuickBooks directly, the Tableau-Snowflake-Fivetran combination is a "million times better,” he says. "It's incredibly valuable.”
+
+
+  ### About Fivetran
+
+  Fivetran enables you to make data-backed decisions by giving your analysts easy access to disparate data sources. Fivetran replicates all your application, database, event and file data into your high-performance cloud warehouse — after no more than a five-minute setup. Fivetran data pipelines are zero-configuration, zero-maintenance and 100% Fivetran-managed. 
+
+
+  ### About Snowflake
+
+  [Snowflake](https://www.snowflake.com/product/why-snowflake/)’s mission is to enable every organization to be data-driven with instant elasticity, secure data sharing and per-second pricing, across multiple clouds. Snowflake combines the power of data warehousing, the flexibility of big data platforms and the elasticity of the cloud at a fraction of the cost of traditional solutions.
+
+
+  ### About Tableau
+
+  [Tableau](https://www.tableau.com/about/mission) products transform the way people use data to solve problems, making analysis fast and easy, beautiful and useful. In 2020, the world will generate 50 times the amount of data generated in 2011. And 75 times the number of information sources. Within these data are huge opportunities for human advancement. But to turn opportunities into reality, people need the power of data at their fingertips. Tableau is building software to deliver exactly that. 

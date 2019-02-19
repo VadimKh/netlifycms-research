@@ -1,0 +1,119 @@
+header: Raider Express Keeps on Truckin' With Fivetran, Snowflake and Tableau
+featuredImage: /images/library/truckmap.png
+path: /blog/raider-express-keeps-on-truckin-with-fivetran-snowflake-and-tableau
+description: Texas-based trucking company Raider Express fuels its fleet performance with a
+  modern, cloud-powered analytics stack.
+pageTitle: Raider Express Keeps on Truckin' with Fivetran, Snowflake and Tableau |
+  Fivetran
+pageDescription: Learn how Raider Express, a Texas-based trucking company, fuels their fleet
+  performance by using a modern cloud analytics stack.
+tags:
+  - case study
+  - snowflake
+  - tableau
+  - sql server
+date: 2018-06-13
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >
+  Diesel fuel isn't the only thing powering Raider Express' 500 refrigerated
+  trailers that haul goods across the 48 continental US states. [Raider
+  Express](http://www.raiderexpress.net/), the Fort Worth, Texas-based trucking
+  company with 400 employees, seemingly transports as much data as it does
+  cold-stored protein goods.
+
+
+  The fuel driving the data is a mixed blend off [Fivetran](https://fivetran.com/), SQL Server, Snowflake and Tableau. In combination with onboard telematics and GPS systems, this array of technology monitors fuel efficiency, traffic, refrigeration temperature, weather, truck component failure, wind speed, road elevation, tire pressure, truck idleness, driver hours and you name it—all in virtually real time.
+
+
+  ![Image title](/images/library/truckgraph.png)
+
+
+  "We track performance on all of those aspects. All of that data, and more, pulls into our main operating system and gets stored on our on-premise data warehouse, SQL Server. From there, Fivetran syncs it to Snowflake," says Dan Eggleton, the CFO and CIO for family owned Raider Express. "We now realize how critical it is to have a clear, and concise, view of when things are happening."
+
+
+  Fivetran, Eggleton says, has fundamentally altered the business.
+
+
+  >"Before Fivetran, I think we had a mind bogglingly distorted view of our operation."
+
+
+  Here's how the Raider Express data path to success works: 
+
+
+  The data is initially and constantly being culled from trucks, trailers, and operating systems, and flows to Raider Express' SQL Server. From there, Fivetran replicates that data, in near real time, to the Snowflake data warehouse. Running on top of the warehouse is the business intelligence tool, Tableau. This BI tool is programmed to send workflow tasks and instant popup notifications that warn about tire pressure, traffic issues and, among other things, alerts managers whether drivers are nearing the end of their federally allowed drive time and gives them options of nearby trucks that have drivers with available hours to swap loads with to keep freight moving as efficiently as possible.
+
+
+  "Anytime there's an event, or something starts becoming an issue that requires attention, alerts are sent to the appropriate operations personnel and don’t go away until the issue is resolved," Eggleton says.
+
+
+  All in all, this setup—which is visualized by Tableau, fueled by Fivetran and powered by Snowflake—is handling about 50,000 events daily and measuring well over 500 predefined metrics.
+
+
+  "Snowflake has infinite computing power. As quickly as Fivetran processes updates, we're effectively in real time with whatever analysis we need," Eggleton says. "Our goal is to get as close to a live-streaming feed of our operation as possible. Our trucks and trailers are basically telling us almost everything that is going on with them every minute of every day. That's what we characterize as an event."
+
+
+  Having all of these metrics—the most crucial among them are time and operating efficiency—means that Raider Express uses a lot of data to determine pricing, efficiency, routes and whether it would even accept new customers. Left behind are the days of simply charging and accepting new business solely based on miles hauled.
+
+
+  >"Fivetran trickles down to every single minute of our operation," Eggleton says. "It has really opened our eyes. We started seeing that some our highest paying lanes were not even close in the top 40 of efficient ones."
+
+
+  Eggleton says Fivetran has ushered in a data-driven culture at Raider Express.
+
+
+  >"Fivetran literally made the process of being able to use Snowflake seamless. We're effectively updating in almost real time. There's zero upkeep in Fivetran. We add a new table in our database, it automatically populates the data into Snowflake. There's no thinking about it on our end. I can't imagine not having that functionality. Before Fivetran, there were a lot of things we couldn't do."
+
+
+  [The SQL Server](https://fivetran.com/directory/sql_server_warehouse) that Raider Express runs is just one of the dozens of connectors Fivetran offers. These connectors are the data from all sorts of business applications, and databases, that Fivetran syncs and replicates into a data warehouse. Fivetran supports four column-oriented data warehouses. They include [Google BigQuery](https://fivetran.com/directory/bigquery), [Amazon Redshift](https://fivetran.com/directory/redshift), [Snowflake](https://fivetran.com/directory/snowflake) and the [Microsoft Azure SQL Data Warehouse](https://fivetran.com/directory/azure_sql_warehouse).
+
+
+  *For an analysis on the difference between a row-based and column-oriented data warehouse, see our in-depth analysis [here](https://fivetran.com/blog/choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics).* 
+
+
+  Raider Express, with the telematics services of [Blue Tree Systems](http://www.bluetreesystems.com/na/) fleet tracking system, and a recent Data Telematics Test Program with the Connected Vehicle Group at Volvo Trucks North America, now has the ability to measure everything it needs for a job. Understanding the impact that variables like route, traffic congestion, road grade, weather, and driver delay time have on the efficiency of freight moving down the road is paramount to business success, Eggleton says.
+
+
+  ![Image title](/images/library/truckgraph2.png)
+
+
+  "The two most crucial efficiency metrics we look are how effectively our drivers’ available work hours are being utilized and the fuel economy for the trucks. That means route is extremely crucial. It has a huge impact on both," Eggleton says. "The route goes into pricing and overall profitability of that particular customer. Historical data shows profitability of routes. We know how efficient a proposal is now. We know what our costs are going to be. We also know what lanes and locations are going to cause our drivers to needlessly lose available working time.  If the inefficiency is not something that can be resolved through pricing, we won't take that freight," Eggleton says.
+
+
+  Finding those hidden trends in data is part and parcel to the Raider Express business operations.
+
+
+  "The Volvo Data Pilot Program has given us the ability to track on a minute-to-minute basis almost everything that is going on with every truck.  Receiving location and truck performance data from a telematics device isn’t anything new, the message frequency and the amount of data that’s pulled in from the Volvo feed is.  A few  years ago we were thrilled to get a few performance measures for a truck aggregated by day while it was operating all over the country.  Today we know almost instantly when a truck starts to have even a hint of an efficiency degradation.  If a critical fault event occurs, we’re able to instantly pull in dozens of real time sensor and status readings, along with the exact details of the fault type and the troubleshooting procedures.  All of this data gives us an incredibly clear picture of what is really happening.  We’ve gone from knowing a truck has a problem because it’s broken down somewhere, to being able to predict failures based on the way the data is trending.  Our goal is to have every truck live streaming as much data as possible.  Doing that on our own would be difficult and costly to say the least. Volvo has been a great partner to work with in providing the path to get there. It’s been a game changer in numerous aspects, but most importantly it helps us help our drivers operate as safely and efficiently as possible."
+
+
+  This level of analysis would not possible without the Fivetran data pipeline to Snowflake, Eggleton says.
+
+
+  >"Snowflake, on a scale of 1-10, would be an 11 or 12. It's the ease of use, the ease of functionality, and of being able to manage cost and performance however we want to. It's having infinite computing power at your fingertips if you need it. What would take our on-premise table updates or ad hoc queries 15 mins to run before can be done in seconds now.  The absolute beating that it is dealing with XML Data is gone.  We can now ingest and process it with no pre-parsing."
+
+
+  The Trucking Industry is changing at an incredibly advanced pace.  The effect on the supply chain from the increasingly present mindset of “order and have it delivered now” has made being a truck driver a not so easy task. That's why Raider Express is constantly measuring driver metrics as well. Federal law requires trucking companies to account for every minute of a driver's time. Essentially, drivers can only be on duty (driving, waiting at a dock) a maximum of 14 hours before they have to take a 10-hour break. And during that 14 hours, only 11 can be driving.
+
+
+  "Every single minute of every single driver's time is absolutely critical to maximize not just from a business perspective, but from a quality of life aspect for our drivers" Eggleton says. "We're constantly comparing current route transit times versus historical. The truck is wasting time if the driver is getting held up picking up a load or making a delivery, and that driver is needlessly wasting time they could be spending at home with their families. If a truck is idling, it's wasting fuel and time. We now know if a driver can make an on-time delivery based on location, appointment time, and how many hours of drive time is left."
+
+
+  On top of the the Fivetran to Snowflake sync is Tableau, the BI tool where all of Raider Express' data is visualized, Eggleton says.
+
+
+  >"We use Tableau for the visualization aspect of everything—the mapping functionalities, the graphing functionalities. Tableau allows for exceptional event reporting, email, filters, and screen popups. It's effectively limitless in the aspect of any visualization or view you want to see of your operation. You can really uncover incredible insights."
+
+
+  **About Fivetran:** Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights using SQL or the business intelligence (BI) tools of choice.

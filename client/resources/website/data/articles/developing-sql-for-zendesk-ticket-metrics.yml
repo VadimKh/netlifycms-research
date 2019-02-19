@@ -1,0 +1,573 @@
+header: Developing SQL for Zendesk Ticket Metrics
+featuredImage: /images/library/zendeskgreen.png
+path: /blog/zendesk-ticket-metrics
+description: Use SQL queries with Zendesk data to assess help desk performance by employing
+  metrics that offer quantitative insight into the efficiency of support teams.
+pageTitle: 7Developing SQL for Zendesk Ticket Metrics
+pageDescription: How to use SQL queries with Zendesk data to assess help desk performance by
+  employing metrics which can give quantitative insight into the efficiency of
+  support teams.
+tags:
+  - analyst recipe
+  - sql
+  - zendesk
+  - redshift
+  - bigquery
+  - snowflake
+date: 2018-08-17
+published: 1
+featured: 0
+authorsName:
+  - narek
+categoryTitle: Analyst Recipe
+categories:
+  - Analyst Recipes
+isDownload: false
+content: "One of the cornerstones of assessing both the performance of support teams
+  and the satisfaction of customers is the formulation of metrics which can give
+  quantitative insight into the efficiency of support teams. Companies using
+  [Zendesk](https://www.zendesk.com/) services have the opportunity to calculate
+  several types of such metrics, chief among them being the number of Zendesk
+  tickets closed, ticket distribution, and response time. Here we will primarily
+  focus on response time, and discuss the methods and queries you can use to
+  determine the number of business hours it takes for a given ticket to be
+  solved.\ 
+
+
+  Discussing Zendesk ticket metrics, Fivetran Head of Support Tom Davies
+  observes, “Response time and wait time are the most valuable metrics. Ideally,
+  we want to be very quick.” Furthermore, wait time could be a potential
+  indicator of customer dissatisfaction because “the longer you wait the more
+  dissatisfied customers might become.” On the other hand, resolution time is
+  important because “it helps to understand the total elapsed time, from when
+  the case is opened to when it is resolved. This metric can point to additional
+  training needed—or to support members required to reinvestigate the issue.”
+  While it is relatively uncomplicated to calculate how long a particular
+  Zendesk ticket was open, such information might not be of great use in
+  examining the performance of your support organization. Instead, it is more
+  important to calculate how long a particular ticket was open during business
+  operating hours. This metric offers much better insight into the efficiency of
+  your support organization.\ 
+
+
+  ## Key Challenge and Proposed Solution
+
+
+  The key challenge is to “extract” any overlapping time occurring between
+  regular business hours and the time during which a ticket is open. We may
+  present this problem using the following illustration.\ 
+
+
+  ![Zendesk1](/images/library/zendeskimage3.png)
+
+  ![Zendesk2](/images/library/zendeskimage2.png)
+
+  ![Zendesk3](/images/library/zendeskimage1.png)
+
+
+  The continuous line above represents the time that a ticket might be open
+  during specific week(s). The discontinuous lines below the ticket line
+  represent regular business operations hours. The goal here is to find the sum
+  (in minutes or hours) of all overlaps between the ticket line and the business
+  operations lines. To do this, we consider three separate scenarios for the
+  location of the ticket line in relation to the business lines:
+
+
+  1.  The ticket is open between two business operation times, and there are
+  overlaps (also: the ticket line might cross multiple business operation
+  lines).
+
+  2.  The ticket is open only during business operation times.
+
+  3.  The ticket is not open during any business operation times, i.e, it took
+  0 business-operations minutes to solve the ticket.
+
+
+  Within the [Zendesk schema](https://fivetran.com/docs/applications/zendesk)
+  (note that this schema may also have a custom name depending on the
+  organization) there are three tables that contain the data describing the
+  ticket open hours and the business operation hours. The first is
+  [zendesk_schema_name].ticket which contains the identification of the ticket
+  (ticket.id) and the creation time (ticket.created_at) in UTC as a timestamp.\ 
+
+
+  Next, the **[zendesk_schema_name].ticket_field_history** table contains the
+  ticket ID (ticket_field_history.ticket_id), solution time[1] and a value for
+  solution status. Lastly, the **[zendesk_schema_name].schedule** table contains
+  the business operation times in UTC. However, the format is quite different
+  from the creation time in the “ticket” table. The business operation start and
+  end times are described as the number of minutes that have passed from Sunday
+  at midnight in a given week.[2] This format, therefore, already poses some
+  difficulties. Consequently, the best course of action in this case is to
+  convert the ticket creation and solution times into the same format as the
+  business operation times. After accomplishing this, it is possible to find the
+  total time that the ticket has been open by computing the difference between
+  the solution and creation times. Lastly, by matching or overlapping the
+  minutes that the ticket has passed through with the business operation hours,
+  it is possible find the number of business minutes/hours that it took to solve
+  the ticket. In SQL, this is done by joining the table that describes the
+  ticket open minutes with the table that describes the business operation
+  times.
+
+
+  ## The Solution in SQL
+
+
+  To illustrate our solution, let us examine the query written in Standard
+  SQL. This SQL engine is implemented primarily within the Google BigQuery data
+  warehouse.\ 
+
+
+  The query is composed of three main parts. The first part derives the ticket
+  creation and solution times, and converts these timestamps into the same
+  format as seen in schedule table. This is a necessary step because it is
+  rather challenging to convert business operation times (in the format that
+  they were given) into timestamps.
+
+
+  In the subquery below, the creation time in minutes, from the beginning of
+  the week, is calculated by truncating the timestamp to the Sunday of the
+  week—and finding the minute-difference between Sunday and the creation time of
+  the ticket. Using the same method, we can also calculate the total minutes the
+  ticket existed (raw_delta_in_minutes). Lastly, we ensure that the ticket has
+  indeed been solved using the “where” clause.\ 
+
+
+  ```
+
+  with ticket_solved_time as (
+
+  select ticket.id as ticket_id,
+
+  \       ticket.created_at as created_at,
+
+  \       round(timestamp_diff(created_at, timestamp_trunc(created_at, week),
+  second)/60, 0) as start_time_in_minutes_from_week,
+
+  \      round(timestamp_diff(max(ticket_field_history.updated), created_at,
+  second)/60, 0) as raw_delta_in_minutes
+
+  \  from [ZENDESK_SCHEMA].ticket
+
+  \  join  [ZENDESK_SCHEMA].ticket_field_history on ticket.id =
+  ticket_field_history.ticket_id where ticket_field_history.value = 'solved'
+
+  group by 1,2,3),
+
+  ```
+
+
+  In the next subquery, the number of minutes for each of the weeks that the
+  ticket was open is calculated. This is done by first creating an array from 0
+  to the floor of the quotient of the number of minutes during which the ticket
+  was open—and the number of hours there are in a week. Then, for each of the
+  weeks, the number of open minutes is populated in the weekly_periods table.
+
+
+  ```
+
+  weekly_periods as (
+
+  \  select ticket_id,
+
+  \         start_time_in_minutes_from_week,
+
+  \         raw_delta_in_minutes,
+
+  \         week_number,
+
+  \         greatest(0, start_time_in_minutes_from_week - week_number *
+  (7*24*60)) as ticket_week_start_time,
+
+  \         least(start_time_in_minutes_from_week + raw_delta_in_minutes -
+  week_number * (7*24*60), (7*24*60)) as ticket_week_end_time
+
+  \  from ticket_solved_time, unnest(generate_array(0,
+  floor((start_time_in_minutes_from_week + raw_delta_in_minutes) /  (7*24*60)),
+  1)) as week_number),
+
+  ```
+
+
+  In the final subquery, we employ the same logic used in the solution
+  described above. Within the query, we join the “schedule” table with the table
+  from the previous subquery. At the same time, we find the minimum between the
+  number of minutes after which the ticket was closed (ticket_week_end_time) and
+  the ending minute of the schedule. Then we calculate the maximum between the
+  starting minute of the ticket and the starting time of the schedule. Lastly,
+  we find the difference between the two values for each, and find the sum of
+  all overlaps between the ticket and the business hours. Using this method, we
+  are thus able to “capture” the overlaps between the business hours and the
+  ticket open hours.\ 
+
+
+  ```
+
+  intercepted_periods as (
+
+  \  select ticket_id,
+
+  \         week_number,
+
+  \         ticket_week_start_time,
+
+  \         ticket_week_end_time,
+
+  \         schedule.start_time_utc as schedule_start_time,
+
+  \         schedule.end_time_utc as schedule_end_time,
+
+  \         least(ticket_week_end_time, schedule.end_time_utc) -
+  greatest(ticket_week_start_time, schedule.start_time_utc) as
+  scheduled_minutes\ 
+
+  \  from weekly_periods
+
+  \  join  [ZENDESK_SCHEMA].schedule on ticket_week_start_time <=
+  schedule.end_time and ticket_week_end_time >= schedule.start_time\ 
+
+  )
+
+  select ticket_id, round(sum(scheduled_minutes)) as scheduled_minutes
+
+  from intercepted_periods
+
+  group by 1
+
+  order by 1
+
+  ```
+
+
+  In the end, all the overlapping minutes are summed and presented as a  table
+  with two fields showing the ticket ID and the number of business minutes it
+  took to solve the ticket.\ 
+
+
+  ## Producing the SQL Query to Run in Other Engines
+
+
+  As it happens, it is possible to “translate” this query from Standard SQL to
+  either PostgreSQL or MySQL. These SQL engines are widely used by popular
+  warehouses. Often, these warehouses expand upon the possibilities of what can
+  be done using the SQL engine that they rely on. Nevertheless, the general
+  logic of the query will remain the same.
+
+
+  \ Below is the PostgreSQL version of our query. Both [Amazon
+  Redshift](https://fivetran.com/docs/warehouses/redshift) and the [PostgreSQL
+  warehouse](https://fivetran.com/docs/warehouses/postgresql) rely on the
+  PostgreSQL engine (with Amazon Redshift SQL having slight syntactical
+  differences).\ 
+
+
+  ```
+
+  \ with ticket_solved_time as (
+
+  select ticket.id as ticket_id,
+
+  \       ticket.created_at as created_at,
+
+  \       EXTRACT(EPOCH FROM (created_at - date_trunc('week', created_at)))/60
+  + 1440  as start_time_in_minutes_from_week,
+
+  \       EXTRACT(EPOCH FROM ((max(ticket_field_history.updated) -
+  created_at)))/60  as\ 
+
+  \       raw_delta_in_minutes
+
+  \  from  [ZENDESK_SCHEMA].ticket
+
+  \  join  [ZENDESK_SCHEMA].ticket_field_history on ticket.id =
+  ticket_field_history.ticket_id where ticket_field_history.value = 'solved'
+
+  \  group by 1,2,3
+
+  ),
+
+  generate_array as (
+
+  \  select distinct generate_series(0, cast((start_time_in_minutes_from_week
+  + raw_delta_in_minutes)/(7*24*60) as int),1) as week_number
+
+  \  from ticket_solved_time
+
+  ),
+
+  weekly_periods as (
+
+  \  select ticket_id,
+
+  \         start_time_in_minutes_from_week,
+
+  \         raw_delta_in_minutes,
+
+  \         week_number,
+
+  \         greatest(0, start_time_in_minutes_from_week - week_number *
+  (7*24*60)) as ticket_week_start_time,
+
+  \         least(start_time_in_minutes_from_week + raw_delta_in_minutes -
+  week_number * (7*24*60), (7*24*60)) as ticket_week_end_time
+
+  \  from ticket_solved_time, generate_array
+
+  ),
+
+  intercepted_periods as (
+
+  \  select ticket_id,
+
+  \         week_number,
+
+  \         ticket_week_start_time,
+
+  \         ticket_week_end_time,
+
+  \         schedule.start_time_utc as schedule_start_time,
+
+  \         schedule.end_time_utc as schedule_end_time,
+
+  \         least(ticket_week_end_time, schedule.end_time_utc) -
+  greatest(ticket_week_start_time, schedule.start_time_utc) as
+  scheduled_minutes\ 
+
+  \  from weekly_periods
+
+  \  join  [ZENDESK_SCHEMA].schedule on ticket_week_start_time <=
+  schedule.end_time and ticket_week_end_time >= schedule.start_time\ 
+
+  )
+
+  select ticket_id, round(sum(scheduled_minutes)) as scheduled_minutes
+
+  from intercepted_periods
+
+  group by 1
+
+  order by 1
+
+  ```
+
+
+  \ Some features, such as lists and arrays, are not supported by Redshift.
+  Consequently, instead of generating arrays, as we have done in the above query
+  using **generate_series()**, we can generate a table containing consecutive
+  numbers starting from 1. One way of doing this would be to use the
+  **stl_connection_log** system table that logs authentication attempts and
+  connections/disconnections. This method enables the creation of a table
+  containing consecutive integers by replacing the **generate_array** subquery
+  in the above PostgreSQL version with:
+
+
+  ```
+
+  number_arrays  as (
+
+  \    select 1\ 
+
+  \    from stl_connection_log\ 
+
+  \    limit 100
+
+  ),
+
+  generate_array as (
+
+  select row_number() over (order by 1) as week_number\ 
+
+  from number_arrays
+
+  )
+
+  ```
+
+
+  \ As a side note, the version of the query produced for organizations using
+  Amazon Redshift also works for organizations relying on the
+  [Periscope](https://fivetran.com/docs/warehouses/periscope) and
+  [Panpoly](https://fivetran.com/docs/warehouses/panoply) warehouses. This is
+  because both Periscope and Panopoly warehouses employ the Redshift SQL
+  engine.\ 
+
+
+  Notice that the differences between the queries in Standard SQL and
+  PostgreSQL are not great, occurring mostly within the first subquery. In lines
+  4 and 5, the Standard
+  [BigQuery](https://fivetran.com/docs/warehouses/bigquery) SQL functions
+  **timstamp_diff()** and **timstamp_trunc()** are replaced by **date_trunc()**
+  and **EXTRACT(EPOCH FROM())** in PostgreSQL. The **unnest(generate_array())**
+  is replaced by a separate subquery of “generate_array”—which uses the
+  **generate_series()** function to create a series from 0 to the week_number.
+  Since it is challenging to use the **unnest()** function for unnesting series
+  values in PostgreSQL, it is better to create a separate “generate_array”
+  subquery where consecutive integers starting from 1 will be stored. These
+  integers will denote the indexes for each of the weeks during which the ticket
+  was open. MySQL also provides similar functions for manipulating dates and
+  date formats. You can employ the version of the query presented below if your
+  organization uses the MySQL and
+  [Snowflake](https://fivetran.com/docs/warehouses/snowflake) warehouses. \f
+
+
+  ```
+
+  with ticket_solved_time as (
+
+  select ticket.id as ticket_id,
+
+  \       ticket.created_at as created_at,
+
+  \       datediff(minute ,date_trunc('week', created_at), created_at) + 1440
+  as start_time_in_minutes_from_week,
+
+  \       datediff(minute,created_at, max(ticket_field_history.updated)) as
+  raw_delta_in_minutes
+
+  \  from  [ZENDESK_SCHEMA].ticket
+
+  \  join  [ZENDESK_SCHEMA].ticket_field_history on ticket.id =
+  ticket_field_history.ticket_id where ticket_field_history.value = 'solved'
+
+  group by 1,2,3),
+
+  generate_arrays as (
+
+  select seq4() as week_number
+
+  from table(generator(rowcount => 1000)) as week_number),
+
+  weekly_periods as (
+
+  \        select ticket_id,
+
+  \         start_time_in_minutes_from_week,
+
+  \         raw_delta_in_minutes,
+
+  \         week_number,
+
+  \         greatest(0, start_time_in_minutes_from_week - week_number *
+  (7*24*60)) as ticket_week_start_time,
+
+  \         least(start_time_in_minutes_from_week + raw_delta_in_minutes -
+  week_number * (7*24*60), (7*24*60)) as ticket_week_end_time     \ 
+
+  \  from ticket_solved_time, generate_arrays
+
+  ),
+
+  intercepted_periods as (
+
+  \  select ticket_id,
+
+  \         week_number,
+
+  \         ticket_week_start_time,
+
+  \         ticket_week_end_time,
+
+  \         schedule.start_time as schedule_start_time,
+
+  \         schedule.end_time as schedule_end_time,
+
+  \         least(ticket_week_end_time, schedule.end_time) -
+  greatest(ticket_week_start_time, schedule.start_time) as scheduled_minutes\ 
+
+  \  from weekly_periods
+
+  \  join  [ZENDESK_SCHEMA].schedule on ticket_week_start_time <=
+  schedule.end_time and ticket_week_end_time >= schedule.start_time\ 
+
+  )
+
+
+  select ticket_id, round(sum(scheduled_minutes)) as scheduled_minutes
+
+  from intercepted_periods
+
+  group by 1
+
+  order by 1
+
+  limit 1;
+
+  ```
+
+
+  As seen above in the MySQL version of the query, **timstamp_diff()** is
+  replaced by the **datediff()** function, while the function for truncating a
+  given date is the same as it is in the
+  [PostgreSQL](https://fivetran.com/docs/warehouses/postgresql) version of the
+  query. Furthermore, since arrays are not supported in MySQL, we once again
+  rely on a table in which we populate the entries of the array (lines 9 to 10).
+  The rest of the subqueries match the structure and the syntax of the previous
+  versions of the query. For warehouses, such as [Microsoft
+  Azure](https://fivetran.com/docs/warehouses/azure-warehouse) SQL Data
+  Warehouse, which neither support range-based arrays nor rely on any of the SQL
+  engines mentioned above, it is possible to use a table of containing
+  consecutive integers. In addition, analogous functions for truncating dates
+  and finding differences between dates in minutes also exist in Microsoft
+  Azure. For instance, we could use **cast(floor(cast([date] as float)) as
+  datetime)** to truncate a particular date.\ 
+
+
+  Notice also that, within the first subqueries of both the MySQL and
+  PostgreSQL versions of the query that an additional “1440” value is added to
+  the value of the **start_time_in_minutes_from_week.** This is because the
+  functions for truncating days of the week in the Standard SQL and in
+  PostgreSQL/MySQL version differ in the default day of the week that is used to
+  truncate a given date. As you might guess, one version uses Sunday, while the
+  other uses Monday. Hence, the additional 1440 minutes. Therefore, when
+  producing the query in other SQL engines, it is important to keep in mind this
+  difference in the way dates are truncated.\ 
+
+
+  In summary, the differences between the different versions of the query are
+  not only strictly syntactical (in terms of the names of the functions
+  implemented), but they also arise from the extent to which certain features
+  are supported in a particular SQL engine. Generally, the SQL engines used by
+  each of the warehouses either support arrays and lists or they do not. If it
+  is the case that arrays are not supported, then it’s possible to create a long
+  table of consecutive integers and cross-join this table with the table
+  describing the number of minutes that a ticket is open during a specified week
+  (within the weekly_periods subquery).\ 
+
+
+  ## Future Improvements and Goals
+
+
+  It is important to note the queries presented above have some limitations.
+  These queries don’t account for holidays during which there are no business
+  hours. This could result in an overestimation of the time it takes for a
+  ticket to be solved. Furthermore, the queries only work for tickets that have
+  only one schedule associated with them. To account for multiple schedules,
+  information about when the schedule change occured is required.\ 
+
+
+  Finally, the “dialectical diversity” of the SQL engines used by each of the
+  warehouses makes it challenging to apply the same solution logic for deriving
+  ticket metrics. Features needed for our solution are sometimes unavailable in
+  the SQL engines of some warehouses.It is possible for different warehouses to
+  use different versions of the same SQL engine. For instance, the version of
+  MySQL used by [Snowflake](https://www.snowflake.net/) contains added custom
+  features—including the **generate()** function—which would not necessarily be
+  available to use in other warehouses running on the MySQL engine. This
+  situation makes it harder to write a single general query which could apply to
+  several warehouses. Nevertheless, the examples illustrated in this article
+  offer a general guideline for producing ticket metric queries and should be
+  used, ideally, as models, rather than as strict methods for calculating ticket
+  metrics.
+
+
+  ## Notes
+
+
+  1. The solution time is calculated by finding the latest
+  ‘ticket_field_history.updated’ value.\ 
+
+
+  2. For instance, 1440 would indicate Monday at midnight. This is because
+  1440 is precisely the difference in minutes between Monday and Sunday. An
+  operation hour would then be some number of minutes between two different
+  integers describing start and end times.\ \n"

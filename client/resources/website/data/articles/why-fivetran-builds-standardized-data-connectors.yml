@@ -1,0 +1,80 @@
+header: Why Fivetran Builds Standardized Data Connectors
+featuredImage: /images/library/why-fivetran-builds-standardized-connectors.png
+path: /blog/why-fivetran-builds-standardized-connectors
+description: Data replication technology wasn't built for the cloud era, so we designed an
+  entirely new kind of connector.
+pageTitle: Why Fivetran Builds Standardized Data Connectors
+pageDescription: Data replication technology wasn't built for the cloud era, so we designed an
+  entirely new kind of connector.
+date: 2019-02-05
+published: 1
+featured: 0
+authorsName:
+  - jeff
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >-
+  ## A New Paradigm for Business Data
+
+
+  Fivetran began with a simple realization: Data replication technology wasn’t built for the cloud era. We set out to change that by designing and building a new kind of data connector — one that could exploit two key advances in data analytics: SaaS and cloud warehouses.
+
+
+  ### SaaS dominance
+
+  Here’s a stat that neatly sums up the rapid ascent and current dominance of cloud-based business applications: In 2008, only [12% of customer relationship management (CRM) apps were hosted on a cloud server](https://www.ibm.com/developerworks/community/blogs/d27b1c65-986e-4a4f-a491-5e8eb23980be/entry/2017_CRM_Statistics_Show_Why_it_s_a_Powerful_Marketing_Weapon?lang=en); today, over 87% are. Meanwhile, Salesforce is closing in on 200,000 global customers, and many of them leverage complementary cloud-based applications like Marketo, Zuora, Zendesk and Jira. Data from a suite of apps like these can give companies a 360-degree view of their business operations, and they tend to be more flexible, powerful and affordable than DIY solutions.
+
+
+  This is the new paradigm for business data, and it’s likely to endure. The SaaS market is [projected to grow to $100 billion by 2020](https://www.forbes.com/sites/matthunckler/2018/02/08/amid-saas-explosion-zylo-aims-to-help-organizations-rein-in-runaway-software-spending/#4ddc80cd21f6), and the largest segment of that market, CRM, might [exceed $80 billion by 2025](https://www.superoffice.com/blog/crm-software-statistics/).
+
+
+  ### Next-gen data warehousing
+
+  Data warehousing technology didn’t remain static as SaaS data sources multiplied and data volumes increased. Warehouse providers moved to the cloud, separating compute and storage and offering near-infinite scalability. The cost of storage plummeted — dropping from $7.70 per GB in 2000 to $0.02 in 2018 — even as compute capacity increased by orders of magnitude. Running analytics in a warehouse became a qualitatively different proposition.
+
+
+
+  ## The ETL Bottleneck
+
+  From an analytics perspective, this was a time of enormous opportunity — at least in theory. All the raw data from myriad cloud sources could be replicated into a cloud warehouse and queried at will. Transformatively deep and comprehensive business insights should follow.
+
+
+  There was an obstacle, though: replication technology. Its development had flatlined by 2000. Organizations were using a highly inefficient ad hoc methodology —  known as extract, transform and load, or ETL — to centralize their data for analysis.
+
+
+  Nearly two decades later, they were using … ETL.
+
+
+  ETL evolved under primitive conditions: prohibitive costs, anemic computational power. To minimize expenses and delays, organizations had to decide which questions to ask of their data well ahead of time and devote significant engineering resources to constructing a bespoke pipeline — a monthslong process. Asking a new set of questions required a new pipeline; adjusting to source changes or adding new sources also required additional engineering. Bespoke connectors, often insufficiently tested and hardened, tended to break or leak.
+
+
+  As the cloud era dawned, traditional ETL was hopelessly outmatched.
+
+
+  ## A New Paradigm for Data Replication
+
+
+  At Fivetran, we set out to build data connectors that would allow companies to realize the potential of cloud applications and warehouses. With the SaaS market converging on a number of hugely popular applications, many companies were dealing with the same API endpoints, and we had an opportunity to massively simplify ETL by building standardized connectors and incorporating key time-saving automations. As we watched the market and listened to customer demand, we saw opportunities to build automations for other types of data sources, like event tracking and databases. We call this new approach [ELT](https://fivetran.com/blog/elt_vs_etl), because it leaves the transformation step — and the specific questions to be answered — to the discretion of the data analyst. The quest to extinguish complexity through standardization and automation — to replace ETL with ELT — has become an enduring principle of Fivetran engineering culture.
+
+
+  We also wanted to completely remove the engineering burden from data teams, so we spent years cultivating our [core data concepts](https://fivetran.com/docs/getting-started/core-concepts) and assigned a dedicated engineering team to every connector we decided to build. Those teams spent weeks in conference rooms, figuring out the best way to make semi-structured SaaS data into structured SQL data and perfecting our schemas and ERDs. They devoted months to building a single connector and many more months — or years — iterating and battle-testing it. To protect the continuity of data projects, they designed connectors that could detect and automatically adjust to source changes, from new SaaS features to additional database metrics.
+
+
+  ## Thriving in the Age of Agile Analytics
+
+
+  Robust, standardized and fully automated connectors, combined with other modern tools, allow data teams to rapidly build completely new capabilities, enabling more agile and comprehensive analytics. Consider the Fivetran-Looker data stack used by HR software provider Namely. Namely uses Fivetran to replicate its data into a warehouse and BI tool Looker to visualize it. Namely users can now embed a Looker analytics dashboard into the Namely UI to continually refine their decision-making. This kind of unified, responsive analytics wouldn’t be possible without the highly consistent data flow Fivetran provides.
+
+
+  The Namely example also illustrates the democratizing effect of the modern data stack. Deploy standardized connectors, a cloud warehouse and a modern BI tool, and you’ll enable data-driven decision-making across your organization. Data insights won’t be limited to finance and other technical teams; key personnel in HR, marketing, development and other areas will be able to access BI insights and even evolve their own dashboards and metrics.
+
+
+  This is the world of agile analytics — the world Fivetran connectors are designed for.
+
+
+  ## Deploying Data Connectors: Buy, Don’t Build
+
+
+  If you’re committed to agile analytics but thinking about engineering your own set of data connectors, we’d point you to these eye-opening  [back-of-the-envelope calculations](https://fivetran.com/blog/build-vs-buy). As noted above, connector projects require a massive time investment. Take a look at [our breakdown](https://fivetran.com/blog/build-vs-buy) you’ll understand why skepticism is warranted. (You might also find yourself flashing back to the division of labor unit in your first economics class.)

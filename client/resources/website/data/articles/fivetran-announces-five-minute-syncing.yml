@@ -1,0 +1,88 @@
+header: Fivetran Announces Five-Minute Syncing
+featuredImage: /images/library/wffl90nh1ncfeatured.png
+path: /blog/fivetran-announces-5-minute-syncing
+description: Fivetran now supports five-minute syncing for all of our data connectors, from
+  Asana to Zendesk. Centralize your data in a warehouse and generate deeper,
+  more comprehensive insights.
+pageTitle: Fivetran announces 5-minute syncing | ETL Software | Fivetran
+pageDescription: Fivetran now supports 5-minute syncing for all of our data connectors, from
+  Asana to Zendesk, offering a pipeline to centralize your data into a data
+  warehouse and have deeper insights into your data.
+tags:
+  - announcement
+date: 2018-03-06
+published: 1
+featured: 0
+authorsName:
+  - meel
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /fivetran-announces-5-minute-syncing-f61c788573a1
+isDownload: false
+content: >
+  Caution: Near real-time syncing to a data warehouse comes with costs.
+
+
+  Fivetran customers asked for near real-time data syncing, and we’ve responded. We now support 5-minute syncing for all of our data connectors — from [databases](https://fivetran.com/source-types#databases) to [business applications](https://fivetran.com/directory) to file storage. Fivetran offers a pipeline to centralize your data into a data warehouse. Our connectors range from Asana to Zendesk, and everything in between and more. At the end of the pipeline is where companies perform advanced analytics with their business intelligence tool of choice.
+
+
+  To enable this new syncing feature, [Fivetran](https://fivetran.com/) customers must go to their Fivetran dashboard and navigate to a connector they want to sync more frequently. From the drop-down menu, choose the 5-minute sync. That’s all that’s required of our customers.
+
+
+  ![Choose sync time from the drop-down menu.](/images/library/1_faOFts1UJ-VKI6nNhtqOvg.png)*Choose sync time from the drop-down menu.*
+
+
+  Once the 5-minute sync is chosen, Fivetran will *attempt* to sync that connector as fast as every 5 minutes. We can’t guarantee it will sync that quickly because it also depends on the data source and the destination warehouse. For example, a database containing thousands of tables might take longer than 5 minutes to sync incrementally.
+
+
+  ## **Note of caution**
+
+
+  For most scenarios, you probably don’t need or want your applications to sync data every 5 minutes. Data warehouses were not designed to ingest tons of small updates. Instead, they were built to run fewer but larger updates. Deploy this new feature judiciously.
+
+
+  Increasing sync times won’t affect your Fivetran pricing. However, *it might* impact how much you pay for your data warehouse, and *it might* create unanticipated data bottlenecks at the warehouse.
+
+
+  Our most popular data warehouses are: [Snowflake](https://fivetran.com/directory/snowflake), [Google BigQuery](https://fivetran.com/directory/bigquery) and [Amazon Redshift](https://fivetran.com/directory/redshift). They are all Fivetran [technology partners](https://fivetran.com/partners), too.
+
+
+  Here are some data warehouse issues that might occur when opting for the 5-minute sync:
+
+
+  For **Snowflake, **shorter sync times results in an increased amount of time that the ingestion warehouse is awake. This will increase your ingestion costs.
+
+
+  For **Redshift**, you will hit concurrent-transaction limitations much faster under a 5-minute sync. Concurrent-transaction bottlenecks result in all queries to the warehouse being delayed, thus degrading your cluster performance.
+
+
+  For **BigQuery, **table upserts are equivalent to processing the entire table, meaning ingestion costs will scale with the frequency of updates.
+
+
+  ## **Honesty is the best policy**
+
+
+  At Fivetran, one of our credos is to be honest and upfront with our customers about technology trade-offs. That’s why we told you of the warehousing pitfalls that may occur with a near real-time sync.
+
+
+  Still, we’re implementing this feature because our clients have requested it. And indeed, there are a myriad of use cases — warehousing issues aside — where you absolutely would want a 5-minute sync.
+
+
+  For example, you might use Fivetran’s data connector for [Mixpanel](https://fivetran.com/directory/mixpanel) to collect real-time, event-level data about your company’s website. If website traffic tapers off or increases dramatically, you will want to know this sooner, rather than later. Your website might be going down, or sales might be going through the roof.
+
+
+  We hope it’s the latter.
+
+
+  **About Fivetran**: Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  Fivetran builds zero-configuration, zero-maintenance and fully-managed cloud data pipelines for businesses big and small. With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file stores into a high-performance data warehouse. Analysts query this centralized data with the business intelligence tools of their choosing.
+
+
+  With Fivetran, businesses gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights.
+
+
+  **For a free demo**, email us at info@fivetran.com.

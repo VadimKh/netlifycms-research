@@ -1,0 +1,66 @@
+header: Choose the Right Metrics
+featuredImage: /images/library/choose-the-right-metrics.png
+path: /blog/choose-the-right-metrics
+description: What gets measured gets managed. Make sure you measure the right things,
+  identify vanity metrics, and perform sanity checks
+pageTitle: Choose the Right Metrics
+pageDescription: What gets measured gets managed. Make sure you measure the right things,
+  identify vanity metrics, and perform sanity checks
+date: 2018-12-15
+published: 1
+featured: 0
+authorsName:
+  - charles
+categoryTitle: Data Strategy
+categories:
+  - Articles
+isDownload: false
+content: >
+  Chances are good that your business is awash in data, especially if we at
+  Fivetran have done our job. You use data to produce actionable insights,
+  measuring and assessing various events and activities related to the conduct
+  of your business. Maybe you have so thoroughly [mastered the use of
+  data](https://fivetran.com/blog/hierarchy-of-data-needs) that you use it to
+  train machine learning models. Product roadmaps, hiring decisions and other
+  pursuits should all be dictated by the numbers because numbers don’t lie.
+  Right?
+
+
+  ## Be careful what you ask for
+
+
+  Suppose you find that, over the past year, your website’s unique monthly visitors have grown from 30,000 to 250,000, and you observe similar trends for the number of social media likes and follows and time on-site. You’d be ecstatic — shouldn’t [mouth of the funnel](https://fivetran.com/blog/funnel-analysis) always be a good thing? 
+
+
+  What we have just described are vanity metrics --numbers that superficially indicate success but are not tied to your business’s revenues or customer satisfaction. Growth in vanity metrics is not necessarily a good thing. [Apparent growth without concern for sustainability and retention](https://www.nytimes.com/2016/02/18/technology/zenefits-scandal-highlights-perils-of-hypergrowth-at-start-ups.html) can be dangerous. More fundamentally, it is dangerous to fail to connect metrics to revenues, or, more importantly, to misconstrue the problem your team ostensibly solves.
+
+
+  Choosing bad metrics isn’t just a rookie mistake. One of the better-known stories of metrics misfires is that of [Microsoft’s Bing](https://medium.com/product-experimentation/the-perils-of-experimenting-with-the-wrong-metrics-9d7bd833a40e), which used searches per user session as its key performance indicator (KPI). On the surface, such a measure seems extremely appropriate. Industry leader Google processes over [40,000 searches](https://ardorseo.com/blog/how-many-google-searches-per-day-2018/) per second. Shouldn’t more searches per user per session mean more engagement, as well as more interactions with ads?
+
+
+  In practice, designating searches per user session as the team’s KPI perversely incentivized the developers to add features that [kept users clicking](https://blog.optimizely.com/2018/05/03/experimenting-with-wrong-metrics/), sometimes at the expense of exposing the most important search results. The Bing team forgot that the goal of a search engine is to return good results the first time, not to keep users searching. Google’s success stems from the fact that users seldom look past the first page because the _search_ ends in a _find_.
+
+
+
+  The Bing debacle wasted a lot of time, money and effort, but it's easy to imagine even higher stakes in sensitive industries like healthcare, education, finance and insurance. History is replete with examples of poorly conceived metrics and perverse incentives leading to [ecological](https://fs.blog/2016/05/incentives-gone-wrong/) and [humanitarian](https://fs.blog/2016/05/incentives-gone-wrong/) catastrophe. This phenomenon is often called the “[Cobra Effect](http://freakonomics.com/podcast/the-cobra-effect-a-new-freakonomics-radio-podcast/),” after an apocryphal story about a cobra infestation in Delhi. British colonial administrators instituted a bounty on cobra skins, prompting enterprising Indians to breed them. As the colonial administrators recognized their error, they immediately compounded it by suspending the bounty, leading to an “excess inventory” of venomous snakes turned loose in the city, worsening the problem.
+
+
+  ## Sanity check using customer satisfaction
+
+
+  Eventually, the Bing team was steered in the right direction by the stubborn refusal of customer satisfaction ratings to rise alongside the KPI. Customer satisfaction is typically measured using a metric called [Net Promoter Score (NPS)](https://www.checkmarket.com/blog/net-promoter-score/). NPS is calculated by subtracting the percentage of detractors (ratings of 0 to 6) from promoters (ratings of 9 or 10), and it will almost never be conceptually flawed.
+
+
+  Though it might pain a quantitatively-minded person to hear, Bing could have avoided its problems early on by observing people as they used search engines, or simply asking them about their experiences.
+
+
+  That said, there was a large kernel of truth in the Bing team’s initial KPI. For a search engine, it _is_ better for users to perform more searches, but only if they are successful searches. These successful searches are unlikely to coexist in the same session. The correct thing to measure, as the Bing team eventually determined, is the number of sessions per user – a subtle, but extremely important difference.
+
+
+  ## Your job is to solve problems and make money
+
+
+  The metrics you use should generally provide evidence that your team is making money, or more importantly, successfully solving a specific problem for your customers. Metrics that are not clearly related to the two objectives of making money and solving problems will foster incentives that are at best tangential to your goals, and at worst in complete opposition to them.
+
+
+  Vanity metrics aren’t all bad – they are at least loosely associated with scale and success, and can provide something of a “wow” factor to a casual observer. More is generally better than less. But to have actionable insights, you have to think beyond raw magnitudes and connect your metrics to the bottom line.

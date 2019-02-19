@@ -1,0 +1,104 @@
+header: Fivetran Updates Warehoused Databases via Log-Based Replication
+featuredImage: /images/library/uguoofsdnwfeatured.png
+path: /blog/fivetran-updates-warehoused-databases-via-log-based-replication
+description: There’s no magical way to keep databases in sync with your data warehouse, but
+  Fivetran does it the most favorable way — with heavy yet easy-to-use and
+  easy-to-implement engineering.
+pageTitle: Fivetran updates warehouse databases via log-based replication | Fivetran
+pageDescription: There’s no magical way to keep databases in sync with your data warehouse, but
+  by using its heavy yet easy to use and implement engineering, Fivetran does it
+  the most favorable way.
+tags:
+  - data strategy
+  - bigquery
+  - redshift
+  - snowflake
+date: 2018-04-14
+published: 1
+featured: 0
+authorsName:
+  - fraser
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /fivetran-updates-warehoused-databases-via-log-based-replication-f0d56aaa110
+isDownload: false
+content: >
+  There’s no magical way to keep databases in sync with your data warehouse. But
+  some methods are better than others.
+
+
+  Through heavy engineering, [Fivetran](https://fivetran.com/) does it the most favorable way. Our log-based replication approach can help companies perform advanced analytics without impacting ongoing business operations. This is the most superior method of replicating changes to your data warehouse.
+
+
+  The [databases for which Fivetran supports](https://fivetran.com/docs/databases) log-based replication include DynamoDB, MongoDB, MariaDB, MySQL, Oracle, PostgreSQL and SQL Server.
+
+
+  The engineers at Fivetran have worked tirelessly to develop a method that reads the logs of changes to the master database. This is the same mechanism that a database replica uses to keep up to date. This technique uses substantially less computing power compared to alternative methods such as “last modified queries” and “daily snapshots” that some of our competitors embrace.
+
+
+  ***For our more detailed discussion of “daily snapshots” and “last modified queries” read [here](https://blog.fivetran.com/approaches-to-database-replication-67c81aa0e6ef).***
+
+
+  ### **Log-Based Replication**
+
+
+  Under the approach of reading database changelogs, data is updated with every version of each change. This includes tables without last modified dates. **This method also captures deleted information, **thus bolstering your advanced analytics.
+
+
+  Log-based replication does not compete with other database queries because it involves reading directly from the log files. This helps to remove stress on your production systems. This approach is the closest you will get to real-time updates.
+
+
+  Some of the other benefits of log-based replication include having to spend less on compute capacity. And, as you scale, you don’t have to worry about your database crashing during replication because the amount of data used in the Fivetran log-based replication process is miniscule.
+
+
+  All of this has real-world, customer-facing consequences. Foremost among them is that the alternative methods to log-base replication can cost you business, and lots of it.
+
+
+  ### **Don’t Lose Customers**
+
+
+  Consider, if you will, a hypothetical use-case scenario, one in which an e-commerce site is sitting atop of the MySQL database but is not updating by the log-based replication method. If your replication service is putting huge demands on the database looking for changes, the result of this could slow down the e-commerce site.
+
+
+  And, as your table sizes increase, the SELECT* queries of a naive database replication approach will consume more database resources. You could be facing degrading database performance at the worst time: Black Friday — when every millisecond of response time counts. If a potential customer goes to buy something from this e-commerce site, the website might be so strained that a consumer’s purchase won’t be registered.
+
+
+  Consumers wanting to buy something can find themselves stalled on the shopping cart trying to press buy, yet nothing is happening. The site is frozen or at a crawl. The frustrated consumer leaves the site, and goes elsewhere. This could be avoided by choosing Fivetran and its log-based replication method.
+
+
+  ### **Other Points of Note:**
+
+
+  * The initial sync of a database is not and cannot be log-based.
+
+
+  * Depending on the amount of data being synced, we recommend that the initial sync be performed in batches, during the off hours.
+
+
+  * We also recommend that, once you’ve done your initial sync, set your database to retain changelogs for seven days so that, in the event of an update error, the logs will be there.
+
+
+  Here is a link to the Fivetran [support documentation](https://fivetran.com/docs/databases) on the topic.
+
+
+  All in all, Fivetran offers a pre-engineered data pipeline to centralize your data into a data warehouse. Fivetran supports three column-oriented warehouses. They include [Google BigQuery](https://fivetran.com/directory/bigquery), [Amazon Redshift](https://fivetran.com/directory/redshift) and [Snowflake](https://fivetran.com/directory/snowflake).
+
+
+  ***For an analysis on the difference between a row-based and column-oriented data warehouse, see our in-depth analysis [here](https://blog.fivetran.com/choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics-5fcbc99a799a).***
+
+
+  In addition to supporting and replicating databases into a data warehouse, Fivetran also syncs and [replicates data from dozens of business applications](https://fivetran.com/directory), ranging from Asana to Zendesk, and everything in between and more. At the end of the pipeline, at the warehouse level, is where companies perform advanced analytics with their business intelligence tool of choice.
+
+
+  **About** **Fivetran**: Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights.
+
+
+  For a Fivetran demo, reach out to our team at [sales@fivetran.com](mailto:sales@fivetran.com).

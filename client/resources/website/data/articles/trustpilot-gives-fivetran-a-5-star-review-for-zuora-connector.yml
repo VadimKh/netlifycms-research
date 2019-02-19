@@ -1,0 +1,108 @@
+header: Trustpilot Gives Fivetran a 5-Star Review for Zuora Connector
+featuredImage: /images/library/case-study-trustpilot.png
+path: /blog/case-study-trustpilot
+description: With the Zuora connector from Fivetran, Trustpilot dramatically cuts down on
+  time spent merging data from disparate systems.
+pageTitle: Trustpilot Gives Fivetran a 5-Star Review for Zuora Connector
+pageDescription: With the Zuora connector from Fivetran, Trustpilot dramatically cuts down on
+  time spent merging data from disparate systems.
+date: 2019-01-21
+published: 1
+featured: 0
+authorsName:
+  - ciara
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >-
+  **Data Stack**
+
+
+  - Pipeline: [Fivetran](http://www.fivetran.com)
+
+  - Connectors: [Zuora](https://fivetran.com/docs/applications/zuora)
+
+  - Destination: [Amazon Redshift](https://fivetran.com/directory/redshift)
+
+  - BI Tool: [Chartio](https://chartio.com/)
+
+
+  **Key Takeaways**
+
+
+  - Fivetran had the Zuora connector that Trustpilot needed and it was quick and easy to set up.
+
+  - The Accounts Receivable team dramatically cut down on time spent closing the year, from one month to three days.
+
+  - Troubleshooting problems between Zuora and its ERP previously took three hours to a day, now it takes minutes.
+
+  - Trustpilot is able to merge data from different sources into its data lake and has achieved greater data integrity.
+
+  - With data insights on Chartio dashboards, the business is able to dig deeper, answer important questions and develop future strategies based on data.
+
+
+  [Trustpilot](https://ie.trustpilot.com/) is a Denmark-based platform that allows consumers to leave company reviews. With more than 50 million posted reviews and a ranking in the top 1% most popular websites on Alexa, this company is proving that people have plenty to say and that businesses need to listen. 
+
+
+  **The Search for a Simple Solution to Merge Data** 
+
+
+  Trustpilot wanted to use Zuora, a platform that helps companies manage their subscription business, as one of its main billing systems, but its data stack at the time did not support it. The company needed a more holistic view of its customers across systems, so it set out to find a solution that could get data from Zuora into its data lake.
+
+
+  Bobby Singh, Lead Business Architect at Trustpilot, found that Fivetran was “very far ahead with the Zuora integration” when compared to other solutions. The company started with a trial and found that Fivetran met its needs from both a technical and cost perspective. Further, Singh found setting up the Zuora connector to be quite easy: “We practically set it up by ourselves. It was very simple, very intuitive. We had it up and running in less than an hour.”
+
+
+  **Cutting Down on Time Spent Reconciling Data and Solving Problems** 
+
+
+  The Accounts Receivable (AR) team has saved a lot of time with help from Fivetran. Prior to deploying Fivetran, the AR team spent about a month trying to combine data from Zuora and its ERP to close the year. But last year, with the data from both systems readily available in Chartio, the team was able to close out the year in three days. As Kalina Todorova, Engineering Manager of Business Systems, says, “It was easier for them to actually merge the two sources together and to ensure that we had the same data in Zuora as we had in our ERP system.”
+
+
+  Everything invoiced in Zuora ends up in Trustpilot’s ERP system, which is giving the finance team “peace of mind,” Todorova says. The team no longer has to export Excel and it can address and fix issues much faster. “When we started the integration between Zuora and our ERP, we were spending easily three hours to a day troubleshooting problems, especially at the end of the month,” Todorova explains. “Now we can easily see if there is a problem and start solving it right away.”
+
+
+  **Painting a Detailed Picture of the Customer with Data**
+
+
+  With its Zuora data in Redshift, Trustpilot uses Chartio to dig deeper into raw data to build customer portfolios across its systems and generate accurate reports much more quickly. “It has enabled us to get better insights and improve tracking,” says Singh. “We have greater data integrity, data science and insights. Through Zuora we are now tracking the kinds of credit cards that customers are signing up with, what kind of credit cards we should be supporting or not supporting, and what the drawbacks are of each.”
+
+
+  **Data and Dashboards Help Focus Future Strategies** 
+
+
+  Having a dashboard to track items that need to be taken care of has made things much easier for Trustpilot. Today, the company uses dashboards for tracking processes, such as payments and recurring payments. The company is laying down a better strategy for what areas to focus on based on the data. Going forward, it plans to have a better understanding of how to increase bandwidth, improve scalability, and lower costs internally.
+
+
+  Centralising your data from different sources into a warehouse can help your business make accurate, data-driven decisions. Our Fivetran product specialists are available to present a [demo of our service](https://fivetran.com/demo) or you can get started today by signing up for a [free trial](https://fivetran.com/signup).
+
+
+  **More Information About Our New and Improved Zuora Connector**
+
+
+  At Fivetran, we aim to deliver the highest-quality connectors possible. Recently we released an updated version of our [Zuora connector](https://fivetran.com/blog/zuora-fivetran-partnership) to improve data integrity and customer experience. We now pull Zuora data through the REST API, whereas previously we were pulling it through the AQuA API. We’ve optimized a number of features by moving to the REST API:
+
+
+  1. **State.** Previously, with AQuA API, the state was a server-side cursor, meaning we did not know until what time the data was being pulled. With REST API, we are maintaining state on our side and have accurate timestamps from when the data was pulled. These timestamps ensure that we are not missing any data and help us to debug further in the case of any data integrity issues.
+
+
+  2. **Access to secret objects.** Zuora has a few secret objects that we are able to fetch and sync that are not mentioned on its documentation page (such as Customer). Previously we were using API to get the available objects, but a few were missing from the response. Now, we have a fixed list of objects which we check for all customers and sync if available.
+
+
+  3. **Email notifications.** Email notification data was not available through the AQuA API. Customers had no way of knowing, for instance, if emails failed to deliver to customers who had unsubscribed. Now, we are able to pull this data.
+
+
+  ![Screenshot](/images/library/zuora-schema.png)
+
+
+  **About Fivetran:** Our standardised technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organisations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardised cloud pipelines are fully managed and zero-maintenance.
+
+
+  **About Amazon Redshift:** Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyse all of your data using your existing business intelligence tools.
+
+
+  **About Chartio:** Chartio is a cloud-based data exploration tool.  

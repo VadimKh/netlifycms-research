@@ -1,0 +1,111 @@
+header: Low-Code Platform Leader OutSystems Eliminates ETL Issues With Fivetran and
+  Snowflake
+featuredImage: /images/library/case-study-outsystems.png
+path: /blog/case-study-outsystems
+description: With Fivetran and Snowflake, OutSystems eliminates data problems and optimises
+  synergies between departments, creating a data-driven culture around new
+  metrics.
+pageTitle: Low-Code Platform Leader OutSystems Eliminates ETL Issues With Fivetran and
+  Snowflake
+pageDescription: With Fivetran and Snowflake, OutSystems eliminates data problems and optimises
+  synergies between departments, creating a data-driven culture around new
+  metrics.
+date: 2019-01-28
+published: 1
+featured: 0
+authorsName:
+  - ciara
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >-
+  **Key Takeaways:**
+
+
+  - Fully managed pipelines from Fivetran save OutSystems an estimated 25 hours of work per week. 
+
+  - Regular syncs from Marketo allow for marketing to modify and optimise campaigns at a much faster rate, resulting in a higher ROI.
+
+  - With improved data access throughout the organisation, OutSystems is able to maintain and constantly improve upon 50-60 metrics, compared to the 15 metrics it had prior to Fivetran and Snowflake.
+
+  - Its modern data stack has resulted in a data-driven culture that attracts investors and data scientists.
+
+
+  **Data stack:**
+
+
+  - Pipeline: [Fivetran](https://fivetran.com/)
+
+  - Connectors: [Intercom](https://fivetran.com/docs/applications/intercom), [Marketo](https://fivetran.com/docs/applications/marketo), [Netsuite](https://fivetran.com/docs/applications/netsuite-suiteanalytics), [Oracle RDS](https://fivetran.com/docs/databases/oracle/rds-setup-guide), [PostgreSQL RDS](https://fivetran.com/docs/warehouses/postgresql/rds-setup-guide), [Salesforce](https://fivetran.com/docs/applications/salesforce), [SQL Server](https://fivetran.com/docs/databases/sql-server) and [SQL Server RDS](https://fivetran.com/docs/databases/sql-server/rds-setup-guide)
+
+  - Destination: [Snowflake](https://fivetran.com/directory/snowflake)
+
+
+  Companies that want to accelerate their digital transformation through great apps turn to [OutSystems](https://www.outsystems.com/) in order to save time and resources. As an aPaaS company that offers a low-code application development platform, OutSystems enables businesses to quickly build innovative, agile, high-productivity enterprise apps.
+
+
+  OutSystems operates in 52 countries and 22 industries, has 245+ global partners, and has over 160,000 community members. This unicorn company is recognised as a global industry leader in mobile app development platforms and high-productivity application platforms by Gartner, as well as enterprise low-code app development platforms by Forrester.
+
+
+  **The Challenge: Accessing Reliable and Timely Data**
+
+
+  OutSystems, one of the largest Amazon Web Services customers in Europe, generates massive amounts of data—data that its people need to make quick and accurate business decisions. However, with its existing ETL, it was running into trouble accessing reliable and timely data.
+
+
+  “In the Digital department, our internal applications have tables in Oracle and MS SQL Server. These tables were changing on a daily basis, through the addition or removal of columns, and this would break our ETL,” says Pedro Martins, head of data engineering at OutSystems. He describes managing the “very fragile” ETL before Fivetran as the “dark ages.”
+
+
+  OutSystems was experiencing around 15-20 data problems a week, which left its people frustrated and constantly waiting for the Digital Data team to fix the pipelines. Each ticket required about 2-3 hours of work to fix. “With Fivetran, we don’t have that problem. As long as the table link stays the same, that table is going to be copied. That’s it,” Martins says.
+
+
+  **The Shift to a Modern Data Stack With Fivetran and Snowflake**
+
+
+  OutSystems chose Fivetran over competitors because the connectors it required were immediately available and the setup was quick and simple.
+
+
+  Martins estimates that by using Fivetran’s fully managed pipelines, the company saves at least 25 hours of work per week. “When we want to integrate a data source, a member of our Tech Operations team adds the pipeline for us,” Martins says. “They just go in and click away to make things available—it’s very easy to use.”
+
+
+  In addition to Fivetran, OutSystems chose Snowflake for its warehouse. According to Martins, Snowflake is easy to understand, meets all of the company’s storage needs and scales nicely. OutSystems has been extremely happy with the way Fivetran, Snowflake and SQL Server work together.
+
+
+  OutSystems uses its new modern data stack as the foundation for most, if not all, of its business decisions, especially when it comes to its go-to-market initiatives. Data syncs from Marketo three or four times a day, allowing for marketing to modify and optimise campaigns at a much faster rate, resulting in a higher ROI. Prior to Fivetran and Snowflake, it used to take quite a long time to get results from campaigns and decisions were much less dynamic and effective.
+
+
+  **A Data-Driven Company Where Everyone “Speaks the Same Language”**
+
+
+  Implementing Fivetran and Snowflake has centralised OutSystems data, making it accessible to the entire organisation and creating a more data-driven culture.
+
+
+  Prior to its modern data stack, OutSystems maintained around 15 top metrics, with the focus on ensuring that the numbers were correct. Now, with improved data access throughout the organisation, it has around 50-60 metrics. Regularly, the entire organisation defines which metrics have the best qualities as indicators for progress. Everyone plays a part in improving the metrics by making existing metrics more reliable or building new ones.
+
+
+  “Our people can only do this type of work because we have the data available using Fivetran. Anything that we do here now has to be quantifiable somehow and it’s a cultural shift that brings a lot of value to the company. The whole company thinks this way,” Martins shares.
+
+
+  **Pipelines For the Future**
+
+
+  With Fivetran and Snowflake, OutSystems has experienced tangible benefits that will continue into the future. Costs are down, bugs are rare and analysts no longer have to worry about how to access their data. Focus has shifted from making data available to making valuable insights available.
+
+
+  Martins believes that the pipelines provided by Fivetran are the way of the future. By following industry best practices and making the best use of their data, he believes that OutSystems will be more attractive to strong data scientists and analysts, as well as investors.
+
+
+  “One of the reasons why we have received large investments, resulting in our [current ‘unicorn’ status](https://www.outsystems.com/news/outsystems-raises-360-million-investment-from-kkr-and-goldmansachs/), is because we started making these kinds of shifts towards a data-driven culture, and our investors understood the message very clearly,” Martins explains. “They are quite confident that we are able to deliver and so far we have done it.”
+
+
+  Is your organisation ready to reap the benefits of centralised data? Our product specialists are excited to present a demo of our service and get you started with a free trial. [Sign up here](https://fivetran.com/demo?utm_source=fivetran&utm_medium=blog&utm_campaign=uservoice_partnership&utm_content=demo).
+
+
+  **About Fivetran:** Our standardised technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organisations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardised cloud pipelines are fully managed and zero-maintenance.
+
+
+  **About Snowflake:** Snowflake is the only data warehouse built for the cloud, enabling the data-driven enterprise with instant elasticity, secure data sharing and per-second pricing, across multiple clouds. Snowflake combines the power of data warehousing, the flexibility of big data platforms and the elasticity of the cloud at a fraction of the cost of traditional solutions. Snowflake: Your data, no limits. Find out more at snowflake.com.

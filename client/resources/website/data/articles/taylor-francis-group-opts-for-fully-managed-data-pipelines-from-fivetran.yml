@@ -1,0 +1,109 @@
+header: Taylor & Francis Group Opts for Fully Managed Data Pipelines From Fivetran
+featuredImage: /images/library/case-study-taylor-francis.png
+path: /blog/case-study-taylor-francis
+description: Taylor & Francis Group, an Informa business, sees an increase in customers,
+  conversions, web sessions and Alexa rankings with Fivetran.
+pageTitle: Taylor & Francis Group Opts for Fully Managed Data Pipelines From Fivetran
+pageDescription: Taylor & Francis Group, an Informa business, sees an increase in customers,
+  conversions, web sessions and Alexa rankings with Fivetran.
+date: 2019-02-12
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >+
+  **Data Stack**
+
+
+  - Pipeline: [Fivetran](https://fivetran.com/)
+
+  - Connectors: [Google Analytics](https://fivetran.com/docs/applications/google-analytics), [Google Search Console](https://fivetran.com/docs/applications/google-search-console), [MongoDB](https://fivetran.com/docs/databases/mongodb), [Salesforce](https://fivetran.com/docs/applications/salesforce), [Pardot](https://fivetran.com/docs/applications/pardot), [Salesforce Marketing Cloud](https://fivetran.com/docs/applications/salesforce_marketing_cloud)
+
+  - Destination: [Amazon Redshift](https://fivetran.com/directory/redshift)
+
+  - BI tool: [Microsoft Power BI](https://powerbi.microsoft.com/en-us/)
+
+
+  [Taylor & Francis Group](https://taylorandfrancis.com/), an [Informa business](https://informa.com/), partners with researchers, scholarly societies, universities and libraries worldwide to bring knowledge to life. As one of the world’s leading publishers of scholarly journals, books, ebooks and reference works, its content spans all areas of the Humanities, Social Sciences, Behavioural Sciences, Science, Technology and Medicine. 
+
+
+  To further its mission of bringing knowledge to life, Taylor & Francis Group recently set out to better understand its supply chain, assessing how internal stakeholders drive sales. It also wanted to gain deeper insights into how its platforms’ users are interacting with products to help refine digital strategy.
+
+
+  **Seeking a Simpler Solution for Complex Scripts and Processes**
+
+
+  Before partnering with Fivetran, Taylor & Francis Group had developed its data architecture internally. Director of Analytics, Mateus Fantini, explains that the company’s analytics approach was ready for review: “We had some emerging analytics based on different data sets. We tried to develop scripts running on Apache Airflow to capture behaviour from Google Analytics. It was experimental and time-consuming, and it was too complex to deal with all of the scripts.”
+
+
+  As Fantini started building out this framework into Amazon Redshift, he encountered issues. “We could not accelerate this process,” he says. “It was experimental and couldn’t scale. That’s why I went to market looking for a better solution.” After surveying and trialling the competition in the data pipeline space, Taylor & Francis Group chose a handful of pre-built, off-the-shelf connectors from Fivetran.
+
+
+  **Fivetran Cuts Complexity with Zero-Configuration, Fully Managed Pipelines**
+
+
+  Fantini was looking for a solution that would eliminate engineering and better enable Taylor & Francis Group’s data scientists to remain focused and effective. He started by using the free trial offered by Fivetran and found that the customer service team was attentive and quick to answer any questions.
+
+
+  “I was looking for something that I wouldn't have to manage, that was zero configuration,” he says. “From a solution perspective, Fivetran was exactly what I was looking for. Everything was so straightforward to set up.” He estimates that Taylor & Francis Group would need four or five new engineers to perform the services that Fivetran now handles behind the scenes.
+
+
+  Fantini notes that Fivetran offers many additional benefits, including:
+
+
+  - Fully managed pipelines
+
+  - Extensive list of connectors, including Google Search Console, with new connectors added regularly
+
+  - Scalability
+
+  - Access to historical data
+
+  - [GDPR compliance](https://fivetran.com/blog/fivetran-is-compliant-with-the-european-unions-gdpr-privacy-law)
+
+  - Competitive pricing
+
+
+  **Capitalising on Centralised Data and Robust BI**
+
+
+  By centralising data from multiple sources into Amazon Redshift, Taylor & Francis Group can now use Microsoft Power BI, AWS SageMaker and other data science tools to produce comprehensive automated reports and dashboards. The company has access to more advanced insights and a deeper understanding of how consumers and researchers interact with their journals, books and e-commerce platforms. 
+
+
+  “We're building a data lake in Redshift by using Fivetran data connectors and we are getting answers to questions like how discoverable our content is on various referral platforms such as Google, Google Scholar and other search engines,” Fantini says. “We’re capturing these data points now to understand session stickiness, the number of people coming to the website and finding content, how much time researchers and users are spending on the platform and why they leave, the number of people downloading content, and the conversion rate.”
+
+
+  The end goal? To make the platform and services even more useful. “Fivetran is helping us accelerate our strategy by bringing our data into a single location,” Fantini says. “We can spend more time interpreting data and making decisions rather than working on the technical pipeline."
+
+
+  **Less Effort, More Growth**
+
+
+  With its new data stack, Taylor & Francis Group can easily use its data to power internal decision-making. With the help of Fivetran, supply chain effectiveness can easily be measured and search engine optimisation strategy has been improved.
+
+
+  Since implementing Fivetran, Taylor & Francis Group has increased conversions, won new customers, seen more sessions, and improved Alexa rankings.
+
+
+  "All of our data is now in a single location, so we can see how we’re deploying our investment,” Fantini says. “We have a more holistic view."
+
+
+  Interested in backing your business discussions with centralised, impactful data? Fivetran product specialists are available to present a [demo of our service](https://fivetran.com/demo), or sign up for a free trial [here](https://fivetran.com/signup).
+
+
+  **About Fivetran:** Our standardised technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organisations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardised cloud pipelines are fully managed and zero-maintenance.
+
+
+  **About Amazon Redshift:** Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyse all of your data using your existing business intelligence tools.
+
+
+  **About Microsoft Power BI:** Microsoft Power BI is a business analytics solution that enables users to visualise data and generate and share insights.
+
+

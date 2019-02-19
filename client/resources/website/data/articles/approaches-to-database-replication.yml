@@ -1,0 +1,135 @@
+header: Approaches to Database Replication
+featuredImage: /images/library/b0dl90m6vnrfeatured.png
+path: /blog/approaches-to-database-replication
+description: null
+pageTitle: Approaches to database replication | Data Syncing | Fivetran
+pageDescription: At Fivetran, data integrity is a priority. Even though it’s technically
+  challenging to build, we adopt a change log approach for all of our database
+  connectors because it produces the best outcomes for our users.
+tags:
+  - data strategy
+date: 2017-10-27
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /approaches-to-database-replication-67c81aa0e6ef
+isDownload: false
+content: >
+  Data pipelines aren't all built the same, and one of the main differences
+  between them is the way data updates into your warehouse. In this post, we
+  will cover the three most popular update strategies for database replication
+  and their pitfalls.
+
+
+  *Specifically, we describe loading data from source databases (Oracle, PostgreSQL, MySQL, Aurora, SQL Server, Azure, etc.) to a destination warehouse. In a future post, we will cover update strategies for non-database sources such as APIs and events.*
+
+
+  The replication method you choose for loading data into your warehouse can drastically change the quality of the resulting tables.
+
+
+  For database updates, Fivetran recommends **replication based on change logs. **When we build database connectors ourselves, we use this approach exclusively because of its effect on the rest of your data stack. While this approach ensures the highest quality data stack, replication based on change logs is also the most challenging to engineer.
+
+
+  By using change logs, you avoid data integrity problems in your warehouse while at the same time lessening the load on your source database. This makes users on both ends of the data stack happy.
+
+
+  To illustrate why this method is the preferred but often neglected, let’s first describe two alternative methods, **daily snapshots, and last modified queries.**
+
+
+  ![Approaches to database replication](/images/library/1_Bqxs8AScHwfVJwoXAWhAUg.png)
+
+
+  ## Daily snapshots (i.e. total re-sync)
+
+
+  Daily snapshots are common practice because it takes the least time to build. Rather than deciphering what has changed in the database, you erase and re-import the entire database into your warehouse on a schedule. These jobs are performed at night when there is less activity. If anything goes wrong with a job, it’s easy to fix since you start over the next day.
+
+
+  Because this method is the easiest to start, its widespread with teams building their own integrations and service companies building custom ETL pipelines for their clients. While you save time up front, headaches are on the horizon with this strategy.
+
+
+  For starters, the name ‘daily snapshots’ is misleading. While possible to re-sync a small dataset in a few minutes, as your data grows it can often take hours or days for large tables to update. Delays are dangerous. A re-sync will hold up other queries in the queue, slowing your production database.
+
+
+  When you re-sync daily, you also lose out on capturing changes in your data. Either you save multiple copies of the entire database, which can be expensive and unruly, or you throw out old data.
+
+
+  ## **Incremental updates**
+
+
+  Instead of performing a total re-sync every time, you can up update your warehouse incrementally which means you update only the rows that changed. While this approach is much harder to do, the benefits can be great.
+
+
+  ### **Incremental updates using ‘last modified’**
+
+
+  First, we’ll cover an incorrect method to incremental updates — using ‘last modified’ columns. To explain why this isn’t recommended let’s walk through what happens when you capture database updates using ‘last modified.’
+
+
+  What you’ll end up doing with this approach is scheduling a query to run that collects all records after a last-modified date curser (or bookmark.) Your query will look something like this:
+
+
+  ```
+
+  SELECT * WHERE date_modified > [cursor]
+
+  ```
+
+
+  Now that you’ve identified what data has changed, you only need to sync the fields that have been changed to your warehouse. This means you can sync more often and with greater table sizes.
+
+
+  While this method is faster than re-syncing the entire database, it’s not as fast as you might think. Most databases order tables by primary key instead of last modified date. This means your query still requires that you scan the entire table to identify which data has changed. Again, workable with small datasets, inefficient with large volumes. You will still compete with other queries running against the database.
+
+
+  Another problem with this query is that it requires the user to specify which date to check for each table. While most of the time this works out fine, the user could pick the wrong column, resulting in silent errors in your warehouse. Also, some tables might not have a date modified column at all and you will end up resorting to daily snapshots for those tables.
+
+
+  When you use a date modified approach, you only capture changes, not deletes. This means that if a record is deleted in your database, there is no sign to your warehouse it was deleted **causing severe data integrity problems**.
+
+
+  Imagine what your projected revenue numbers might look like if you included every accidental entry from your sales team…
+
+
+  ### **Incremental updates using change logs**
+
+
+  Now we will cover the correct way to replicate your database — capturing updates based on streaming change logs. It will give you the best outcomes for data integrity and efficiency, but it can be difficult to set up on your own.
+
+
+  To start, find your database’s change log by reading their documentation. Identifying the change log can get confusing because each database has a different name for it. For example, Postgres calls it “logical decoding slots,” MySQL has “binary logs,” and Mongo uses the name “op-logs.” Once you have identified which logs you need, you then need to get the updates to post to a destination table. We’ve found that you end up having to write complex SQL queries to get you there. These logs were built for read-replicates, not data warehousing, and as such have many irregularities between databases and events stream structure. For example, Oracle logs only give you the primary key and the cell that was updated so you end up with a honeycomb of updates.
+
+
+  **Despite how challenging this method is, it is worth it.**
+
+
+  With database change logs, you get every version of every change, including tables without last modified dates. You also capture deleted information since deletes are only accessible in the logs. Say goodbye to data integrity pitfalls and hello to advanced analytics.
+
+
+  Since you’re querying the logs instead of the actual database, you no longer compete with other database queries, helping to remove stress on your production systems. This approach is the closest you will get to real-time updates since the changes are streaming to your warehouse without competition.
+
+
+  To reiterate, by replicating your database data off of the change logs, the data in your warehouse will be accurate, there is little stress on your production database, and you will achieve close to real-time updates.
+
+
+  ### **Fivetran goes the extra mile**
+
+
+  At Fivetran, data integrity is a priority. Even though it’s technically challenging to build, we adopt a change log approach for all of our database connectors because it produces the best outcomes for our users. When our customers onboard our pre-built data pipelines, they trust that their data stack is working properly and that their connectors are optimal for fast and comprehensive analytics. Our users rely on quality, up-to-date data, so we don’t cut any corners.
+
+
+  We want you to have a high performant data stack, as you should. This is why our zero maintenance, zero configuration approach works. We’ve figured out the best way to build pipelines so that you don’t have to. Focus on growing your business instead of data validation and maintenance.
+
+
+  **About Fivetran:**
+
+
+  *Fivetran is the smartest, fastest way to load data into a warehouse. Our connectors replicate data from applications and databases into one central location so that analysts can unlock profound insights about their business*
+
+
+  *Get in touch for a demo or free trial at [fivetran.com/demo](https://fivetran.com/demo).*

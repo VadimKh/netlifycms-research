@@ -1,0 +1,42 @@
+header: Fivetran Wins Snowflake Partner of the Year "Get it Done" Award
+featuredImage: /images/library/snowflake-awards.jpg
+path: /blog/snowflake-award-2018
+description: We’re proud to announce our 2018 Snowflake Partner of the Year Award.
+pageTitle: Fivetran Wins Snowflake Partner of the Year "Get it Done" Award
+pageDescription: We’re proud to announce our 2018 Snowflake Partner of the Year Award.
+tags:
+  - announcement
+  - snowflake
+  - dwh
+date: 2018-09-28
+published: 1
+featured: 0
+authorsName:
+  - jeff
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >
+  We’re proud to announce our 2018 Snowflake Partner of the Year Award!
+
+
+  Snowflake chooses winners based on criteria that map to its [core values](https://www.snowflake.com/about/#our-values), and Fivetran won in the Get It Done category. That’s appropriate, given our mission: empowering analysts by making data centralization effortless. Snowflake and Fivetran recently advanced the cause with [Partner Connect](https://www.snowflake.com/news/snowflake-announces-partner-connect/), a pre-built Snowflake integration for Fivetran connectors that simplifies and accelerates the data loading process.
+
+
+  ## Snowflake Partner Connect: Effortless Loading and Analysis
+
+
+  If you’re using Snowflake and Fivetran, check out the “Partner Connect” tab in the Snowflake web interface. You’ll see a list of Snowflake’s data integration partners, including Fivetran. Use the “Connect” button to create a free Fivetran trial account — that’s it. Deploying a pipeline and warehouse for data analytics doesn’t get any easier. (Note that you’re creating new database, warehouse and user objects inside Snowflake for partner applications to interact with.)
+
+
+  [Learn how](https://fivetran.com/directory/snowflake) Snowflake and Fivetran enable agile analytics.
+
+
+  ![snowflake-awards-team.jpg](/images/library/snowflake-awards-team.jpg)
+
+
+  ## Why Fivetran?
+
+
+  Fivetran technology delivers data into your warehouse—the right way. Fivetran enables companywide, data-backed decisions using solutions driven by analyst needs. We’re focused, transparent, and trusted by businesses that embrace agile analytics. What’s more, we adhere to industry-leading [security standards](https://fivetran.com/docs/security) for connecting to, replicating, and loading data from all your sources into cloud based warehouses. In addition to Microsoft Azure SQL Data Warehouse, Fivetran supports loading data into Snowflake, Google BigQuery, and Amazon Redshift.

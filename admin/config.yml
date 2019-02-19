@@ -80,9 +80,11 @@ collections:
       - name: published
         label: Published
         widget: boolean
+        required: false
         default: true
       - name: featured
         label: Featured
+        required: false
         widget: boolean 
   - name: downloads
     label: Downloads
@@ -132,6 +134,7 @@ collections:
       - name: published
         label: Published
         widget: boolean
+        required: false
         default: true
   - name: authors
     label: Authors

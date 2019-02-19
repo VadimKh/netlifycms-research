@@ -1,0 +1,57 @@
+header: "Guest Post: Fivetran — Five-Minute ETL?"
+featuredImage: /images/library/j0gwk6snlqfeatured.png
+path: /blog/guest-post-aptitive
+description: null
+pageTitle: Five Minute ETL? | Guest Post by Ashley Pradhan at Aptitive | Fivetran
+pageDescription: Fivetran is a middleware tool that allows you to quickly and easily integrate
+  data with very minimal resources. It creates a point-and-click, five-minute
+  ETL process.
+tags:
+  - case study
+date: 2017-10-27
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Case Study
+categories:
+  - Case Studies
+redirects:
+  - /guest-post-aptitive-18dbd9ebbe0a
+isDownload: false
+content: >
+  _Guest post by Ashley Pradhan of Aptitive, originally published and produced
+  by Aptitive._
+
+
+  Let’s be honest, data integration isn’t the most exciting or provocative subject tearing up the technological landscape, but those subjects that are getting more attention, such as “predictive analytics” or “data science,” rely heavily on the structure that integration provides. Therefore, we are constantly exploring new tools and solutions for creating said structure. In our latest exploration, we came across [Fivetran](https://fivetran.com/).
+
+
+  ## What Is It?
+
+
+  [Fivetran](https://fivetran.com/) is a middleware tool that allows you to quickly and easily integrate data with very minimal resources. It creates a point-and-click, five-minute ETL process.
+
+
+  Sounds too good to be true, eh? How do you create all of your SSIS packages and change all your parameters / variables in under five minutes?! The answer is, you don’t. Fivetran minimizes all of that. It eliminates the monotony of replicating data and in turn streamlines the entire data wrangling and integration process. When you buy Fivetran, what you are really buying is time. Within minutes of using Fivetran for the first time, I was able to connect to a data source, set up an integration, wrangle the data into my preferred format, and migrate it to its destination. The GUI was easy to follow and simple in its aesthetic.
+
+
+  ## What’s the Experience Like?
+
+
+  The few steps required to move the data from Point A to Point B consumed the time equivalent to setting up an SSIS project and database connections for a comparable integration. I found there was little to no learning curve and I was able to add three different types of data sources, without trouble. In addition, the most convenient feature aside from its overall simplicity was the ease in which one could control data types and structure. It was an intuitive and quick process to import data, assign the data types to tables, and format whatever you might need.
+
+
+  ## Where Can I Use It?
+
+
+  As I made my way through the process, I thought back to some projects where this would have been useful. For example, at [Aptitive](https://www.aptitive.com/), we once built a chatbot named [Arfbot](https://blog.aptitive.com/aptitivebotsforbusiness-bd5752a8946c), whose main purpose was to collect feedback from and for employees, aggregate it, and use it to help compile semi-annual reviews. “He” collected feedback through conversations with people in slack, and wrote all of the feedback to a database. It quickly became evident that we would need some kind of ETL process to write the data from our application database to our internal data warehouse. It seemed excessive to set up something like a whole SSIS project and create integration packages for the couple tables we needed, but it also seemed necessary. However, now, I would have suggested we just use [Fivetran](https://fivetran.com/). We can (and will) just pop in the connection information and slide the feedback tables to our DW. It’s simple and efficient. This can be said for a lot of projects we’ve worked on for small to mid-sized companies.
+
+
+  ## Give Me the Low-Down
+
+
+  Though one of [Fivetran](https://fivetran.com/)’s strengths is its fundamental simplicity, it does leave room for more features and compatibility with more variant sources. It seems as though more types of sources are being added as they are requested, which is encouraging. Regardless, as is, the service Fivetran provides expedites one very large and time-consuming step of the data integration process. Therefore, encompassing the integration component of Fivetran with a commonplace ETL architecture is a powerful, quick, and efficient way to manage one’s data. Overall, Fivetran’s tool is efficient, simple, and provides an intuitive experience.
+
+
+  ![Guest Post by Ashley Pradhan at Aptitive | Fivetran — Five Minute ETL?](/images/library/1_dVh4UT1Jwz8WzUimyr6l7w.png)

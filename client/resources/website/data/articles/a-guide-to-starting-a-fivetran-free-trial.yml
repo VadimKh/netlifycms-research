@@ -1,0 +1,78 @@
+header: A Guide to Starting a Fivetran Free Trial
+featuredImage: /images/library/fivetran-free-trial-feature.png
+path: /blog/fivetran-free-trial
+description: Follow these five simple steps to try out Fivetran for free.
+pageTitle: A Guide to Starting a Fivetran Free Trial
+pageDescription: Follow these five simple steps to try out Fivetran for free.
+date: 2018-12-13
+published: 1
+featured: 0
+authorsName:
+  - ethan
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >+
+  If traditional ETL tools are failing you and you’re looking to centralize and
+  make the most of your data, you’re in the right place. We believe in our
+  product — so much so that we offer a 14-day free trial so you can decide if it
+  works for your business. This is the best way to evaluate Fivetran connectors.
+  Many of our customers — including Square, Lime, Duo Security, ClassPass,
+  WeWork and Kickstarter — started out like this.
+
+
+  Follow the steps below to try out Fivetran for free:
+
+
+  1. Sign up [here](https://fivetran.com/signup).
+
+
+  2. Connect your data warehouse. No warehouse? No worries. We'll automatically spin up a free Google BigQuery warehouse for you during the trial. We even offer a managed warehouse, and once the trial is over we can continue managing it for you or give you the keys if you'd like to own it yourself. We also offer sandbox accounts.
+
+  ![Screenshot](/images/library/choose-a-warehouse.png)
+
+
+  3. Connect your data sources. This is when your 14-day trial officially starts. Some of our most popular sources are Salesforce, Hubspot and Google Analytics. We encourage you to test as many sources as you want. It doesn't cost you anything during the trial and it really is worth it. Here are the types of sources we support:
+      * Apps: Salesforce, Google Analytics, Hubspot, Marketo, Quickbooks, and many more!
+      * Databases: SQL Server, PostgresSQL, Oracle, MySQL, MongoDB, and many more!
+      * Files: Amazon S3, Azure Blob Storage, Dropbox, FTP, Google Sheets, and many more!
+      * Events: Snowplow, Webhooks, and Segment
+      * Cloud functions: AWS Lambda, Azure Functions, Google Cloud Functions
+  ![Screenshot](/images/library/add-salesforce-connector.png)
+
+  ![Screenshot](/images/library/add-a-connector.png)
+
+
+  4. Do a historical sync. For some sources and data sets this can take minutes; for larger data sets or applications with throttled APIs, this will take longer. [This post](https://fivetran.com/blog/api-pitfalls) discusses the pitfalls to avoid when designing APIs.
+
+
+  5. After the initial sync into your warehouse, you’re ready to run your BI tool. Moving forward, we continue to do incremental batch updates. Currently, we are able to sync your data from every single source in as little as every five minutes and soon we will be able to do syncs every minute. If you prefer to have longer sync times, you can always choose a longer time period between syncs, up to every 24 hours.
+
+
+  A big differentiator of Fivetran is our automatic normalization behaviors. For a large portion of our sources, we automatically normalize the data during the process of centralizing data into your warehouse. That data is then delivered in an entity relationship diagram (ERD), which helps the warehouse understand your data more clearly, which will in turn help your business intelligence tool understand the data, resulting in better business decisions. The ERDs give you a jump-start on building analytics.
+
+
+  ![Screenshot](/images/library/schema-image.png)
+
+
+  Fivetran also has automatic schema migrations. Typically, when anything changes on the source side — think column or API changes — the customer has to manually code the changes on the source side into the warehouse in order to make sure the change replicates. With Fivetran, we automatically replicate any changes on your source side to your warehouse in a matter of minutes.
+
+
+  If you have questions at any point during your trial, there are a number of ways you can contact us:
+
+
+  1. Submit a technical support question to our 24/7 support at [support@fivetran.com](mailto:support@fivetran.com).
+
+  2. Go to our website and have a live chat with us. We will route you to the correct department based on the nature of your question.
+
+  3. You can email sales directly at [sales@fivetran.com](mailto:sales@fivetran.com).
+
+  4. Consult with our [documentation](https://fivetran.com/docs).
+
+
+  Not ready for a trial? We're happy to walk you through a personalized demo. Sign up [here](https://fivetran.com/demo).
+
+
+  **About Fivetran:** Fivetran began with a realization: for modern companies using cloud-based software and storage, traditional ETL tools badly underperformed, and the complicated configurations they required often led to project failures. To streamline and accelerate analytics projects, Fivetran developed zero-configuration, zero-maintenance pipelines to deliver data into modern cloud warehouses. Established out of Y Combinator, we are part of a growing ecosystem of cloud companies that enable organizations to control their data without complex engineering.
+

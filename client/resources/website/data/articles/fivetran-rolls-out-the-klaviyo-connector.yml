@@ -1,0 +1,61 @@
+header: Fivetran Rolls Out the Klaviyo Connector
+featuredImage: /images/library/p3qs5fvtuxpfeatured.png
+path: /blog/fivetran-rolls-out-the-klaviyo-connector
+description: From supporting and replicating databases into a data warehouse to syncing and
+  replicating data from dozens of business apps, Fivetran should be your default
+  method of loading business data into a warehouse.
+pageTitle: Fivetran rolls out the Klaviyo connector | Fivetran
+pageDescription: From supporting and replicating databases into a data warehouse to syncing and
+  replicating data from dozens of business apps, Fivetran should be your
+  company’s default method to load business data into a data warehouse.
+tags:
+  - announcement
+  - source
+  - klaviyo
+date: 2018-04-19
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /fivetran-rolls-out-the-klaviyo-connector-6c58b2a27065
+isDownload: false
+content: >
+  Fivetran should be your company’s default method of loading business data into
+  a data warehouse. In addition to [supporting and replicating
+  databases](https://fivetran.com/docs/databases), Fivetran syncs and
+  [replicates data from dozens of business
+  applications](https://fivetran.com/directory).
+
+
+  We’re constantly updating these easy-to-set-up connectors and developing new ones. Today, we’re proud to announce the addition of the Fivetran connector for [Klaviyo](https://www.klaviyo.com/) — a leading ecommerce marketing platform.
+
+
+  Klaviyo allows you to easily segment your audience and trigger targeted campaigns based on actual behavior instead of guesswork. You can target based on customers' real purchases, what they actually looked at on your website, where they actually interacted with your emails and how much they actually spent. That way, [you can send emails they actually want to receive](https://www.klaviyo.com/features/segmentation).
+
+
+  >**"The Fivetran Klaviyo connector has helped us get a deeper understanding of our CRM outreach and how we re-target our repeat customer base."**
+
+
+  Carlos Nido, an analyst for clothier [Chubbies](https://www.chubbiesshorts.com/) — a customer of Fivetran and Klaviyo — is quite satisfied with the Klaviyo connector. “We are very happy with the new Klaviyo connector," he says. "It has helped us get a deeper understanding of our CRM outreach and how we re-target our repeat customer base. Off the bat, we have been able to systematically quantify the effect of mixing in a fun lifestyle email to our customers in order to keep them interested in our brand."
+
+
+  Here's a link to our [documentation](https://fivetran.com/docs/applications/klaviyo) for Klaviyo. Fivetran provides a complete [schema diagram](https://docs.google.com/presentation/d/1ioSGR_4bro1YIDjZ_3Re-ieJp5vlPLBYMxc3DD0sRaA/edit#slide=id.g244d368397_0_1) too. As with all Fivetran connectors, the Klaviyo connector is super simple. You need an active Klaviyo account, and then, from the Fivetran user interface, just enter the desired destination schema name. Fivetran will assist you in getting an API key. Then you'll follow a few short final steps.
+
+
+  Fivetran offers pre-engineered data pipelines to centralize your business data into a data warehouse, and we support all the major column-oriented warehouses, including [Google BigQuery](https://fivetran.com/directory/bigquery), [Amazon Redshift](https://fivetran.com/directory/redshift), [Snowflake](https://fivetran.com/directory/snowflake) and [Azure SQL Data Warehouse](https://azure.microsoft.com/en-us/services/sql-data-warehouse/). From there, you can use the business intelligence (BI) tool of your choice to conduct advanced analytics and gain deep insights into your customers and product.
+
+
+  **About Fivetran**: Our mission is to democratize data, make companies data-driven, and give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a five-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights.
+
+
+  The Fivetran sales team is available at sales@fivetran.com.

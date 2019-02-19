@@ -1,0 +1,45 @@
+header: Fivetran Browser Uploader
+featuredImage: /images/library/uln5jpf9ocffeatured.png
+path: /blog/fivetran-browser-uploader
+description: When you’re trying to analyze data in CSV files, it’s easy to fall into a long
+  cycle of repetitive work. Here's how to avoid it.
+pageTitle: Fivetran Browser Uploader | Data Stack Management | Fivetran
+pageDescription: Save time and repetition by using Fivetran to load your CSV files into a data
+  warehouse. With our file uploader, audit data types and set primary keys
+  before you import and then save recipes for future uploads.
+tags:
+  - announcement
+  - browser uploader
+date: 2017-09-11
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /fivetran-browser-uploader-a127e94f4620
+isDownload: false
+content: >
+  Trying to analyze data in CSV files can be repetitive work. Instead, save time
+  by using
+  [Fivetran](https://fivetran.com/?utm_campaign=fileupload_video&utm_medium=blog&utm_source=medium&utm_content=&utm_term=)
+  to load your files into a data warehouse. With our file uploader, audit data
+  types and set primary keys before you import and then save recipes for future
+  uploads.
+
+
+  Then, instead of performing vlookups manually, join your tables with the rest of your organization’s data within your warehouse. Craft your queries once and run them as often as new data is uploaded.
+
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/VsBt5lVYj1Y" frameborder="0" allowfullscreen></iframe></center>
+
+
+  ## About Fivetran:
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business. To learn more visit our website at [fivetran.com](https://fivetran.com/?utm_campaign=fileupload_video&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ![Fivetran Browser Uploader](/images/library/1_iVqkYpPwrSZZ2rEtIWOW4A.png)

@@ -1,0 +1,14 @@
+header: Data Warehouse Benchmark
+featuredImage: /images/library/data-warehouse-benchmark.png
+download: /pdf-data-warehouse-benchmark/data-warehouse-benchmark.pdf
+description: >
+  The question Fivetran gets asked most often is “what data warehouse should I
+  choose?” In order to better answer this question, we’ve performed a benchmark
+  comparing the speed and cost of five of the most popular data warehouses.
+date: 2018-02-12
+published: 1
+featured: 0
+categoryTitle: Downloads
+categories:
+  - Downloads
+isDownload: true

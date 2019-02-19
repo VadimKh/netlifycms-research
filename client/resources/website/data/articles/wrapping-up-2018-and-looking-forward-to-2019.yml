@@ -1,0 +1,77 @@
+header: Wrapping Up 2018 and Looking Forward to 2019
+featuredImage: /images/library/2018-year-in-review.gif
+path: /blog/2018-year-in-review
+description: Thank you to everyone who contributed to the success of Fivetran in 2018! Here
+  we recap some of the exciting things that have happened this past year.
+pageTitle: Wrapping Up 2018 and Looking Forward to 2019
+pageDescription: Thank you to everyone who contributed to the success of Fivetran in 2018! Here
+  we recap some of the exciting things that have happened this past year.
+date: 2019-01-11
+published: 1
+featured: 0
+authorsName:
+  - ciara
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >-
+  2018 was a great year for Fivetran. We experienced significant growth across
+  multiple facets of the business – from new employees and partnerships, to new
+  customers and products. We want to thank everyone that has contributed to our
+  success this year. Here is a quick recap of some things that happened this
+  past year at Fivetran that we’re most proud of.
+
+
+  ## Employees
+
+
+  We began 2018 with 32 employees and started 2019 by welcoming our [100th employee](https://fivetran.com/blog/hundredth-employee-announcement). In addition to our Oakland, Denver and Bengaluru offices, we [expanded our operations into EMEA](https://fivetran.com/blog/fivetran-expands-sales-operations-to-european-union) with an office in the vibrant Dublin, Ireland. Heading into 2019 we plan on [hiring even more exceptional people](https://fivetran.com/careers).
+
+
+  ## Customers
+
+
+  Our customer base has grown exponentially, more than doubling from 279 customers to 525 at year end. Fivetran has become an enterprise tool that helps businesses, from start-ups to traditional companies, regardless of their size, industry or sector.
+
+
+  ## Connectors
+
+
+  We added about 60 connectors last year, bringing us to over 115 total connectors at the end of 2018. Of the new connectors created, [Adobe Analytics](https://fivetran.com/docs/applications/adobe-analytics), [ServiceNow](https://fivetran.com/docs/applications/servicenow) and [Workday](https://fivetran.com/docs/applications/workday) were some of the most popular among customers. Of all connectors existing and new, the most popular of the year included [Salesforce](https://fivetran.com/docs/applications/salesforce), [Google Analytics](https://fivetran.com/docs/applications/google-analytics), [Google Adwords](https://fivetran.com/docs/applications/google-adwords), [Facebook](https://fivetran.com/docs/applications/facebook-ad-account), [Google Sheets](https://fivetran.com/docs/files/google-sheets), [Zendesk](https://fivetran.com/docs/applications/zendesk) and [Postgres](https://fivetran.com/docs/warehouses/postgresql).
+
+
+  ## Features
+
+
+  We launched a handful of new features in 2018 that have made Fivetran even more robust. Some of the most notable include:
+
+
+  - **Column blocking.** In addition to blocking specific tables, users can now block specific columns. We will soon introduce hashing, which allows users to join across data sets without introducing sensitive data to their data warehouse. Both are critical for GDPR compliance.
+
+
+  - **Table re-sync.** Rather than doing a complete historical re-sync of an entire data source, users can save time by selecting the specific tables they need to re-sync.
+
+
+  - **One minute updates.** Replication frequency can now be as often as every minute. This feature can be enabled on the backend by contacting our [support team](mailto:support@fivetran.com) and will soon be available on the user interface.
+
+
+  - **Sync history.** Users can view the sync history for each connector, including individual sync start time, end time, duration and status. Sync history can be filtered by the hour, day or week.
+
+
+  ## Revenue and Series A Funding
+
+
+  In addition to a two-fold increase in customers this year, we tripled our revenue. We wrapped up the year on an exciting note, announcing our [$15 Million Series A funding](https://fivetran.com/blog/press-release-series-a), led by Matrix Partners, in December.
+
+
+  ## Looking Forward
+
+
+  Going into the new year, Fivetran will continue to develop our technology and work towards our goal of helping more companies centralize their disparate data sources and become data-driven. We wish you all a happy and healthy 2019 and look forward to the year ahead.
+
+
+  **About Fivetran:** With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. The data pipeline is zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  With Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights using the business intelligence tools of your choice.

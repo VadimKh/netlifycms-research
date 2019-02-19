@@ -1,0 +1,102 @@
+header: "Falcon.io: Building a Data-Driven Culture in a Fast-Growing Company"
+featuredImage: /images/library/case-study-falcon-io.png
+path: /blog/case-study-falcon-io
+description: With its modern data stack, Falcon.io builds a comprehensive picture of the
+  business’s critical operations, democratises access to data, and makes faster,
+  more precise business decisions.
+pageTitle: "Falcon.io: Building a Data-Driven Culture in a Fast-Growing Company"
+pageDescription: With its modern data stack, Falcon.io builds a comprehensive picture of the
+  business’s critical operations, democratises access to data, and makes faster,
+  more precise business decisions.
+date: 2019-01-07
+published: 1
+featured: 0
+authorsName:
+  - charles
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >
+  ## Key Takeaways:
+
+
+  - After using multiple tools and an all-in-one solution with unsatisfactory results, Falcon.io built a data stack with Fivetran, Looker and Redshift, which it uses to build a comprehensive picture of the business’s critical operations
+
+  - Using its modern data stack, the Falcon.io BI team has been able to construct a model that fully represents the sales funnel, customer success process, and other business operations
+
+  - The team now uses accurate and holistic data to drive decisions rather than relying on hunches, and data access and literacy have become the norm across the company
+
+
+  ## Data Stack:
+
+
+  - Pipeline: [Fivetran](https://fivetran.com/)
+
+  - Connectors: [Marketo](https://www.marketo.com/) ([documentation](https://fivetran.com/docs/applications/marketo)), [Salesforce](https://www.salesforce.com/) ([documentation](https://fivetran.com/docs/applications/salesforce)), [Jira](https://www.atlassian.com/software/jira) ([documentation](https://fivetran.com/docs/applications/jira)), [Zendesk](https://www.zendesk.com) ([documentation](https://fivetran.com/docs/applications/zendesk)), [NetSuite](http://www.netsuite.com/portal/home.shtml) ([documentation](https://fivetran.com/directory/netsuite)), [Zuora](https://www.zuora.com/) ([documentation](https://fivetran.com/docs/applications/zuora))
+
+  - Destination: [Amazon Redshift](https://aws.amazon.com/redshift/)
+
+  - BI tool: [Looker](https://looker.com/)
+
+
+
+  Falcon.io is a global social media marketing platform that serves as a one-stop shop for managing social media marketing campaigns across a wide range of social networks. Since its founding in 2010, Falcon.io has grown spectacularly and currently has over 15,000 users. It counts NGOs, major research universities and corporate giants among its customers, including Carlsberg, Toyota, William Grant & Sons, Momondo, Panasonic and Coca-Cola.
+
+
+  ## The Search for an Automated Data Pipeline
+
+
+  When Nicolaas Wagenaar first started as Team Manager of Business Intelligence at Falcon.io, he was solely responsible for constructing the data pipeline and analyzing the sales funnel. He wrote scripts to ingest data from API endpoints, chased down spreadsheets, and copied unstructured data kept in notes in order to build reports. Simple figures like customer renewal rates could take up to two weeks to calculate as the BI team consulted multiple managers and stitched data together from a variety of sources and formats.
+
+
+  >**"We needed to get serious about managing our data and building up a solid reporting framework"** 
+
+
+  Rapid growth following Series B funding meant that the business needed to get serious about managing its data and building up a solid reporting framework. It was clear from the outset that neither the ad hoc process of the company’s early years nor a bespoke tool built by a dedicated team of engineers would be appropriate. In the interest of keeping Falcon.io lean and nimble, and to meet its mission of building a robust data model that reflects real life, the BI team began a search for several tools to automate part or all of the data pipeline. They initially tried an all-in-one solution but encountered problems including limited visibility into underlying data transformations and a lack of access to the source data. The API connectors offered by other solutions lacked consistent naming conventions or were otherwise broken. 
+
+
+  ## Finding the Perfect Fit with Fivetran and Looker
+
+
+  After using multiple tools and an all-in-one solution with unsatisfactory results, the BI team built a data stack using Fivetran as its data pipeline, Redshift as its warehouse, and Looker as its data platform. The connectors that Falcon.io required were quick to set up, need minimal maintenance, and provide faithful one-to-one replication of the source data. The BI team found the [NetSuite connector](https://fivetran.com/blog/netsuite-connector-article), in particular, refreshingly straightforward and complete. Initial sync aside, the setup took no more than a few minutes per connector and subsequent syncs are handled automatically.
+
+
+  The BI team also appreciated Looker’s modularity and accessibility, especially to business users who did not know SQL. Looker dashboards have since become the company’s standard reporting tool for supporting decisions. Ultimately, the Falcon.io BI team knew they had the right set of tools when the data represented on Looker precisely matched the data from their API feeds. The BI team has been able to construct a model that fully represents the sales funnel, customer success process, and other business operations. The company increasingly shares a unified, transparent vision of the truth, with full access to almost every aspect of the business.
+
+
+  With its new modern data stack, Falcon.io is able to:
+
+
+  - Track essential SaaS metrics such as gross renewal rate (GRR), annual recurring revenue (ARR), and monthly recurring revenue (MRR).
+
+  - Use Salesforce data—from calls made, emails exchanged, and meetings booked and held—to adjust the sales team’s training and strategy.
+
+  - Combine data from Salesforce, Jira, and Zendesk to track the full customer support process in order to assign priority to tickets and feature requests, no longer relying on “hunches.”
+
+
+  ## Democratising Access to Data
+
+
+  Before Falcon.io adopted its current stack, only its small sales operations team routinely consulted analytics. Since adopting Looker, it has seen active users of analytics dashboards grow by 10x across company functional departments. The BI team has even used Looker’s derived table feature as a custom transformation layer. 
+
+
+  >**"It’s not like flipping a switch, but we definitely see it growing. Managers are actively using the pipelines and reports we set up for them."**
+
+
+  Falcon.io is well on its way to democratising access to data and making data-driven decisions the norm. According to Wagenaar, “It’s not like flipping a switch, but we definitely see it growing. Managers are actively using the pipelines and reports we set up for them.” Reports on customer acquisition cost used to take a month but now take less than a week. Information that used to be locked in the heads and computers of various managers is now kept in a common environment and accessible to all. With the help of Fivetran and Looker, Falcon.io can now set priorities and make decisions with greater speed, precision, and confidence.
+
+
+  Want to democratise data within your organisation? Our Fivetran product specialists can [present a demo of our service](https://fivetran.com/demo) or you can sign up for a free trial [here](https://fivetran.com/signup). 
+
+
+  **About Fivetran:** Our standardised technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organisations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardised cloud pipelines are fully managed and zero-maintenance.
+
+
+  **About Amazon Redshift:** Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyse all of your data using your existing business intelligence tools.
+
+
+  **About Looker:** Looker is a modern Platform for Data that offers data analytics and business insights to every department at scale, and easily integrates into applications to deliver data directly into the decision-making process.  

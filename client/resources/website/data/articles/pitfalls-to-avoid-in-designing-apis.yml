@@ -1,0 +1,80 @@
+header: Pitfalls to Avoid in Designing APIs
+featuredImage: /images/library/4xb05lhaovffeatured.png
+path: /blog/api-pitfalls
+description: Building your own API for internal or commercial use? Follow these guidelines
+  and your end users will thank you.
+pageTitle: Pitfalls to Avoid in Designing APIs
+pageDescription: Building your own API for internal or commercial use? Follow these guidelines,
+  your end users will thank you.
+tags:
+  - article
+date: 2018-07-09
+published: 1
+featured: 0
+authorsName:
+  - ian
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >
+  The developers at Fivetran work with APIs every day to build connectors
+  between data sources and warehouses, giving them a unique insight into what
+  makes an API well-suited for data extraction. The API is your source – if the
+  API is crazy, your whole pipeline is going to suffer unless you really think
+  hard about how to work out the kinks. While an API does not have to be perfect
+  to be functional, there are some common design pitfalls that should be avoided
+  to ensure optimality and ease of use. This is by no means a comprehensive
+  list, but if you are designing an API for internal or commercial use, the
+  following guidelines will benefit your API’s end users.
+
+
+  ## Basic Mistakes
+
+
+  At its most basic, an API must fulfill certain fundamental requirements to work correctly.  These include practices like returning data in consistent formats and in the requested sort order, as well as validating the data that comes into and out of API requests.  There are basic elements of trust between an API and a developer that must be in place for the construction of a working pipeline – without them, inconsistencies can creep into a dataset, rendering it meaningless and potentially leading businesses to make uninformed decisions.  These pitfalls contribute to a general “brokenness” of the API, and if they exist, interacting with the API can be a nightmare (or even impossible).
+
+
+  Additionally, including some kind of identifier is a fundamental requirement – not including a primary key or any other unique identifier with returned data is considered a cardinal sin for those working with databases.  The ability to address something unique with a specific identifier is a tenet of the modern relational database, and it’s easy to see why not having this capability baked into an API can be a major issue.  For one, it becomes a lot harder to incrementally update your data without being able to efficiently locate and retrieve the relevant records.  But on a deeper level, the omission of this feature can create a dataset full of errors and duplicate information.  For example, imagine an API that allows retroactive insertion of data into an event stream.  To catch these events, a connector could be built with a “trailing sync” that would continuously re-sync past data to catch these late-arriving events. This would result in seeing a lot of the same events over and over.  If there were no primary keys or event IDs, the dataset would be inundated with duplicates, and specific events would be massively overrepresented to data analysts, possibly leading to faulty decision-making.
+
+
+  ## Structural Mistakes
+
+
+  Moving to structural pitfalls, an API should be flexible in the ways data can be requested.  It’s extremely helpful to allow certain fields to be specified in a request, but if a user wants everything, an API shouldn’t require them to specify every field.  The reason is that HTTP requests have a maximum character limit, and sometimes datasets are extremely wide with many different columns.  This can result in a case where enumerating all the columns in the dataset actually takes more characters than the amount given to make the request. A possible solution to this would be to issue multiple API requests, but this leads to the further issue of figuring out how to stitch the data back together in a durable way so that it can be faithfully synced.  On a similar note, many APIs only allow objects to be requested by specific ID, making the process of retrieving an entire dataset especially painful and time intensive.  The short solution to both of these problems is to include ways to select both every field and every element in a dataset with simple, concise requests.
+
+
+  A related pitfall to avoid is imposing unnecessarily harsh API quotas or rate limits.  Sometimes these constraints are necessary to prevent a system from receiving more data than it can handle, but often quotas are set unrealistically low.  When paired with the aforementioned problem of only being able to request one piece of data at a time, the time and cost of a sync can rise exponentially.  The engineers at Fivetran can sometimes mitigate the effects of these limits by building sophisticated pipelines, but they are hard to compensate for entirely.  If these constraints absolutely must be in place, a balance should be struck between what is necessary for the system and what allows quick access to data.
+
+
+  ## Usability
+
+
+  Shifting to the issue of usability, API designers should try to avoid unnecessary invention wherever possible.  Don’t create new query languages with their own delimiters and response formats – much of the time these practices just reinvent the wheel, even if they seem better on the surface.  When a designer introduces something entirely new, it can be bug-ridden and alienating because it has no entrenchment in the broader technology industry.  One common way of requesting data from an API is with a SQL-like payload in an HTTP request.  Existing languages like SQL have gone through decades of iteration and adoption, making them both stable and familiar, and a SQL-like request format is so common because it’s clear and generally works. When you reject it in favor of something you think will be better, you are rejecting a lot of context that makes it easier for people to jump into things and get them working right away.  SQL-like formats are, of course, not the only way. There are a lot of widely accepted query languages and data formats out there, and it’s better to implement an API in a syntax that many people have experience with.
+
+
+  Familiarity can only go so far, however, and the quality of an API’s documentation can often make or break its usability.  An API should be designed as a “black box” where the end user, often someone with no part in its design, does not need to know any details of the underlying implementation to get it working optimally.  At the bare minimum, the API’s documentation should explain its function, accepted parameters and return format, but ideally it should also detail error-handling and any possible unexpected behaviors.  To that end, everything about an API should be documented – there’s no point in creating “secret APIs” or hiding anything from the user, especially if significant development time went into its creation.  An API could be functionally perfect, but if it is undocumented, it could become practically useless.
+
+
+  ## Summary
+
+
+  These are all mistakes you shouldn’t make in designing APIs, and if you can avoid these pitfalls, your API will be better for it. In summary:
+
+
+  - Return data in consistent formats and in the requested sort order
+
+  - Validate data coming into and out of API requests
+
+  - Include primary keys in returned data
+
+  - Allow flexibility in the ways data can be requested
+
+  - If necessary, be reasonable with quotas and rate limits
+
+  - Use well-tested, stable query languages and data formats
+
+  - Spend adequate time on documentation
+
+
+  Some of these pitfalls listed may seem far-fetched, but the engineers at Fivetran have seen all of them at some point or another.  The good news is that with Fivetran, you don’t have to deal with any of these API issues.  Our developers have put a lot of effort into figuring out the intricacies of over a hundred APIs – and everyone who uses Fivetran benefits from that effort.  The connectors that we offer are tailored specifically to each data source’s API, and within minutes we can set up a pipeline and begin centralizing our customers’ data.  But the benefits extend past outsourcing the pain of learning APIs. We see datasets that can be quite diverse and used differently, and we can be very resilient against a wide range of problems.  We also have more monitoring than most companies would in their homebrew pipelines. As a result, we are able to identify inconsistent behavior or bugs in APIs and adapt quickly with robust solutions.   We also spend a lot of time figuring out how to organize the data to make it easy for analysts to think about.  Designing an easy-to-use API that functions optimally is no small task, but hopefully by avoiding these pitfalls, your API can get that much closer to the ideal.

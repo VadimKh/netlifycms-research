@@ -1,0 +1,220 @@
+header: "Guest Post: Bucketing in SQL"
+featuredImage: /images/library/guest-bucketing-in-sql.png
+path: /blog/guest-bucketing-in-sql
+description: Use SQL to group data so that you can spot trends, uncover opportunities, and
+  see where and how your business generates value.
+pageTitle: How to Group Data Into Buckets with SQL | Fivetran Blog
+pageDescription: Use SQL to group data together so that you can see where your business
+  generates value, spot trends, and find opportunities.
+date: 2018-11-28
+published: 1
+featured: 0
+authorsName:
+  - ericf
+categoryTitle: Analyst Recipe
+categories:
+  - Analyst Recipes
+isDownload: false
+content: >-
+  _This is a guest post by Eric Feng of [Numeracy](https://numeracy.co/), a
+  company specializing in lightweight business intelligence tools. Before he
+  joined Numeracy, Eric worked at Dropbox and Sentry in developer relations,
+  engineering and product._
+
+
+  Bucketing, also known as binning, is useful to find groupings in continuous data (particularly numbers and time stamps). While it’s often used to generate histograms, bucketing can also be used to group rows by business-defined rules. I’ll walk through the simple bucketing various data types as well as custom buckets. Finally, to illustrate how these types of bucketing might be used, I’m going to walk through an example with Numeracy’s own schemas and mock data on when our users connect a database.
+
+
+  ## Bucketing Numbers
+
+
+  The most common and naive method of bucketing is through truncating. `trunc` rounds floats down to the nearest integer. As a bonus, if you’re trying to bucket values to the nearest 10, `trunc` takes a second argument for the decimal point you want to round to.
+
+
+  ```SQL
+      select trunc(1.4); -- returns 1
+      select trunc(14, -1); -- returns 10, the equivalent of trunc(14 / 10) * 10
+  ```
+
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%2F*%20Move%20cursor%20to%20execute%20individual%20statements%20*%2F%0Aselect%20trunc(1.4)%3B%0Aselect%20trunc(14%2C%20-1)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  ## Bucketing Time
+
+
+  Like `trunc` for numbers, `date_trunc` is used to bucket dates together. This is particularly useful for tracking user activity, where you’d like to smooth out weekend dips by bucketing weeks together. It accepts a wide variety of fields to truncate against, from microseconds to millennia.
+
+
+  ```SQL
+      select date_trunc('month', '2018-11-13'::timestamp); -- returns 2018-11-01 00:00:00
+      select date_trunc('week', '2018-11-13'::timestamp); -- returns 2018-11-12 00:00:00
+  ```
+
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%2F*%20Move%20cursor%20to%20execute%20individual%20statements%20*%2F%0Aselect%20date_trunc(%27month%27%2C%20%272018-11-13%27%3A%3Atimestamp)%3B%0Aselect%20date_trunc(%27week%27%2C%20%272018-11-13%27%3A%3Atimestamp)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  ## Bucketing Intervals
+
+
+  To bucket time intervals, you can use either `date_trunc` or `trunc`. `date_trunc` accepts intervals, but will only truncate up to an hour.
+
+
+  ```SQL
+      select date_trunc('hour', '97 minutes'::interval); -- returns 01:00:00
+  ```
+
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=select%20date_trunc(%27hour%27%2C%20%2797%20minutes%27%3A%3Ainterval)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  `date_trunc` cannot truncate for months and years because they are irregular intervals. Be careful: instead of throwing an exception or returning null, `date_trunc` quietly returns a 0 interval.
+
+
+  ```SQL
+      select date_trunc('month', '31 days'::interval); -- returns 00:00:00
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=select%20date_trunc(%27month%27%2C%20%2731%20days%27%3A%3Ainterval)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  Surprisingly, `date_trunc` returns a 0 interval for day and week as well, despite being regular intervals. C’est la vie.
+
+
+  ```SQL
+      select date_trunc('day', '25 hours'::interval); -- returns 00:00:00
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=select%20date_trunc(%27day%27%2C%20%2725%20hours%27%3A%3Ainterval)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  If you want to bucket by intervals other than second, minute, or hour, your second option is to change the interval into a number (namely epoch or seconds since 1970), divide by the desired interval, and then `trunc`  the result.
+
+
+  ```SQL
+      select extract(epoch from '60 seconds'::interval); -- returns 60
+      select trunc(extract(epoch from '139 seconds'::interval) / 60); -- returns 2
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%2F*%20Move%20cursor%20to%20execute%20individual%20statements%20*%2F%0Aselect%20extract(epoch%20from%20%2760%20seconds%27%3A%3Ainterval)%3B%0Aselect%20trunc(extract(epoch%20from%20%27139%20seconds%27%3A%3Ainterval)%20%2F%2060)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  Once again, it’s important to note that other fields (like hour or day) do not work this way. It instead extracts the field as a value, and does not convert the value into that unit of time. In the event you try and extract irregular intervals, results can vary in unexpected ways. I’d recommend you stick with epoch.
+
+
+  ```SQL
+      select extract(minute from '61 minutes'::interval); -- returns 1
+      select extract(month from '31 days'::interval); -- returns 0
+      select extract(month from '1 month'::interval); -- returns 1
+      select extract(year from '1 year'::interval); -- returns 1
+      select extract(day from '1 year'::interval); -- returns 0
+      select extract(month from '1 year'::interval); -- returns 0
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%2F*%20Move%20cursor%20to%20execute%20individual%20statements%20*%2F%0Aselect%20extract(minute%20from%20%2761%20minutes%27%3A%3Ainterval)%3B%0Aselect%20extract(month%20from%20%2731%20days%27%3A%3Ainterval)%3B%0Aselect%20extract(month%20from%20%271%20month%27%3A%3Ainterval)%3B%0Aselect%20extract(year%20from%20%271%20year%27%3A%3Ainterval)%3B%0Aselect%20extract(day%20from%20%271%20year%27%3A%3Ainterval)%3B%0Aselect%20extract(month%20from%20%271%20year%27%3A%3Ainterval)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  ## Custom Buckets
+
+
+  You can create custom bucket with the Postgres `width_bucket` function. The function scans through the array, using the listed values as upper bounds, and returns the last index. That’s why it’s important to always have your buckets sorted by ascending values (easily done with Postgres’ `intarray` extension). For the array `{10, 20, 30}`, you effectively get the four ranges <10, 10-20, 20-30, and >30.
+
+
+  ```SQL
+      select width_bucket(4, '{10, 20, 30}'); -- returns 0
+      select width_bucket(24, '{10, 20, 30}'); -- returns 2
+      select width_bucket(60, '{10, 20, 30}'); -- returns 4
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%2F*%20Move%20cursor%20to%20execute%20individual%20statements%20*%2F%0Aselect%20width_bucket(4%2C%20%27%7B10%2C%2020%2C%2030%7D%27)%3B%0Aselect%20width_bucket(24%2C%20%27%7B10%2C%2020%2C%2030%7D%27)%3B%0Aselect%20width_bucket(60%2C%20%27%7B10%2C%2020%2C%2030%7D%27)%3B" target="_blank">Try it out on Numeracy</a>
+
+
+  While it’s possible to manually duplicate this logic with CASE expression, it’s much more verbose. `width_bucket` also has the advantage of being able to use _values_ to bucket, allowing you to generate or even store buckets as SQL values, instead of needing to hard code them in your SQL statements.
+
+
+  ## Numeracy Example
+
+
+  Let’s look at our example: tracking when Numeracy users first connect a database. 
+
+
+  First, here’s how we might pull the “time to connect” from raw event tables with ‘organization.created’ and ‘database.connected’ event types:
+
+
+  ```SQL
+      with conn_event as (
+        select org_id, min(created) as created
+        from events
+        where type = 'database.connected'
+        group by 1
+      ),
+      org_event as (
+        select org_id, min(created) as created
+        from events
+        where type = 'organization.created'
+        group by 1
+      ),
+      time_to_connect as (
+        select extract(epoch from conn_event.created - org_event.created) as seconds
+        from org_event
+        left join conn_event
+        on org_event.org_id = conn_event.org_id
+      )
+  ```
+
+
+  We’ll assume all of the following statements to be prefixed with these CTEs. For a first pass, let’s group by day.
+
+
+  ```SQL
+      select trunc(seconds / 3600 / 24) as day, count(1) as org_count
+      from time_to_connect
+      group by 1
+      order by 1
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%0Awith%20conn_event%20as%20(%0A%20%20select%20org_id%2C%20min(created)%20as%20created%0A%20%20from%20events%0A%20%20where%20type%20%3D%20%27database.connected%27%0A%20%20group%20by%201%0A)%2C%0Aorg_event%20as%20(%0A%20%20select%20org_id%2C%20min(created)%20as%20created%0A%20%20from%20events%0A%20%20where%20type%20%3D%20%27organization.created%27%0A%20%20group%20by%201%0A)%2C%0Atime_to_connect%20as%20(%0A%20%20select%20extract(epoch%20from%20conn_event.created%20-%20org_event.created)%20as%20seconds%0A%20%20from%20org_event%0A%20%20left%20join%20conn_event%0A%20%20on%20org_event.org_id%20%3D%20conn_event.org_id%0A)%0Aselect%20trunc(seconds%20%2F%203600%20%2F%2024)%20as%20day%2C%20count(1)%20as%20org_count%0Afrom%20time_to_connect%0Agroup%20by%201%0Aorder%20by%201" target="_blank">Try it out on Numeracy</a>
+
+
+  If you run this, you can see almost everyone connects within a week. Most, in fact, connect within a day of signing up. Our intuition tells us that the users connecting on the first day actually connect in minutes. However, grouping by minute would produce hundreds of thousands of “buckets” from the long tail of users who connect months later. 
+
+
+  ```SQL
+      select trunc(seconds / 60) as minutes,
+        count(1) as org_count
+      from time_to_connect
+      where trunc(seconds / 60) <= 1440
+      group by 1
+      order by 1
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%0Awith%20conn_event%20as%20(%0A%20%20select%20org_id%2C%20min(created)%20as%20created%0A%20%20from%20events%0A%20%20where%20type%20%3D%20%27database.connected%27%0A%20%20group%20by%201%0A)%2C%0Aorg_event%20as%20(%0A%20%20select%20org_id%2C%20min(created)%20as%20created%0A%20%20from%20events%0A%20%20where%20type%20%3D%20%27organization.created%27%0A%20%20group%20by%201%0A)%2C%0Atime_to_connect%20as%20(%0A%20%20select%20extract(epoch%20from%20conn_event.created%20-%20org_event.created)%20as%20seconds%0A%20%20from%20org_event%0A%20%20left%20join%20conn_event%0A%20%20on%20org_event.org_id%20%3D%20conn_event.org_id%0A)%0Aselect%20trunc(seconds%20%2F%2060)%20as%20minutes%2C%0A%20%20count(1)%20as%20org_count%0Afrom%20time_to_connect%0Awhere%20trunc(seconds%20%2F%2060)%20%3C%3D%201440%0Agroup%20by%201%0Aorder%20by%201" target="_blank">Try it out on Numeracy</a>
+
+
+  ## Segmenting Users Into Custom Buckets
+
+
+  In most businesses, you want to define “personas”: types of users who find your software valuable. In Numeracy’s case, it’s easy to see three distinct buckets: users who connect in the first 15 minutes, in the first week, or later. Having defined and reached consensus on these, I might want to categorize these users in my queries and examine other attributes. For this, we’ll use `width_bucket`.
+
+
+  ```SQL
+      select width_bucket(seconds / 60, '{15, 10080}') as bucket,
+        count(1) as org_count
+      from time_to_connect
+      group by 1
+  ```
+
+  <a href="https://numeracy.co/create-gist?connId=2186&query=%0Awith%20conn_event%20as%20(%0A%20%20select%20org_id%2C%20min(created)%20as%20created%0A%20%20from%20events%0A%20%20where%20type%20%3D%20%27database.connected%27%0A%20%20group%20by%201%0A)%2C%0Aorg_event%20as%20(%0A%20%20select%20org_id%2C%20min(created)%20as%20created%0A%20%20from%20events%0A%20%20where%20type%20%3D%20%27organization.created%27%0A%20%20group%20by%201%0A)%2C%0Atime_to_connect%20as%20(%0A%20%20select%20extract(epoch%20from%20conn_event.created%20-%20org_event.created)%20as%20seconds%0A%20%20from%20org_event%0A%20%20left%20join%20conn_event%0A%20%20on%20org_event.org_id%20%3D%20conn_event.org_id%0A)%0Aselect%20width_bucket(seconds%20%2F%2060%2C%20%27%7B15%2C%2010080%7D%27)%20as%20bucket%2C%0A%20%20count(1)%20as%20org_count%0Afrom%20time_to_connect%0Agroup%20by%201" target="_blank">Try it out on Numeracy</a>
+
+
+  In this case, I’ve passed the array `{15, 10080}` to the `width_bucket` function. If a user connects in less than 15 minutes, `width_bucket` returns 0. If between 15 minutes to 10,080 minutes (or 1 week), it returns 1. If more than a week, 2.
+
+
+  In Numeracy’s case, if you run the queries above, you’ll see 60% of organizations that will connect a database will do so in the first 15 minutes. 30% connect in the next 7 days. The final 10% trickle in over near-infinite time afterwards.
+
+
+  Now that we’ve bucketed our users, we can answer questions like, “Which bucket converts at the highest rate?” In Numeracy’s case, our initial intuition told us that users who instantly connected were more likely to convert. However, our highest conversion rates were actually amongst the second group: users who returned within a week. In retrospect, this makes sense. people with database credentials on hand are more likely ops teams, whereas Numeracy is built for business or product teams.
+
+
+  The goal of bucketing is to group user behaviors into segments that can inform your marketing efforts and product design. By using buckets to organize data in different ways, you can detect trends that might otherwise have gone unnoticed, determine where your business currently generates the most value, and find unexploited opportunities.

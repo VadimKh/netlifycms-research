@@ -1,0 +1,110 @@
+header: Hotelier Jumeirah Books Big With Fivetran-Facebook Pipeline to Google BigQuery
+featuredImage: /images/library/case-study-jumeirah.png
+path: /blog/case-study-jumeirah
+description: Automated ETL helps Jumeirah centralise data, cut costs and optimise ad
+  campaigns.
+pageTitle: Hotelier Jumeirah Books Big with Fivetran-Facebook Pipeline to Google BigQuery
+pageDescription: Follow these five simple steps to try out Fivetran for free
+date: 2018-12-17
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >+
+  **Key Takeaways**
+
+  - Reduced and optimised ad campaign spend
+
+  - Reduced costs per ad click by 28% on average and up to 60% in certain cases
+
+  - No longer needs to hire data engineers to perform ETL
+
+  - Reporting can now be targeted for executives and marketers
+
+  - Facebook video campaign strategy blossoms
+
+  - Gained a comprehensive view across all hotels
+
+
+  ## Data Stack:
+
+
+  - Pipeline: [Fivetran](http://www.fivetran.com)<br/>
+
+  - Connectors:  [Facebook Ad Insights](https://fivetran.com/docs/applications/facebook-ads-insights), [Facebook Ad Account](https://fivetran.com/docs/applications/facebook-ad-account) <br/>
+
+  - Destination: [Google BigQuery](https://fivetran.com/directory/bigquery)<br/>
+
+  - BI Tools: [Qlik Sense](https://www.qlik.com/us/products/qlik-sense) and internal
+
+
+
+  [Jumeirah Hotels and Resorts](https://www.jumeirah.com/en) is a top international luxury hotelier operating 22 properties in eight countries. According to Loai Taha, the Dubai-based company's Digital Analytics Manager, Jumeirah spends heavily on online advertising to capture as many direct bookings on its own websites as possible. The online bookings market is a saturated space, so it is critical to understand how customers are reacting to campaigns and how to best target them.
+
+
+  **Merging “Two Siloed Worlds that were Serving the Same Purpose”**
+
+
+  To get the complete data picture, Jumeirah needed the data from Google and Facebook merged together in a single location. “I needed to leverage other resources: machine learning, R and Python; I needed to bring specific Facebook campaign data to Google Cloud,” Taha recalls.
+
+
+  Jumeirah was already using Google BigQuery as its marketing data warehouse, which Taha describes as “the greatest thing Google has ever developed." He also deployed the Google DoubleClick stack, Google's marketing data-analysis product, which seamlessly syncs to the BigQuery marketing data warehouse.
+
+
+  While BigQuery performed well in its own right, Jumeirah struggled to incorporate its other marketing data. The company runs advertising campaigns on Facebook to attract travellers and Taha needed to integrate data from Facebook Ad Insights and Facebook Pages with his Google data tools. However, BigQuery does not offer built-in support for non-Google products. 
+
+
+  Taha admits that he considered designing the Facebook-to-BigQuery ETL pipeline himself in addition to trialling an off-the-shelf solution. "The problem with doing it yourself is that it takes time. You need resources. There's a lot riding on that. We don't have time for that. Hospitality is a fast-paced business; a small change in the markets can impact your bottom line," Taha says. Instead, he chose to focus his efforts on deriving insights from Jumeriah’s data and on helping the marketing team make better optimisation decisions rather than on designing ETL.
+
+
+  Some factors Taha considered while trialling automated ETL competitors were ease of integration with and connection to Facebook, limitations on the volume of data a tool can pull and schedule, cost, and data quality. Ultimately, Taha turned to Fivetran, which can replicate [dozens of marketing and business applications](https://fivetran.com/directory) to [supported data destinations](https://fivetran.com/destinations), including those offered by Facebook.
+
+
+  "Some beautiful things about Fivetran are the scheduling, the user interface and the data structure on the other end. That is why I chose Fivetran," he says. **"Fivetran is a good solution that is affordable. There's no headache involved, all the data is delivered as expected and there are no data quota limitations or hidden costs."** He also notes the comprehensiveness and the integrity of the data as some of the top selling points of Fivetran.
+
+
+  "One of the problems with any business analytics function is the consolidation of data. That was our pain point," Taha says. "I had different sources in different places. I needed to bring it all together."
+
+
+  **Centralised Data Leads to Comprehensive Dashboards and Straightforward Insights**
+
+
+  Taha believes that he created the optimal setup by warehousing marketing data in BigQuery and employing Jumeirah’s own internal BI tool as well as Qlik Sense. With centralised data, he has created dashboards that combine data from all sources. “We were able to create different segments, subtables of the overall data, and have quality assurance and date stamps," he says. He describes the addition of lookback windows for one day, one week, and four weeks as “awesome.”
+
+
+  Jumeirah has a lot of data to track—each hotel has its own marketing campaign, and its own separate food and beverage campaigns as well. **"Thanks to our automated ETL by Fivetran, we track Facebook campaigns, spend, reach, hosts and costs per click," Taha says. "We are in a much better position to move the budget from one campaign to the other, or from one asset to the other, all because we have quick, easy and straightforward insights into Facebook."**
+
+
+  **Reducing Costs and Raising ROI**
+
+
+  Having a deeper view of data has proven to be very beneficial for Jumeirah. **"Because of Fivetran, we have all of our Facebook Ad data in BigQuery, and a granular view of our data. We can get the cost per view for video, and look at the length of views and how the costs vary for that," he says.** By using its own scripts in BigQuery, Jumeirah has discovered the optimal length for Facebook video commercials per market. Other benefits include: 
+
+    - Reduced costs per click by 28% on average, and up to 50-60% in some campaigns
+    - Higher conversion and click-through rates at lower costs
+    - No need to hire an additional engineer
+
+  Taha says BigQuery works seamlessly with the Fivetran connectors for Facebook in addition to Google's marketing stack and has helped tackle Jumeirah’s previous marketing data pain points. "Big Query has helped the company to connect the dots with other non-marketing data sources like Google Analytics and CRM datasets to build a wider view of the customer journey and its touch points," he says. 
+
+
+  Want to see the impact that centralising your data can have on your ad campaigns? The Fivetran team is available to present a [demo](https://fivetran.com/demo) of our service, or you can sign up for a free trial [here](https://fivetran.com/signup).
+
+
+  **About Fivetran:** Our standardised technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organisations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardised cloud pipelines are fully managed and zero-maintenance.
+
+
+  **About BigQuery:** BigQuery is Google’s serverless, highly scalable, enterprise data warehouse designed to make all your data analysts productive at an unmatched price-performance.
+
+
+  **About Qlik Sense:** A multi-cloud data analytics platform for modern BI, Qlik Sense enables businesses to discover data insights and drive data literacy throughout their entire organisation.
+
+
+
+

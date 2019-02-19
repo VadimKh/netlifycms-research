@@ -1,0 +1,170 @@
+header: The Modern Data Pipeline
+featuredImage: /images/library/pjcu1ccttdofeatured.png
+path: /blog/the-modern-data-pipeline
+description: How workflow systems are shifting to keep up with the speed of business.
+pageTitle: The Modern Data Pipeline | Data Integration | Fivetran.com
+pageDescription: To fully leverage the big data potential that exists, organizations must be
+  able to quickly and easily manage and deploy scalable data pipelines for
+  centralizing their data. As a result, business leaders are turning to the
+  cloud because it’s scalable, affordable, and fast.
+tags:
+  - data strategy
+date: 2017-09-09
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /the-modern-data-pipeline-2235d928514b
+isDownload: false
+content: >
+  *This paper outlines the fundamental shifts in data pipeline configurations
+  that are occurring as a result of the wide adoption of new cloud applications
+
+  and technologies.*
+
+
+  Today’s rapid growth of big data represents an immense opportunity for progressive companies. To fully leverage the potential that exists, organizations must be able to quickly and easily manage and deploy scalable data pipelines — systems for moving and centralizing their data. As a result, business leaders are turning to the cloud because it’s scalable, affordable, and reduces the overall analytical overhead of time, energy, and effort.
+
+
+  ## The Changing Landscape
+
+
+  ### SaaS Changed Everything
+
+
+  Cloud-based technologies have changed the face and pace of business. Fading aware are the long, complex sales cycles that require deep, customized integrations. Self-serve applications are flourishing, and enterprise level SaaS has gained great momentum simply because its flexibility creates the opportunity to build better technology than traditional methodologies. Today organizations can quickly realize ROI and reallocate resources to competitive revenue-driving projects rather than to custom
+
+  builds for mundane tasks. Beyond cost, the biggest attraction of SaaS is its ability to collect data — and lots of it. Now companies have access to structured and unstructured data from multiple disparate sources at volumes that have reached amazing heights. The problem is wrangling that same data so they can derive meaning from it and act accordingly.
+
+
+  ### Data sources have increased exponentially
+
+
+  The term data explosion has been used to describe the sheer amount of data available from a myriad of sources — enterprise software tools, multimedia, social media, sensor and surveillance data, web browsers and IoT. In 2016, there were approximately 3,500 SaaS apps on the market up from just 150 just five years ago.(1) Therefore, companies that employ SaaS for advertising and promotion, content and experience, social and relationships, commerce and sales, data and management and much more, are trying to harvest and combine their many input points, to gain a comprehensive understanding of
+
+  their customers.
+
+
+  ![Source: ChiefMartec.com: Evolution of Marketing Technology Landscape (1)](/images/library/1_F2YRhgJYAkxZXh-8dFGfpQ.png)*Source: ChiefMartec.com: Evolution of Marketing Technology Landscape (1)*
+
+
+  Traditionally, organizations sought out single platform solutions, but with so many specialized apps on the market, they have directed their energies into building integrated workflows to manage their growing infrastructure. As an example, Domino’s Pizza captures data from Twitter, SMS, Android, Pebble and Amazon Echo and combines it with demographic, geographic and competitor data, and USPS and POS information.The data gives them great insight into their customers and helps them “consistently measure information across their operational and analytic layers.” (2)
+
+
+  ### Data is a competitive advantage
+
+
+  The increasing need to coalesce these rich, new data sources to create a fuller picture of the business landscape is fast becoming a key differentiator in how organizations make the decisions that fuel the growth of their companies. The challenge is finding a way to leverage it. Gartner says that 85% of Fortune 500 companies are unable to exploit big data for a competitive advantage.(3) But once unlocked, businesses can realize the true potential of their customers, suppliers, products, and partners.
+
+
+  Walmart collects the web and social data of their 200+ million weekly website visitors and combines it with their purchasing data to send offers that are based on their contextual understanding of customer conversations online. They can even tap into the interests of customer friends through Facebook and make recommendations.(4) By leveraging this data, Walmart can increase sales and engagement, improve their supply chain, predict what customers want, and stock their virtual and physical shelves.
+
+
+  ### Rise of agile development
+
+
+  Agile processes have been in play for the past seven years and gained momentum as automation changes the way business is run. Focused on agility, efficiency, and innovation, agile development revolves around continuous improvement in response to dynamic change. In an environment where data changes daily and sometimes in just seconds, lengthy release cycles that require major system changes and the expertise of only a select few stunt the ability of businesses to respond rapidly to market changes. Today, businesses are calling for processes focused on data discovery and exploration. This requires real-time access to multichannel data and easy deployment to stakeholders across the organization. Technology providers are heeding the call.
+
+
+  ### Better technology leads to lower storage costs
+
+
+  In response, better technology platforms have surfaced that collect, transform, store and visualize massive amounts of data with an emphasis on speed, accuracy, and fluidity. However, one of the biggest challenges was that of physical storage costs. It is not unusual for companies to have billions of records which require hundreds of terabytes to store; nor were there tools on the market that could efficiently handle the velocity, variation, and amount of data available in real-time. Custom solutions had to be built such as Walmart’s Muppet — a resource intensive task.(5)
+
+
+  CTOs were forced to make decisions based on what they could afford to store and available man-hours, rather than on what the company actually needed. But with new cloud-based data warehouses such as Amazon Redshift, Snowflake, and Google BigQuery, the cost of storage has decreased dramatically opening up the door to new possibilities. And fantastic browser-based business intelligence tools are now in play which offer increased flexibility and ease of delivery of analytics across an organization.
+
+
+  **Five-minute setup, really**
+
+
+  If you’re not a middleware product and integrating all your data is not
+
+  a core function of your business, then why spend more than 5 minutes
+
+  focusing on it? Integrate your core cloud data with single authentications
+
+  and get back to work on what you do best. Learn more at [fivetran.com](https://fivetran.com/?utm_campaign=moderndatapipeline_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ## The Pitfalls of Traditional Data Warehousing in a Modern Workflow
+
+
+  ### Business limitations
+
+
+  As stated, due to high storage costs, business leaders were forced to incorporate highly limiting workflows into their data management to cut costs. These classic data workflows often involved some version of the Extract, Transform, and Load (ETL) paradigm with a non-cloud based business intelligence (BI) layer on top. While data warehouses have made wrangling the data more affordable, the ETL paradigm fails to address the problems organizations are still having leveraging the data.
+
+
+  ### Predictions are not based on science
+
+
+  ETL forces business leaders to predict which questions they need answered so that complex pipelines can be built to support those queries. Once the data is extracted and cleaned from the various data sources, it is then transformed, aggregated and modeled before it is loaded into the data warehouse as a way to use less storage space. (see figure A) However, a prediction by definition is a best guess. While you may be able to anticipate your needs based on previous experience, the data landscape gives you the unique opportunity to make decisions based on science mapped to actual behaviors.
+
+
+  ### ETL is resource intensive and inflexible
+
+
+  ETL requires a team of engineers and data scientists to spend months developing workflows that are stagnant and lack efficiency in managing multiple, disparate data sources that change at the speed of business. It also requires layers of customized technology that revolve around lowering storage costs by limiting data. Today, there are SaaS-based tools that simplify the ETL process, but the underlying issue remains the same. Organizations are still not seeing the whole picture. Because you are only loading a portion of the data with the ETL paradigm, you are inherently leaving things out and limiting your options for future inquiry. The missing data points could be influential in the growth of your business.
+
+
+  ![The Modern Data Pipeline](/images/library/1_xbWs2aaEdiJUFkAFdy_xqw.png)
+
+
+  ## Characteristics of the Modern Data Pipeline
+
+
+  ### ELT is dynamic and adaptive to business environments
+
+
+  With services like [Snowflake](https://www.snowflake.net/), Amazon [Redshift](https://aws.amazon.com/redshift/) and Google [BigQuery](https://cloud.google.com/bigquery/) heavily reducing the cost of data warehousing, data pipelines no longer have to be oriented around conserving space. The Modern Data Pipeline workflow has shifted to ELT (Extract, Load, and Transform) — a process where all data is loaded into your data warehouse before it is aggregated and modeled. Now businesses can optimize their pipelines around agility, flexibility, and the capacity to adapt to the constantly changing data landscape.
+
+
+  ELT’s simple shift in workflow provides a wealth of opportunity for businesses simply by enabling real-time access to the breadth and depth of data assets available from their systems and having timely information regarding changes taking place in their databases every second. Business leaders and analysts can now obtain the intelligence they need to accurately and confidently measure and advance performance.
+
+
+  ### Access to all data points drives insights and innovation
+
+
+  The focus of ELT is data discovery and exploration which provides access to comprehensive insights never before available. Unbound by any technical limitations, analytic teams can ask intricate questions, dive deeper into their data and problem solve at faster rates. Browser based BI tools also make it simpler for analysts and business users to visualize, understand and act on the data. The intentional move towards “customer-facing analytics” allows key stakeholders and teams across an organization to engage in the
+
+  process in a more meaningful and relevant way that drives the business forward.
+
+
+  ### “The biggest advantage to using Fivetran has been the fact that it is a massive accelerant to getting data insights.” — Ernest Wong, Product Manager at Talkdesk
+
+
+  ## Where [Fivetran](https://fivetran.com/?utm_campaign=moderndatapipeline_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=) Fits In
+
+
+  Given all of the rich new data sources, classic methodologies can no longer respond rapidly and efficiently to business challenges. In today’s environment, where businesses are more dynamic than ever, organizations cannot rely solely on predictions to fuel their business decisions. The market has responded to this inflection point and is creating new tools and methodologies to respond. Trends are moving away from building classic ETL data pipelines based on pre-defined reports and towards a more progressive means of real-time data exploration and discovery using the modern ELT data pipeline. This simple shift in workflow creates a clear path for business to gain dominion over their data and leverage it to accelerate growth and drive innovation. At F[ivetran](https://fivetran.com/?utm_campaign=moderndatapipeline_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=), we built a simple cloud-based ELT
+
+  data pipeline through which you can centralize all of your data into your data warehouse in just minutes. We believe that your internal data is your most powerful asset and that true insights come from building an infrastructure that is rooted in your ability to leverage that same data. It just shouldn’t take months to do so.
+
+
+  ### “We went from using 14 technologies to a stack of four powerhouses — AWS, Snowflake, Fivetran and MicroStrategy — that can be managed by a single person.” — Joseph Bates, Head of Analytics at Sharethrough
+
+
+  **Join the new generation of forward-thinking, data-driven companies leveraging modern data warehouses, new cloud-based business intelligence solutions, and agile data pipelines to garner the greatest value from their ever-growing amounts of data.**
+
+
+  ## About Fivetran:
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business. To learn more visit our website at [fivetran.com](https://fivetran.com/?utm_campaign=moderndatapipeline_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ## Sources
+
+
+  1 [Marketing Technology Landscape Supergraphic (2016) Chief Marketing Technologist.](http://chiefmartec.com/2016/03/marketing-technology-landscape-supergraphic-2016./) 13 Aug. 2016. Web. 18 Oct. 2016.
+
+  2 Marr, Bernard. [Big Data-Driven Decision-Making At Domino’s Pizza](https://www.forbes.com/sites/bernardmarr/2016/04/06/big-data-driven-decision-making-at-dominos-pizza/#1c7eeae82b8e). Forbes. 6 Apr. 2016. Web. 18 Oct. 2016.
+
+  3 Laney, Douglas. [Information Innovation: Innovation Key Initiative Overview.](https://www.gartner.com/doc/1991317/information-innovation-innovation-key-.) Gartner. 27 Apr. 2012. Web. 18 Oct. 2016.
+
+  4–5 Van Rijmenam. Mark. [Walmart Is Making Big Data Part of Its DNA](https://datafloq.com/read/walmart-making-big-data-part-dna/509) Datafloq. 14 Mar. Web. 18 Oct. 2016.

@@ -1,0 +1,86 @@
+header: Fivetran Announces New Google Sheets Permissions, Security Options
+featuredImage: /images/library/a3ocoiig5rhfeatured.png
+path: /blog/fivetran-announces-new-google-sheets-permissions-security-options
+description: At Fivetran, we’re always looking for new ways to bolster customer security
+  and data privacy, so we offer permissions management at the most granular
+  level possible.
+pageTitle: "Fivetran announces new Google Sheets permissions, security options "
+pageDescription: At Fivetran, we’re always looking for methods to bolster customer security and
+  the privacy of your data so we offer permissions management at the most
+  granular level possible.
+tags:
+  - announcement
+  - google sheets
+date: 2018-05-01
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /fivetran-announces-new-google-sheets-permissions-security-options-506a7646b344
+isDownload: false
+content: >
+  At Fivetran, we’re always looking for new and better methods of bolstering
+  customer security and data privacy, but we also urge our customers to follow
+  data-security best practices. One way to do that is to grant Fivetran, or any
+  other third party, as few permissions to your data as necessary.
+
+
+  Fivetran customers may limit the SELECT permissions to certain schemas and tables. We even let you do that all the way down to the column level with [MySQL](https://fivetran.com/directory/mysql), [Postgres](https://fivetran.com/directory/postgresql) and [SQL Server](https://fivetran.com/directory/sql_server). Fivetran encourages similar practices with your data warehouse, too. One important caveat is the [Amazon Redshift](https://fivetran.com/directory/redshift) data warehouse. If you connect Fivetran with the master/admin user, we will do routine database maintenance on your behalf: VACUUM (DEEP COPY) tables on weekends.
+
+
+  ![Fivetran announces new Google Sheets permissions, security options](/images/library/0__tv8kieJS5OoshvA)
+
+
+  That said, we understand that security and convenience (accessibility) are always a trade-off, and we try to accommodate this where appropriate. That’s why we have introduced a second approach to authenticating [Google Sheets](https://fivetran.com/directory/google_sheets) when uploading them to your Fivetran supported data warehouse.
+
+
+  Our original implementation of Google Sheets uses OAuth for authentication. OAuth is a method for a user to delegate access for all files to which they have been granted access. Some companies, by default, give access to all Google Drive files to all employees. As a result, the Google OAuth method for Google Sheets grants Fivetran permission to access *all* of your company’s Google Spreadsheets, even the ones you haven’t connected to your data warehouse.
+
+
+  ![Fivetran OAuth method to upload Google Sheets.](/images/library/0_SFpt1eT61IrZlJ35)*Fivetran OAuth method to upload Google Sheets.*
+
+
+  Some of our clients have told us that access this broad was unacceptable.
+
+
+  So we added a second method — Service Accounts for authentication. This allows users to grant access on a per-spreadsheet basis. The Service Accounts method, however, requires granting access to a domain (fivetran-production.iam.gserviceaccount.com) that is outside of your Google account domain.
+
+
+  ![Fivetran Service Accounts method to upload Google Sheets.](/images/library/0_VesN2E-e5rDVat53)*Fivetran Service Accounts method to upload Google Sheets.*
+
+
+  There are a few caveats:
+
+
+  For some G Suite account holders, the practice of sharing outside the domain is banned by the security policies of their employer. As a result, these Fivetran customers must use the OAuth method unless G Suite permissions are altered to allow sharing outside the domain.
+
+
+  We should also note that if an employee is authenticating Google Sheets via the OAuth method from his or her own corporate Google account, the connection between those sheets will break if that employee’s Google account is terminated. This is not the case when it comes to the Service Accounts method.
+
+
+  Here is the Fivetran [setup guide](https://fivetran.com/docs/files/google-sheets/google-sheets-setup-guide) for both methods to upload Google spreadsheets to your data warehouse.
+
+
+  All in all, Google Sheets is just one of the [dozens of connectors](https://fivetran.com/directory) Fivetran offers. These connectors are the data from your business applications, and databases, that Fivetran syncs into a data warehouse for you.
+
+
+  Fivetran supports four column-oriented data warehouses. They include [Google BigQuery](https://fivetran.com/directory/bigquery), [Amazon Redshift](https://fivetran.com/directory/bigquery), [Snowflake](https://fivetran.com/directory/snowflake) and the [Microsoft Azure SQL Data Warehouse](https://fivetran.com/directory/azure_sql_warehouse).
+
+
+  ***For an analysis on the difference between a row-based and column-oriented data warehouse, see our in-depth analysis [here](https://blog.fivetran.com/choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics-5fcbc99a799a).***
+
+
+  **About Fivetran**: Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights using SQL or the business intelligence (BI) tools of choice.
+
+
+  The Fivetran sales team is available at sales@fivetran.com.

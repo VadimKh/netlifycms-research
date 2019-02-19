@@ -1,0 +1,105 @@
+header: Extra! Extra! News Outlet Kaleva Media Forges a Data-Driven Culture.
+featuredImage: /images/library/kaleva-media.png
+path: /blog/kaleva-media-case-study
+description: Finnish news conglomerate Kaleva Media leverages a modern data stack powered
+  by Fivetran connectors to generate insights into advertising, readership and
+  employee performance.
+pageTitle: Extra! Extra! Finland news conglomerate Kaleva Media forges a data-driven
+  culture.
+pageDescription: Kaleva Media achieves data insights about its advertising, readership and
+  employee performance by using a modern data stack fueled by Fivetran data
+  connectors.
+tags:
+  - case study
+  - dwh
+  - bi
+  - tableau
+  - snowflake
+date: 2018-10-05
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >-
+  ### Key Takeaway 
+
+  - Kaleva Media generated comprehensive insights into critical business areas — including advertising, readership and employee performance — by using a modern data stack fueled by Fivetran data connectors. Its rapid move to a data-driven culture had an immediate impact.
+
+
+  ### Data Stack
+
+  - Data Pipeline: [Fivetran](http://www.fivetran.com)
+
+  - Data Warehouse: [Snowflake](https://fivetran.com/docs/warehouses/snowflake)
+
+  - Business Intelligence Tool: [Tableau](https://www.tableau.com)
+
+
+  [Kaleva Media](https://www.kalevakonserni.fi/) produces several newspapers and city journals in Finland. With the addition of digital media, Kaleva is breaking away from its traditional business models. As Markku Mäenpää, the group's new data architect, describes it, "Our new strategy is to get a digital business up and flying," and to drive this growth through data insights.  
+
+
+  ## Data Centralization That Just Works
+
+
+  Before Kaleva embraced the Fivetran-Snowflake-Tableau combination, there wasn't any scalable visualization of data at the group. "We had some point-to-point business intelligence solutions, but the data and understanding wasn't really shared,” Mäenpää says. "We had a little bit of Google Analytics and Data Studio but no data warehouse, and there was no transparency of the data. We were manually producing some marketing numbers. This is all changing."
+
+
+  The Fivetran data connectors Mäenpää chose for his data-platform include [CSV Uploader](https://fivetran.com/directory/csv), [AdWords](https://fivetran.com/directory/google_adwords), [Facebook Ads Insights](https://fivetran.com/directory/google_adwords), [Google Analytics](https://fivetran.com/directory/ganalytics), [Snowplow](https://fivetran.com/directory/snowplow), [SQL Server](https://fivetran.com/directory/sql_server), [Doubleclick for Publishers](https://fivetran.com/docs/applications/double-click-publishers) and [Google Sheets](https://fivetran.com/docs/files/google-sheets). He expects to use many more in the future.
+
+
+  "Advertising is our lifeblood, and Fivetran offers connectors for the majority of the best advertising networks," Mäenpää says. Fivetran offers a large and growing number of off-the-shelf application, file, event, and database [data connectors](https://fivetran.com/directory) that are easy to set up. 
+
+
+  >**"Advertising is our lifeblood, and Fivetran offers connectors for the majority of the best advertising networks. It's the closest of all options to truly having data integration as a service. You don't have to spend much time working with the product and instead you can focus on the business and getting data to decision-makers."**
+
+
+  "Fivetran was easy to use,"  Mäenpää notes. "Everything worked as assumed. It was the closest of all options to truly having data integration as a service. You don't have to spend much time working with the product and instead you can focus on the business and get data to decision-makers."
+
+
+  ## Hassle-Free Data Warehouse
+
+
+  What's more, he says, both Snowflake and Fivetran "are quite simple and straightforward to get up and running. The company doesn't have to be dependent on me for the services to function. I don't want to maintain anything myself. It's not that I'm lazy. I'm building an infrastructure that is easy to maintain, easy to pass on to somebody else if required."
+
+
+  >**"I could not imagine a more affordable way of getting data into a warehouse than Fivetran."**
+
+
+  Mäenpää describes Snowflake as a "really, really hassle-free data warehouse" with the key advantage of separating storage and compute. This means costs can be controlled even as customers achieve optimum performance on queries. Increasing compute capacity is instantaneous, and you only pay for what you use. 
+
+
+  With Kaleva Media’s new Fivetran data flow and Snowflake data warehouse, Mäenpää says he has achieved unprecedented time-to-market speeds. The team's resources can now be used to deliver business benefits instead of scaling up servers and frameworks.
+
+
+  Mäenpää says he "could not imagine a more affordable way of getting data into a warehouse than Fivetran."
+
+
+  ## Data Drives a Change in Culture and Performance 
+
+
+  When switching to a data-driven culture, Mäenpää says, Kaleva "had struggles. There was resistance to change as there always is for approaches that deviate from accustomed ways. But this is changing and we're now more and more embracing data-driven decisions over our hunches and partially informed opinions."
+
+
+  >**"Our employees can now visualize what kinds of articles and subject matter drive readers, so they have more insight into the business and customers. We make better decisions because we get more sophisticated information faster, and that creates satisfied customers."**
+
+
+  Kaleva now uses Tableau to see in-depth insights into its advertising, readership and employee performance. "It's quite a huge improvement to employee well-being, motivation and efficiency," Mäenpää notes. "When data wasn't visualized, everybody did the best with the tools they had with little data transparency."
+
+
+  Kaleva's journalists are empowered by Tableau dashboards, Mäenpää says, "to visualize what kinds of articles and subject matter drive readers. Now there's more insights into the business and customers. We can make better decisions because we get more sophisticated information faster. We believe happy employees create satisfied customers, and alleviating tedious work and manual reporting gets you a lot of happy employees."
+
+
+  With so much data at his fingertips, Mäenpää is helping Kaleva achieve the vision of a truly “digital business up and flying."
+
+
+  ### About Fivetran and Snowflake 
+
+
+  Fivetran delivers data into your Snowflake Data Warehouse in minutes, not months, through [Snowflake’s Partner Connect](https://resources.snowflake.net/youtube-all-videos/getting-started-on-snowflake-with-partner-connect).
+
+
+  The Fivetran team is available to present a [demo of our service](https://fivetran.com/demo) and provide a [free trial](https://fivetran.com/signup).

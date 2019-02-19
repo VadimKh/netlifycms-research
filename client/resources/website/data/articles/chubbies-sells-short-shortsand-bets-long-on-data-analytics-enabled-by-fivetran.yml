@@ -1,0 +1,100 @@
+header: Chubbies Sells Short Shorts — and Bets Long on Data Analytics Enabled by
+  Fivetran
+featuredImage: /images/library/numyfx9n2ofeatured.png
+path: /blog/chubbies-sells-short-shorts-and-bets-long-on-data-analytics-enabled-by-fivetran
+description: Chubbies Shorts leverages advanced analytics by using Fivetran to blend
+  customer data from Shopify, Klaviyo, Google Analytics, Google Sheets and more
+  into the Google BigQuery data warehouse.
+pageTitle: Chubbies sells short shorts and bets long on data analytics | Fivetran
+pageDescription: Learn how Chubbies Shorts uses Fivetran to blend customer data from Shopify,
+  Klaviyo, Google Analytics, Google Sheets, and more into the Google BigQuery
+  data warehouse to produce advanced analytics.
+tags:
+  - case study
+  - bigquery
+  - looker
+  - shopify
+  - klaviyo
+  - google analytics
+  - google sheets
+date: 2018-06-01
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Case Study
+categories:
+  - Case Studies
+redirects:
+  - /chubbies-sells-short-shorts-and-bets-long-on-data-analytics-enabled-by-fivetran-69447155c4bd
+isDownload: false
+content: >
+  It’s been about a decade since Tom Montgomery and fellow Stanford University
+  students Kyle Hency, Preston Rutherford and Rainer Castillo began hawking
+  shorts — really, really short shorts — on the shores of Lake Tahoe. These
+  shorts represented a backlash-of-sorts response to the huge, long and
+  ultra-wide styles of the time. Or, as Montgomery remembers it, they were a
+  counterattack against the “dark days of long, baggy cargo shorts.”
+
+
+  Known today as Chubbies, the San Francisco-based clothier has gone from selling a few dozen pairs of shorts in Lake Tahoe to distributing a clothing line in its own branded stores and across the globe online. It got there because Chubbies capitalizes on a martech data stack and niche consumer offerings, in addition to its out-of-the-ordinary namesake.
+
+
+  “We were looking for a funny, eye-catching name that no other fashion brand would call themselves. We thought Chubbies was hilarious,” Montgomery says. “Then we just started calling it Chubbies, and our friends wouldn’t let us change it. In San Francisco, the sun is barely out. When it is, we embrace it wearing tiny shorts. The brand was something that came naturally to us.”
+
+
+  Chubbies’ marketing efforts have advanced from combing the beaches for customers to analyzing a blend of customer data from [Shopify](https://fivetran.com/directory/shopify), [Klaviyo](https://blog.fivetran.com/fivetran-rolls-out-the-klaviyo-connector-6c58b2a27065), [Google Analytics](https://fivetran.com/directory/ganalytics), [Google Sheets](https://blog.fivetran.com/fivetran-announces-new-google-sheets-permissions-security-options-506a7646b344) and more. All of this data gets commingled and replicated by [Fivetran](https://fivetran.com/) into the [Google BigQuery](https://fivetran.com/directory/bigquery) data warehouse. That’s where advanced analytics are performed on a grand and granular scale — with the goal of understanding customer and consumer behavior.
+
+
+  *“The mission to all of our business units is to fully understand how they are affecting our customer, and to understand their part in a customer’s life, experience, and also understand the levers they need to press to increase the value of that experience,” Montgomery says. “For us, this process is king. The data that is being fueled by Fivetran is the important part of the process that helps us optimize.”*
+
+
+  Chubbies runs Looker as its (BI) business intelligence tool that sits atop the Google BigQuery data warehouse.
+
+
+  *“The data we are reporting in with Fivetran into Looker is the basis of meetings as opposed to the meetings being about figuring out how to get the data,” Montgomery says.*
+
+
+  Among its critical marketing metrics, Chubbies has data at its fingertips to analyze what ads prompted orders, and what emails lead to sales. It’s about understanding consumers’ “**lifetime value and revenue implications**,” Montgomery says.
+
+
+  Montgomery says that its Fivetran-powered martech stack enables Chubbies to gain deep insights into buying behaviors. Fivetran, he says, has enabled Chubbies to create a **“holistic picture” **of its operations.
+
+
+  *“We analyze consumers from their first piece of content they see all the way through their 10th order, with any exchanges and emails along the way,” Montgomery says. “Our web analytics is about how people are behaving on the site once we get them to arrive on the site*. *Data with Fivetran has a been a huge driving force for us.”*
+
+
+  Chubbies says it’s quite satisfied with the BigQuery data warehouse, and how effortlessly Fivetran moves Chubbies’ data to the warehouse. And if anything goes wrong, “**Fivetran support is always available**,” says Carlos Nido, a data analyst.
+
+
+  *“We like BigQuery a lot. It’s simple with Fivetran for managing the upload and syncing process,” says Nido. “One of the nice things about Fivetran is the ease of integration.”*
+
+
+  ***For an analysis on the difference between a row-based and column-oriented data warehouse, see our in-depth analysis [here](https://blog.fivetran.com/choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics-5fcbc99a799a).***
+
+
+  Nido explains that, prior to Chubbies adopting Fivetran, data from Chubbies’ applications had to be uploaded manually.
+
+
+  *“Before Fivetran, all of our data was on all different platforms,” Nido says. “Everything was uploaded manually. Everybody pulled data from different sources. Now, everything lives in one ecosystem with Fivetran. We can easily analyze the data that we want. It’s plug and play with Fivetran, in what normally would consume massive engineering resources.”*
+
+
+  Montgomery, meanwhile, says that the Chubbies bottom line is much better served with Fivetran.
+
+
+  *“Fivetran is allowing us to make better decisions. Combined with Looker, Fivetran is providing access to data for many people at Chubbies,” Montgomery says. “They can own their own reporting. This frees up time for the data team to make more of a strategy approach, to create long-term solutions and to move away from creating reports for people.”*
+
+
+  All in all, Fivetran offers plenty of data connectors in addition to the ones used by Chubbies. They range from [AdRoll to Zuora](https://fivetran.com/directory). Essentially, these connectors are the data from business applications, files and databases that Fivetran syncs into a data warehouse for you.
+
+
+  (***The Fivetran sales team is available to present a demo, and provide a free trial. Sign up [here](https://fivetran.com/demo?utm_campaign=chubbies-case-study&utm_medium=blog&utm_source=&utm_content=&utm_term=).***)
+
+
+  **About Fivetran:** Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights using SQL or the business intelligence (BI) tools of choice.

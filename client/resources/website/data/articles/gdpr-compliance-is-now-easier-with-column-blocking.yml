@@ -1,0 +1,56 @@
+header: GDPR Compliance Is Now Easier With Column Blocking
+featuredImage: /images/library/column-blocking.png
+path: /blog/column-blocking
+description: Block specific columns from replicating in order to protect personally
+  identifiable information (PII).
+pageTitle: GDPR Compliance is Now Easier With Column Blocking | Fivetran Blog
+pageDescription: Block specific columns from replicating in order to protect personally
+  identifiable information.
+date: 2019-01-15
+published: 1
+featured: 0
+authorsName:
+  - alexa
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >
+  In our efforts to give you more control over your data, Fivetran users can now
+  block specific columns from replicating to your warehouse. The new feature
+  enables you to avoid sending personally identifiable information (PII) to your
+  data warehouse, bringing you into compliance with GDPR.
+
+
+  Not only are we preventing the data from saving in your data warehouse, blocking is applied before it is persisted to temporary storage within Fivetran.
+
+  Column Blocking is available for the following connectors:
+
+
+  * Salesforce
+
+  * NetSuite
+
+  * Marketo
+
+  * MySQL
+
+  * Oracle
+
+  * Postgres
+
+  * Zuora
+
+  * SQL Server
+
+
+  You can use this feature by going to your connector details page and unchecking the columns you would like to omit from syncing.  
+
+
+  ![Screenshot](/images/library/column-blocking-screenshot.png)
+
+
+  One of our early adopters, [Karel Kosterman](mailto:karel.kosterman@lightspeedhq.com), Team Lead, Development at [Lightspeed HQ](https://www.lightspeedhq.com/), says: “Just wanted to let you know that this feature is amazing! We have been struggling with this exact problem that is addressed here. This will simplify adding a new integration by a lot, and I can get rid of a good bunch of workarounds we had in place.”
+
+
+  We hope you find it just as useful!

@@ -1,0 +1,32 @@
+header: "New Connector: Amplitude"
+featuredImage: /images/library/new-connector-amplitude.png
+path: /blog/new-connector-amplitude
+description: New connector enables businesses to centralize data from product analytics
+  platform Amplitude.
+pageTitle: "New Connector: Amplitude"
+pageDescription: New connector enables businesses to centralize data from product analytics
+  platform Amplitude.
+date: 2019-02-13
+published: 1
+featured: 0
+authorsName:
+  - ciara
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >
+  The Fivetran Amplitude connector is now live in beta.
+  [Amplitude](https://amplitude.com/) is a product analytics platform whose
+  mission is to help businesses build and improve digital products. Amplitude
+  can improve conversion rates and fuel growth by allowing companies to gain
+  insights into how their users interact with their products.
+
+
+  Our [documentation](https://fivetran.com/docs/applications/amplitude) explains how to set up this connector and includes an entity relationship diagram (ERD) of the schema.
+
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRsAakEhaO9cwKq5_ffGVP3IhBZhKQW47LDSufmK--_Y1Bi8xEZD-yDO_fRpWSdW3c0C7ruRF1dZRA-/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+  If you have an Amplitude account, set up the connector [here](https://fivetran.com/integrations/amplitude) to centralize your data, along with [all of your other data sources](https://fivetran.com/directory) for more powerful and robust metrics. If you have any questions, feel free to reach out to our [support team](mailto:support@fivetran.com).

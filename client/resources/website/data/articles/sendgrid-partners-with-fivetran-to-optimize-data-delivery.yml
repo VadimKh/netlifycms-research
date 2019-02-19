@@ -1,0 +1,54 @@
+header: SendGrid Partners With Fivetran to Optimize Data Delivery
+featuredImage: /images/library/t7ar9eiqc46featured.png
+path: /blog/fivetran-partners-with-sendgrid-its-all-about-data-delivery
+description: "For SendGrid, partnering with Fivetran to improve data pipeline management
+  was a logical choice: Both firms specialize in data delivery on a grand
+  scale."
+pageTitle: "Fivetran partners with SendGrid: It’s all about data delivery | Fivetran"
+pageDescription: "It only makes sense that SendGrid partnered with Fivetran to improve their
+  data pipeline management. They both have similar goals: Delivering data on a
+  grand scale."
+tags:
+  - announcement
+  - source
+date: 2018-05-18
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /fivetran-partners-with-sendgrid-its-all-about-data-delivery-5b797be7d952
+isDownload: false
+content: >
+  Founded in 2009, [SendGrid](https://sendgrid.com/) is a leading digital
+  communications platform, enabling businesses to engage with their customers
+  via email reliably, effectively and at scale.
+  [Fivetran](https://fivetran.com/) builds data pipelines connecting and
+  replicating disparate business data sources to a data warehouse — for the goal
+  of advanced analytics on a grand and granular scale. With Fivetran, SendGrid
+  users can co-mingle data from their SendGrid accounts with data from their
+  other business applications to gain deep insights into all of that data.
+
+
+  “It was only a matter of time until Fivetran and SendGrid would become partners. SendGrid’s platform already provides engagement data in real time. With Fivetran, our customers can get even wider views into their own companies and customers,” says Elliot Goldwater, director of business development at SendGrid.
+
+
+  Logan Welley, who heads the Fivetran partnership program, agreed. “Adding SendGrid to the growing list of Fivetran technology partners was bound to happen. Each company enhances the other company, all of which benefits end users and their goal of performing agile analytics,” Welley says.
+
+
+  SendGrid is just one of the [dozens of connectors](https://fivetran.com/directory) Fivetran offers. These connectors are the data from your business applications, and databases, that Fivetran syncs into a data warehouse for you.
+
+
+  ***The Fivetran sales team is available to present a demo or provide a free trial. Sign up [here](https://fivetran.com/demo?utm_campaign=sendgrid-partnership-post&utm_medium=&utm_source=medium&utm_content=&utm_term=).***
+
+
+  **About Fivetran**: Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights using SQL or the business intelligence (BI) tools of choice.

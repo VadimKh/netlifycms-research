@@ -1,0 +1,62 @@
+header: A Digest of George Fraser’s Talk at MicroStrategy World
+featuredImage: /images/library/microstrategy-world-2019.png
+path: /blog/microstrategy-world-2019
+description: Fivetran CEO George Fraser gave a talk about the merits of cloud data
+  warehousing at MicroStrategy World 2019.
+pageTitle: A Digest of George Fraser’s Talk at MicroStrategy World
+pageDescription: Fivetran CEO George Fraser gave a talk about the merits of cloud data
+  warehousing at MicroStrategy World 2019.
+date: 2019-02-14
+published: 1
+featured: 0
+authorsName:
+  - charles
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >
+  
+  From February 4-6, Fivetran attended [MicroStrategy World 2019](http://events.microstrategy.com/events/microstrategy-world-2019/event-summary-2c0e177416a0487b95c82069ccaa35ce.aspx) alongside our partner [Snowflake](https://www.snowflake.com/). Our CEO George Fraser had the opportunity to speak during the conference and gave a talk expounding the merits of cloud data warehousing.
+
+
+  As George put it, “Cloud data warehouses are not just on-prem data warehouses that have been moved to the cloud. They are fundamentally different and better.” Cloud warehousing presents the possibility of a radically simplified business intelligence architecture. This is because cloud warehouses are **elastic**, **fast**, and **cheap**.
+
+
+  ## Elastic
+
+
+  Cloud data warehouses can recruit decentralized resources from across the cloud on demand. The most radical example of this is [BigQuery’s](https://cloud.google.com/bigquery/) “serverless” infrastructure, which spools up additional resources on the fly to handle large queries without explicit instruction from the user. The downside to such a setup is the high cost of allocating huge amounts of resources and the chance of doing so accidentally. A less radical example is Snowflake, which allows users to specify the exact resources desired and directly control the tradeoff between performance and cost.
+
+
+  The elasticity of cloud data warehouses makes it unnecessary to buy excess capacity or design data infrastructure and workflows to even out the use of computational resources over time. It makes the difference between remotely spooling up new machines’ worth of processing power in a second and building your own data warehouse out of “NT server boxes that someone brought to you on a hand truck.”
+
+
+  ## Fast
+
+
+  George insisted that “if you can only remember one thing from this talk, it’s that OLTP and OLAP are completely different animals.” Like their on-premise counterparts, cloud data warehouses are column-based (OLAP) rather than row-based (OLTP) and optimized for the aggregate functions typical of business intelligence. 
+
+
+  For this reason, we shouldn’t expect meaningful differences in performance between on-prem and cloud warehouses. In 2018, Fivetran conducted a [benchmark test](https://fivetran.com/blog/warehouse-benchmark) of several popular cloud data warehouses. Redshift was developed from the on-premise ParAccel Analytic Database and closely approximates the performance of any given on-prem system. The results clearly indicate similar performance between on-premise and cloud data warehouses. Combine this comparable performance with the elasticity of cloud resources, and the advantage clearly favors cloud data warehousing.
+
+
+  ## Cheap
+
+
+  Thanks to Moore’s Law, the cost of storage and computation has plummeted in the last two decades. Storage, in particular, has declined from $7.70 per GB in 2000 to $0.02 in 2018. More importantly, the disappearance of old processing and storage constraints means that the complexity of the data pipeline – and the labor cost of building and maintaining it – can be radically reduced.
+
+
+  As George explained, “Instead of building a very complicated data pipeline to support some very optimized data model, you can just build a data pipeline that’s very easy to maintain and throw compute at it, and it’s going to cost far less than it would cost to pay the people to maintain a highly optimized system.” The profusion of available computational resources means that it is now practical to run computationally-heavy SQL-based transformations after the data have been warehoused.
+
+
+  ## “All of this culminates in a BI architecture that we often refer to as ELT.”
+
+
+  The [ELT-ETL distinction](https://fivetran.com/blog/elt_vs_etl) is one that we have covered on [several occasions](https://fivetran.com/blog/5-differences-between-fivetran-and-traditional-elt) but bears repeating. George notes that traditional ETL data pipelines are “designed, in many ways, to protect the data warehouse, to minimize the amount of data that is loaded…they’re great for preserving CPU, but they’re not very good at preserving people’s time.” Since the cost of processing power and storage is now trivial, the greatest benefits of the ELT approach over ETL are [savings of labor, time, and money (and morale)](https://fivetran.com/blog/build-vs-buy).
+
+
+  The elasticity, speed, and low cost of cloud data warehousing mean that the data pipeline can be designed in a manner that is completely agnostic to the anticipated analyses. This modularizes the data pipeline and removes the brittleness inherent to a system that must be redesigned with changing business needs. Furthermore, it makes the construction of standardized connectors with normalized schemas possible, and with it, the automation and outsourcing of data pipelines to outside vendors like Fivetran. As George put it, “everything just flows to your data warehouse without your intervention…you start with the tables in your data warehouse that are replicas of the data that exists in the world.”
+
+
+  If you and your organization are interested in automated data pipelines, give Fivetran a try [here](https://fivetran.com/demo).

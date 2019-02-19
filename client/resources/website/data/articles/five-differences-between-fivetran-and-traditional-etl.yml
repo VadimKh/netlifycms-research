@@ -1,0 +1,118 @@
+header: Five Differences Between Fivetran and Traditional ETL
+featuredImage: /images/library/hmww6i2sjnufeatured.png
+path: /blog/5-differences-between-fivetran-and-traditional-elt
+description: null
+pageTitle: 5 Differences Between Fivetran and Traditional ETL | Fivetran
+pageDescription: With automation extracting and loading the disparate data directly into your
+  data warehouse, Fivetran provides a faster, better way to centralize all of
+  your data sources so you can quickly model and obtain meaningful insights
+  using your favorite BI Tools.
+tags:
+  - data strategy
+date: 2017-09-11
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /5-differences-between-fivetran-and-traditional-elt-574aa0376595
+isDownload: false
+content: >
+  Classic data integration tools force analysts to predict what insights they
+  can glean from a limited data set and then build a resource-intensive workflow
+  around it that is dated and inflexible. Fivetran changes everything with a
+  fully automated data pipeline built especially for analysts. With automation
+  extracting and loading the disparate data directly into your data warehouse,
+  Fivetran provides a faster, better way to centralize all of your data sources
+  so you can quickly model and obtain meaningful insights using your favorite BI
+  Tools.
+
+
+  *Download this post as a [pdf here](https://drive.google.com/file/d/0B2y_sHUKQ_4obXFMeFdRNi1lQUU/view?usp=sharing).*
+
+
+  ## 1. Data Pipeline Users
+
+
+  ### **Traditional ETL — Built for IT**
+
+
+  Built and managed by IT teams creating siloes in the collection, availability, delivery and usability of data across your organization.
+
+
+  ### Fivetran Connectors — Built for Analysts
+
+
+  Built for analysts to easily deploy the exact data pipeline they need for effective data discovery, exploration, and delivery to business users.
+
+
+  ## 2. Technical Requirements
+
+
+  ### Traditional ETL — Engineering Heavy
+
+
+  Complex workflow requiring a rigid and lengthy custom building process dependent on numerous engineering resources.
+
+
+  ### Fivetran Connectors — No Engineering
+
+
+  Simpler ETL based workflow providing access to your entire data set turning months of development into a 5-minute setup.
+
+
+  ## 3. Analytics Versatility
+
+
+  ### Traditional ETL — Inflexible
+
+
+  An inflexible data pipeline that is configured based on predictions and best guesses because of limitations associated with storage capacity, development resources, and hardware capabilities.
+
+
+  ### Fivetran Connectors — Agile
+
+
+  A zero-configuration, fully automated data pipeline that replicates all of your data in minutes so you can answer important business questions quickly, accurately and confidently
+
+
+  ## 4. Usability
+
+
+  ### Traditional ETL — Complex
+
+
+  Clunky, resource-intensive processes requiring layers of custom technology that is incapable of operating at the speed of business.
+
+
+  ### Fivetran Connectors — Transparent
+
+
+  Synchronizes data from APIs in one centralized place that connects your Amazon Redshift, Snowflake or Google BigQuery data warehouse and favorite BI tools for full-scale visualization.
+
+
+  ## 5. Business Impact
+
+
+  ### Traditional ETL — Cost Center
+
+
+  Convoluted and expensive requirements prevent both enterprises and SMBs from realizing the power of their data and maximizing their internal resources.
+
+
+  ### Fivetran Connectors — Business Driver
+
+
+  Accelerates insights by widening availability across user groups, creating a robust data culture and encouraging better use of human capital within organizations of all sizes.
+
+
+  ## About Fivetran
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business. To learn more visit our website at [fivetran.com](https://fivetran.com/?utm_campaign=5differencesETL&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ![5 Differences Between Fivetran and Traditional ETL](/images/library/1_njfAAyEbReDpJIENda9_4w.png)

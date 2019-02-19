@@ -1,0 +1,45 @@
+header: Chew on These Postgres “Hidden Gems”
+featuredImage: null
+path: /blog/chew-on-these-postgres-hidden-gems
+description: null
+pageTitle: Chew on these Postgres “Hidden Gems” | Data Pipeline | Fivetran
+pageDescription: As part of our sales offerings of data pipelines, Fivetran can sync and
+  replicate your company’s Postgres production data for you. Fivetran can also
+  store your company data in Postgres as an analytics database.
+tags:
+  - data strategy
+  - postgressql
+date: 2018-02-06
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /chew-on-these-postgres-hidden-gems-b7e1485e8891
+isDownload: false
+content: >
+  Craig Kerstiens curates the email newsletter Postgres Weekly, and he heads the
+  cloud team at Citus Data. He took to Twitter the other day, asking followers:
+  “What’s your favorite hidden gem of Postgres that you wish more people knew
+  about?”
+
+
+  The response was overwhelming. In a [blog post](http://www.craigkerstiens.com/2018/01/31/postgres-hidden-gems/), Kerstiens published more than two dozen tips about the object-oriented database. The so-called gems were wide-ranging, touching on everything from hooks, indexing, search and to working with time in Postgres.
+
+
+  Got any more “hidden gems” to share with us?
+
+
+  Here at Fivetran, we’re heavy Postgres users. We employ it for our production database, on [Amazon RDS](https://aws.amazon.com/rds/?sc_channel=PS&sc_campaign=acquisition_US&sc_publisher=google&sc_medium=rds_b&sc_content=rds_e&sc_detail=amazon%20rds&sc_category=rds&sc_segment=186597876411&sc_matchtype=e&sc_country=US&s_kwcid=AL!4422!3!186597876411!e!!g!!amazon%20rds&ef_id=Wlah8AAAAMLdnEsY:20180206174036:s). George Fraser, the CEO of Fivetran, will be [speaking](https://postgresconf.org/conferences/2018/program/proposals/warehouse-benchmark-redshift-vs-bigquery-vs-snowflake) April 18 at [PostgresConf US 2018](https://postgresconf.org/conferences/2018) in Jersey City.
+
+
+  As part of our sales offerings of data pipelines, Fivetran can [sync and replicate](https://fivetran.com/docs/databases/postgresql) your company’s Postgres production data for you. Fivetran can also [store your company data](https://fivetran.com/directory/postgresql_warehouse) in Postgres as an analytics database. In short, we can pull it as a data source or deliver it as a destination. That said, as your business grows, you’ll want to switch to a columnar warehouse [for performing more advanced analytics](https://blog.fivetran.com/choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics-5fcbc99a799a).
+
+
+  Fivetran [replicates and syncs](https://fivetran.com/connector-methodology) data from your supported cloud applications, databases, event logs, file stores and more. The three columnar warehouses we support and recommend include [Snowflake](https://www.snowflake.net/), [Google BigQuery](https://cloud.google.com/bigquery/) and [Redshift](https://aws.amazon.com/redshift/).
+
+
+  **About Fivetran**: Built for the cloud, Fivetran is the smartest, fastest way to replicate and store data into your warehouse with zero configuration. Our ecosystem frees companies to easily join data sources and perform agile analytics with the business intelligence tools of their choice.

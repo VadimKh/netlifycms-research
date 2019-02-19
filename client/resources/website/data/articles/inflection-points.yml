@@ -1,0 +1,270 @@
+header: Inflection Points
+featuredImage: /images/library/m6fu5lbo22featured.png
+path: /blog/the-inflection-points
+description: How data is changing the face of business.
+pageTitle: The Inflection Points | Data Integration | Fivetran.com
+pageDescription: Data allows businesses to act on fact rather than instinct. As companies
+  figure out how to better manage their multiple disparate data sources, they’ll
+  be able to answer critical questions that drive growth and acceleration.
+tags:
+  - data strategy
+date: 2017-09-09
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /the-inflection-points-249203bbf6c7
+isDownload: false
+content: >
+  Intel’s former Chairman of the Board, Andrew Grove, has described a strategic
+  inflection point as “what happens to a business when a major change takes
+  place in its competitive environment ... A strategic inflection point is that
+  which causes you to make a fundamental change in business strategy. Nothing
+  less is sufficient."
+
+
+  Strategic inflection points in technology might be the most visible events to illustrate how a major change can not only impact the competition but also the economy. Think iTunes vs. the entire music industry, ecommerce vs. brick and mortar retailers, or the smartphone vs. the pay phone. These are just three examples of how technology disrupted entire industries and forced it to adapt or go the way of the dinosaur. Sometimes these inflection points are well-plotted courses, but often they're simply the result of innovation that creates a domino effect because it was better than anyone expected — even the creators.
+
+
+  Data is another inflection point, although it's not as flashy as the iPhone and not as visible to the consumer market. Big data, little data, structured and unstructured — whichever type, companies now have the ability to go beyond Neilson set top boxes and focus groups and open their sample size to the entire world. Technology driven by Google, software platforms and mobile apps provides a whole new level of data that was never before imagined on such a large scale, and never so specific to individuals. The challenge is how to wrangle the millions or billions of pieces of data collected daily into meaningful and relevant insights you can use to grow your business.
+
+
+  ## Data as Your Biggest Asset
+
+
+  Data was first used extensively in the financial services sector; it was later used to drive sales across industries. As accessibility to different types of data increased, businesses expanded their usage to not only win customer deals but also for customer retention and business process improvement. This growth was made possible by additional advances in technology around data collection, storage and visualization, which have driven down costs and improved opportunity across business units.
+
+
+  ### Storage costs have decreased
+
+
+  Infrastructure and operational costs represent 70% of the typical IT budget, prompting IT professionals to actively seek out cloud storage solutions to manage the large influx of data. Given the increased usage of video, mobile devices and IoT, data will reach 44 zettabytes worldwide by 2020, up from 4.4 zettabytes in 2013, according to a recent CDW study.
+
+
+  >**According to CDW, 60% of IT professionals have moved their storage systems to the cloud, while Dimensional Research finds that data warehouses that have the ability to scale on demand and require less administrative overhead are of particular interest to data stakeholders.**
+
+
+  On-premise solutions are simply unable to support this unprecedented data growth and limit an organization’s ability to be flexible, scalable and responsive to business changes. Cloud-based systems provide key benefits that reduce hardware and people costs while yielding both hard and soft ROI.
+
+
+  **Case in point:** Social app Foursquare relies on data analytics from its hundreds of millions of application logs streamed each day to make important business decisions on product expansion and growth planning. However, as millions of check-ins occurred each day, its licensing costs increased, and it had to dedicate more and more staff to running the system. To save money and use its staff more strategically, it moved to Amazon Redshift for storage, testing and querying. It now saves tens of thousands each year on licensing costs, and it has shifted its engineering team to revenue-generating products rather than running servers.
+
+
+  ### Business intelligence tools are more advanced
+
+
+  The need for businesses to respond to an “always-on” society and to more concretely justify ROI has put pressure on IT departments to provide faster insights. With the move to the cloud, organizations can gain instant insights if their technology and processes support it. Business intelligence tools have advanced to meet market demand, working on the premise that data needs to be made available across organizations to extract real value and live up to the promise of leveraging a company’s intellectual property.
+
+
+  >**“Traditional vendors of analytic platforms recognize that in order to expand their reach beyond traditional power users, they must deliver packaged domain expertise and applications to enable self-service by a wider range of users.” — Gartner Research**
+
+
+  APIs remove silos by facilitating integration between systems to form a relational database that can provide greater context. By making the data available, actionable and most importantly culled from trusted sources, enterprises are in a better position to affect how business is run, how decisions are made and the speed at which success and failures are measured and improved.
+
+
+  ### Analytical roles are changing
+
+
+  As analytics gains wider adoption throughout organizational business units, the method for data distribution is shifting from IT specialists to day-to-day business users. Hadoop is still a favored technology for processing data, but requires a specialized expertise that is scarce in the marketplace. However, SQL expertise is far easier to obtain and is fast becoming the new spreadsheet.
+
+
+  From product development to marketing to sales to supply chain, expanded SQL expertise in your employee pool means that data can be used more strategically and collaboratively at critical touchpoints.
+
+
+  ![2015 The State of the Data Warehouse Survey, Dimensional Research](/images/library/1_Hb2omrWl2tldMnIJcjKhvQ.png) *2015 The State of the Data Warehouse Survey, Dimensional Research*
+
+
+  ## Data as Your Biggest Challenge
+
+
+  From Mad Men to Digital Age, data has shifted the way everyone thinks about business. While understanding people and brands has always been, and will remain, the focus, the methodology has significantly advanced in application.
+
+
+  Data allows businesses to act on fact rather than instinct. As companies figure out how to better manage their multiple disparate data sources, they’ll be able to answer critical questions that drive growth and acceleration, such as: Which customer tiers are utilizing the greatest support? Which customers are most likely to upsell vs. churn?
+
+
+  >**“For a lot of questions, we don’t know ahead of time what we want to ask about the customer journey. About 85% of the analytics questions we ask are new or unknown. If you impose structure and throw out data, you cannot ask questions you don’t know, but if you store everything, you will have 100 million hours of data per month and won’t be able to analyze it all.” — David Stephenson, Head of Global Business Analytics, eBay, in 2014**
+
+
+  Right now, keeping pace is hard, but technology is responding to this inflection point. Data innovators are testing creative ways to better integrate data into the fabric of their organizations by focusing on creating a data culture, optimizing analytics and deploying a data governance strategy.
+
+
+  ### Create a data culture
+
+
+  Data should drive market expansion, product development, sales, marketing strategy and everything in between. Organizations are now developing data-based cultures which encourage all levels of the company to take a more strategic approach to their roles in making sound business decisions based on statistical information rather than conjecture. But to work, this requires three things:
+
+
+  1. Access to a single version of the truth
+
+
+  1. The desire and expertise to leverage the data
+
+
+  1. A top-down approach as to how to integrate data within the organization
+
+
+  Given that technology can better facilitate data collaboration among large groups of people across remote locations, you can readily empower employees to be advocates for the bottom line. In 2015, office sharing company, PivotDesk hit a growth plateau, which required their 15-person team to execute a change in market strategy. By taking a deep dive into their lead volume and sales opportunity data, they decided to narrow their focus to a single market: New York City. The result was a 300% increase in revenue.
+
+
+  But to lead with metrics, you have to create a philosophy and process that heralds its use. Marketing automation platform Hubspot chose to relay its data-first philosophy through The Hubspot Culture Code. The first statement reads: “We are maniacal about our mission and our metrics." It immediately lets employees know that the company favors fact-driven assessments over gut feelings.
+
+
+  ### Optimizing Analytics
+
+
+  The power of data is undeniable, but optimizing the data pipeline remains one of the biggest challenges for enterprises, for four main reasons:
+
+
+  1. **Large data volumes.** The sheer volume of data makes its management overwhelming and therefore, un-actionable. However, it also fuels organizational desire to find innovative ways to leverage it. To provide perspective, a recent survey revealed that enterprises are managing more than 100 terabytes of data, some are managing one petabyte of data, and these volumes are increasing each year. As a result, integration and scalability are of high priority to IT professionals and analysts, and they are actively seeking solutions to help manage and optimize the data channel to add value.
+
+
+  1. **Lack of quality.** 77% of IT professionals believe “data management is driven by multiple stakeholders in their organization, rather than by a single data specialist," which creates gaps in data quality and ultimately lack of trust in the accuracy of the data. To bridge this gap, companies need to change their fragmented approach to data management by diluting departmental silos, eliminating siloed dashboards and devising a centralized strategy that delivers one version of the truth. This is not to say that multiple stakeholders cannot contribute to or access information but instead asserts that
+
+  a set of processes be put in place around data capture, security, governance, and pro ling to ensure accuracy.
+
+
+  1. **Lack of ownership.** 44% of executives are frustrated by their current analytic capabilities citing difficulty in performing data analysis as well as limited and lack of timely access to the data. As a result, a revamp of people, process and technology are required to move from a reactive approach to an optimized approach to data management. The solution is to hire a Chief Data Officer who is responsible for creating and implementing an enterprise-wide data strategy that is accountable for the governance, quality, protection and exploitation of corporate assets with the expressed purpose of driving growth.
+
+
+  1. **Technology lapses.** Many companies aren’t yet employing the tools they need to extract and store vast amounts of data from their various cloud systems, let alone aggregate and model the data for visualization by multiple stakeholders. Hampered by legacy data pipeline models and storage costs, organizations need to explore technology solutions that specifically speak to the problem of exponential data acquisition. This requires modernization of the data pipeline. Data modernization focuses on integration by layering new tools onto your existing ones to create relational databases and forgoes “rip and replace” in some cases. Most importantly, it requires companies keep up with modernization trends to fuel growth and maintain their competitive advantage.
+
+
+  ### Data Governance
+
+
+  Data governance is principally a conversation about maintaining data integrity. To build confidence and trust in the information being delivered, strict processes must be created that addresses the types of data collected, their origin, data privacy and security issues, as well as data transformation practices. Above all, data governance ensures that everyone is looking at the information in the same way. For example, marketing consultancy Sirius Decisions, created the Demand Creation Waterfall to help B2B marketing and sales teams develop a common set of funnel metrics to remove the disparity between the two entities and increase productivity. By developing a common language from KPIs to company credos, teams can have more meaningful conversations based on the same set of facts to drive better results.
+
+
+  To devise a data governance strategy, Chief Data Officers will need to:
+
+
+  * Analyze and define data sources to develop a common understanding between all constituents. This should be a collaborative effort between stakeholders and well-documented.
+
+
+  * Develop a exible and scalable technology process around the collection, use, access and updating of data schemas. This will require SLAs on data sharing and maintenance.
+
+
+  * Build integrated and automated systems to ensure high data quality that pairs disparate data sources with a data warehouse, integrated ELT pipeline and analytics tools to extract insights.
+
+
+  ## Data as Your Competitive Advantage
+
+
+  67% of organizations see big data as an opportunity for their company, but 85% of Fortune 500's will fail to effectively exploit big data for their competitive advantage. The difference between winning and losing in a data-driven world will be the ability to reduce the ongoing costs of managing increasing volumes of data with the ability to extract value from it. So how can you turn your biggest asset into your greatest opportunity?
+
+
+  ### Redefine Roles
+
+
+  Make data available to everyone by creating a data culture that probes people to ask themselves, “where will our business have the most impact and why?” Identify who is empowered to generate, access and extract data and make it readily available by putting the tools and technology in place to deliver it when and where they need it. Also, examine the role you want data to play in your organization and put the proper resources behind it. Consider hiring a Chief Data Of cer and data scientists who will successfully combine expertise in science, data, and technology for innovation. Additionally, augment your Hadoop expertise and hire more professionals that are well versed in SQL. The goal is to create a diverse portfolio of staff who are armed with a data-based background to fuel decision making. This can be challenging since there is a shortage of talent with data analysis and data management expertise, but one worth exploring.
+
+
+  ### Evaluate Investments
+
+
+  What does it cost you when you lack the right information? Look at the whole spectrum including data storage systems, maintenance, staff, time, energy, and the absence of the right business intelligence. Analyze TCO to determine if the company is throwing good money after bad. D-Link was able to save $2 million by moving its non-ERP application portfolio to the cloud but found the bigger benefit to be their ability to rapidly respond to changing business requirements. Therefore, take care to review how your organization is allocating human resources. Could individuals on your team be more strategically placed if they weren’t focused on repetitive tasks that could be managed by a SaaS system?
+
+
+  ### Fill the Gaps
+
+
+  Traditional methodologies force data analysts to pre-determine what information will benefit the business before data pipelines can be built and administered. This limits a company’s ability to be agile and responsive in the face of business challenges. For instance, data may reveal that sales for a particular product increased over the holiday season, but may not reveal what influenced those sales or, because of latency, failed to expose the answers in time to drive more revenue. Because of storage cost limitations, eBay used to keep only 1% of its customer journey data and throw the rest away. According to eBay’s Head of Global Business Analytics, David Stephenson, “For a lot of questions, we don’t know ahead of time what we want to ask about the customer journey. About 85% of the analytics questions we ask are new or unknown. If you impose structure and throw out data, you cannot ask questions you don’t know, but if you store everything, you will have 100 million hours of data [per month] and won’t be able to analyze it all."
+
+
+  Modern data pipelines are filling that gap by allowing organizations to not only have full access to their data assets but the ability to manage and analyze those volumes so they can answer key questions, dive deeper into the unknown and ultimately, gain the upper hand in their market. To take advantage of these new capabilities, and out what you’re missing and change your process and technology to extract meaningful and relevant data. Accept no limitations.
+
+
+  ### Improve Technology
+
+
+  Maintaining the status quo means you’re the captain of a sinking ship. Your system architecture must support speed and accuracy to help teams make quick decisions. Where can you improve current systems? What tools should you use? What data projects should you engage in to test the veracity of your current system and find gaps? Data volumes will continue to rise, users will increase, and reports and analyses will continue to evolve. Therefore, formulate a strategy for continuous improvement that aligns with your business goals and focuses on integration, reporting, and analytics.
+
+
+  > **The Right Technology Makes Big Data Actionable.** Fintech company Nomis wanted to eliminate the need to export data from Salesforce and HubSpot into spreadsheets in order to do a combined analysis of marketing and sales metrics. By using data pipeline solution, [Fivetran](https://fivetran.com/?utm_campaign=inflectionpoint_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=) to automate the synchronization of Salesforce and HubSpot into Redshift, where SQL and Tableau are used for the analytics process, Nomis was able to dive deeper into their data and develop a more sophisticated analytics stack for predictive modeling. This helped their banking clients optimize interest rates, products and service fees for their customers. To learn more visit [fivetran.com](https://fivetran.com/?utm_campaign=inflectionpoint_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ## What the Future Will Bring
+
+
+  Plan for change. Additional tools and more sophisticated methods will be devised, making the hunger for the information even more voracious. Looking into a crystal ball, this data explosion will result in the following:
+
+
+  ### Intelligence will become more intelligent
+
+
+  More data will enter the ecosphere and fuel the development of smarter systems to help companies realize the tremendous value data-based decisions creates for their bottom line. To that end, there will be a greater push for business users to acquire the analytical skills necessary to leverage the information effectively. This initiative will be led by a Chief Data Officer and executed by data scientists. Until then, the talent gap will remain wide.
+
+
+  On the other side of the spectrum, the quest to extract sentiment and infuse personality, context, and understanding into computerized interactions will continue to prompt artificial intelligence solutions to evolve beyond robot dogs and intelligent virtual assistants. This, in turn, will force data to morph into something bigger and grander than it is today causing data to reach an inflection point.
+
+
+  ### Real time means real time
+
+
+  Companies are striving to develop 1:1 interpersonal relationships with their customers at critical points in the customer journey. Since sentiment can change in an instant, the ability to gain a deeper, more complex understanding of them as individuals rather than as categorical groups will drive industry demand for tools and services that facilitate faster analyses and reduce the reallocation of human resources. Think of the android, Data from the television series, Star Trek Next Generation. Critical decision making needs to happen at a faster clip and technology will either catch up or surpass the supposition created by science fiction movies. Once it does, companies will be able to blast through traditional barriers and leverage the information that can dismantle their competition in months rather than years.
+
+
+  ### A new data ethos will emerge
+
+
+  The data revolution will continue to build momentum at extraordinary rates paving the way for advanced analytics to emerge. Soon no business question or process will be evaluated without extensive data modeling and testing. As intelligence becomes more intelligent and real-time moves beyond collection and aggregation and expands more deeply into data discovery and exploitation, conversations around privacy will need to intensify. Ethics will become a much more important measure and spark a deeper dive into industry best practices. CDOs who are at the forefront of that conversation will become one of the most valued roles within the organization and intersect seamlessly with CIO and CMOs for data governance.
+
+
+  Moreover, crowd-sourcing for knowledge advancement will become common place. Companies will not only adopt the theory that many minds looking at a single problem are much better than one but be able to execute against it proactively. As entire workforces start to engage more deeply with a company’s data, new interesting correlations and insights will be drawn collectively, which will drive data’s impact and value over the edge of the current precipice.
+
+
+  ## About Fivetran
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business. To learn more visit our website at [fivetran.com](https://fivetran.com/?utm_campaign=inflectionpoint_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ## **Sources**
+
+
+  1 Grove, Andrew S. “[Intel Keynote Transcript](https://www.intel.com/pressroom/archive/speeches/ag080998.htm).” Academy of Management, Annual Meeting. 9 Aug 1998. Web. 19 Oct 2016
+
+  2 “[The 2016 Global Data Management Benchmark Report](https://www.experian.com/innovation/thought-leadership/2016-data-benchmark-report.jsp).” Experian. 17 Feb 2016. Web. 19 Oct 2016
+
+  3 “[The Need for Speed.](http://webobjects.cdw.com/webobjects/media/pdf/Solutions/Data-Center/Need-for-Speed-Infographic.pdf)” CDW. Web. 19 Oct 2016
+
+  4 “[Foursquare Case Study.](http://www.cdwnewsroom.com/wp-content/uploads/2015/02/CDW_Cloud-401_Report_FINAL_022315.pdf)” Amazon Web Services. Web. 19 Oct 2016
+
+  5 “[Cloud 401: Navigating Advanced Topics in Cloud Computing](http://www.cdwnewsroom.com/wp-content/uploads/2015/02/CDW_Cloud-401_Report_FINAL_022315.pdf).” CDW. 2015. Web. 19 Oct 2016
+
+  6 “[The State of the Data Warehouse: A Survey of Data Professionals.](http://info.snowflake.net/StateoftheDW.html)” Snow ake and Dimensional Research. Mar 2015. Web. 19 Oct 2016
+
+  7 “[Gartner Predicts Business Intelligence and Analytics Will Remain Top Focus for CIOs Through 2017](http://www.gartner.com/newsroom/id/2637615).” Gartner. 16 Dec 2013. Web. 3 Nov 2016
+
+  8 The State of the Data Warehouse: A Survey of Data Professionals.” Snow ake and Dimensional Research. Mar 2015. Web. 19 Oct 2016
+
+  9 Mandell, David. “[BTDT: Focus is your friend — How we increased revenue 300% by ignoring everything we possibly could](https://www.pivotdesk.com/blog/we-scaled-back-then-grew-300-percent/).” PivotDesk Blog.
+
+  21 Sep 2015. Web. 15 Sep 2016
+
+  10 Birke, Colin. “[How to Create a Data-Driven Culture.](http://www.insightsquared.com/2015/08/how-to-create-a-data-driven-culture/)” InsightsSquared Blog. 24 Aug 2015. Web. 19 Oct 2016
+
+  11 “[Big Data Analytics Survey.](http://core0.staticworld.net/assets/2015/03/16/2015-data-and-analytics-survey.pdf)” IDG Enterprise. 2015. Web. 19 Oct 2016
+
+  12 “[Global Data Management Benchmark Report.](https://www.experian.com/innovation/thought-leadership/2016-data-benchmark-report.jsp)” Experian Data Quality. 2016. Web. 19 Oct 2016
+
+  13 Dutton, Gail. “[5 Steps to Building A Data-Driven Culture.](http://www.forbes.com/sites/emc/2014/06/06/5-steps-to-a-data-driven-culture/#66faa7da43d5)” Forbes. 6 Jun 2014. Web. 19 Oct 2016
+
+  14 Wittlake, Eric. “[The New SiriusDecisions Waterfall (and New B2B Marketing Acronyms)](http://b2bdigital.net/2012/05/23/new-sirius-decisions-waterfall/).” B2B Digital Marketing. 23 May 2012. Web. 4 Nov
+
+  2016
+
+  15 Karr, Douglas. “[What is Big Data? What Are the Benefits of Big Data?](https://marketingtechblog.com/benefits-of-big-data/) Marketing Tech Blog. 16 Jan 2016. Web. 19 Oct 2016
+
+  16 “[Gartner Reveals Top Predictions for IT Organizations and Users for 2012 and Beyond](http://www.gartner.com/newsroom/id/1862714).” Gartner. 1 Dec 2011. Web. 19 Oct 2016
+
+  17 Karr, Douglas. “What is Big Data? What Are the Benefits of Big Data? Marketing Tech Blog. 16 Jan 2016. Web 19 Oct 2016
+
+  18 Cearley, David. W. “[Case Studies in Cloud Computing](https://www.gartner.com/doc/1761616/case-studies-cloud-computing).” Gartner. 8 Aug 2011. Web. 19 Oct. 2016
+
+  19 Saran, Cliff. “[Case Study: How big data powers the eBay customer journey](http://www.computerweekly.com/news/2240219736/Case-Study-How-big-data-powers-the-eBay-customer-journey)” Computer Weekly. 29 Apr 2014. Web. 4 Nov 2016

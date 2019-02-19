@@ -1,0 +1,14 @@
+header: How do Fivetran and Tableau work together?
+featuredImage: /images/library/onepager-fivetran-tableau.png
+download: /pdf-onepager-fivetran-tableau/onepager-fivetran-tableau.pdf
+description: >
+  Fivetran replicates all your data into your warehouse and continuously updates
+  it, while the Tableau analytics platform enables you to configure it within
+  the visualization layer.
+date: 2018-02-12
+published: 1
+featured: 0
+categoryTitle: Downloads
+categories:
+  - Downloads
+isDownload: true

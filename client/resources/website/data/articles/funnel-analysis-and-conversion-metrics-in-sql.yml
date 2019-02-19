@@ -1,0 +1,306 @@
+header: Funnel Analysis and Conversion Metrics in SQL
+featuredImage: /images/library/funnel-analysis.png
+path: /blog/funnel-analysis
+description: Using SQL to conduct funnel analysis can help you make sense of multiple
+  facets of your business.
+pageTitle: Funnel Analysis and Conversion Metrics in SQL
+pageDescription: Use SQL to conduct funnel analysis and make sense of various facets of your
+  business.
+date: 2018-11-01
+published: 1
+featured: 0
+authorsName:
+  - charles
+categoryTitle: Analyst Recipe
+categories:
+  - Analyst Recipes
+isDownload: false
+content: >-
+  **_Try it with connectors from
+  [Salesforce](https://fivetran.com/docs/applications/salesforce),
+  [Greenhouse](https://fivetran.com/docs/applications/greenhouse),
+  [Shopify](https://fivetran.com/docs/applications/shopify) and
+  [more](https://fivetran.com/directory)._**
+
+
+  Funnel analysis crops up everywhere. It can be used to analyze success of sales and marketing teams, a customer's progression through a website, or the efficiency of a recruiting pipeline. A famous example in the startup world is David McClure’s [AARRR (pirate) framework](http://startitup.co/guides/374/aarrr-startup-metrics) for  product metrics. In general, it is a useful approach to analyzing just about any process that involves multiple steps and attrition.
+
+
+  ## Some Example Data
+
+
+  Let’s walk through an example involving some mock sales data. In our sales model, we have the following progression of events:
+
+
+  1. **Lead** - a potential client has been identified
+
+  2. **Marketing Qualified** - the marketing team has determined that a potential client is a good fit, based on broad characteristics
+
+  3. **Sales Qualified** - the sales team has determined that potential client is a good fit, based on conversations with the client 
+
+  4. **Negotiated** - the sales team has discussed pricing and features with a potential client
+
+  5. **Customer** - the sales team has closed new business with client
+
+  6. **Renewed** - the client has renewed their contract for the next period
+
+
+  The particulars of a funnel can vary. In the actual Salesforce schema, you will likely be looking at the “opportunity_history” table, and examining steps with names like  “contacted,” “qualified,” and “won.” What is most important to making this model work is that the expected value of a client increases as they progress down the funnel, while the raw number of clients decreases.
+
+
+  We’ll use a table with the following fields:
+
+
+  1. **account_id** - a unique identifier for client accounts
+
+  2. **date** - date on which an event occurred
+
+  3. **event** - type of event, from the above progression
+
+
+  | account_id | date       | event           |
+
+  | ---------- | ---------- | --------------- |
+
+  | 000033     | 1/5/2018   | lead            |
+
+  | 000063     | 2/28/2019  | negotiated      |
+
+  | 000050     | 2/5/2018   | sales_qualified |
+
+  | 000001     | 6/18/2018  | lead            |
+
+  | 000053     | 11/12/2018 | lead            |
+
+  | 000091     | 2/14/2019  | negotiated      |
+
+
+  The “events” table contains only accounts that were opened in fiscal year 2018. Cohort analysis is a subject for another post.
+
+
+  ## Queries
+
+
+  The simplest thing you might consider doing is this:
+
+
+  ```SQL
+
+  SELECT
+
+  event,
+
+  COUNT(*) as event_count
+
+  FROM 
+
+  samplesales.events
+
+  GROUP BY
+
+  event
+
+  ORDER BY COUNT(*) DESC
+
+  ```
+
+
+  | event               | event_count |
+
+  | ------------------- | ----------- |
+
+  | lead                | 153         |
+
+  | marketing_qualified | 71          |
+
+  | sales_qualified     | 29          |
+
+  | negotiated          | 13          |
+
+  | registered          | 5           |
+
+  | renewed             | 2           |
+
+
+  A straightforward aggregation, and a great start for getting the absolute magnitudes of each step. But what if we want percentages? 
+
+
+  ```SQL
+
+  WITH grouped_events as
+
+  (SELECT
+
+  event,
+
+  COUNT(*) as event_count
+
+  FROM
+
+  samplesales.events
+
+  GROUP BY event)
+
+
+  SELECT
+
+  event,
+
+  event_count,
+
+  event_count/(SELECT MAX(event_count) FROM grouped_events) as event_percentage
+
+  FROM
+
+  grouped_events
+
+  ORDER BY
+
+  event_count DESC
+
+  ```
+
+
+  | event               | event_count | event_percentage |
+
+  | ------------------- | ----------- | ---------------- |
+
+  | lead                | 153         | 1.0              |
+
+  | marketing_qualified | 71          | 0.4650           |
+
+  | sales_qualified     | 29          | 0.1895           |
+
+  | negotiated          | 13          | 0.0850           |
+
+  | registered          | 5           | 0.0327           |
+
+  | renewed             | 2           | 0.0131           |
+
+
+  We’ve turned the first query into a [common table expression](https://www.citusdata.com/blog/2018/08/09/fun-with-sql-common-table-expressions), and then referred to a specific value from it. And what if we want to measure the percentage of prospective clients who are lost at each step.? We add a [window function called “lag”](https://docs.microsoft.com/en-us/sql/t-sql/functions/lag-transact-sql?view=sql-server-2017) that returns the preceding data for each row.
+
+
+  ```SQL
+
+  WITH grouped_events as
+
+  (SELECT
+
+  event,
+
+  COUNT(*) as event_count
+
+  FROM
+
+  samplesales.events
+
+  GROUP BY event)
+
+
+  SELECT
+
+  event,
+
+  event_count,
+
+  event_count/(SELECT MAX(event_count) FROM grouped_events) as total_percentage,
+
+  lag(event_count, 1) over (ORDER BY event_count DESC) as above_count
+
+  FROM
+
+  grouped_events
+
+  ORDER BY
+
+  event_count DESC
+
+  ```
+
+
+  | event               | event_count | total_percentage | above_count |
+
+  | ------------------- | ----------- | ---------------- | ----------- |
+
+  | lead                | 153         | 1.0              |             |
+
+  | marketing_qualified | 71          | 0.4650           | 153         |
+
+  | sales_qualified     | 29          | 0.1895           | 71          |
+
+  | negotiated          | 13          | 0.0850           | 29          |
+
+  | customer            | 5           | 0.0327           | 13          |
+
+  | renewed             | 2           | 0.0131           | 5           |
+
+
+  Then, let’s divide `event_count` by `above_count` to get the percentage of clients who convert between each step in the funnel:
+
+
+  ```SQL
+
+  WITH grouped_events as
+
+  (SELECT
+
+  event,
+
+  COUNT(*) as event_count
+
+  FROM
+
+  samplesales.events
+
+  GROUP BY event)
+
+
+  SELECT
+
+  event,
+
+  event_count,
+
+  event_count/(SELECT MAX(event_count) FROM grouped_events) as total_percentage,
+
+  event_count/lag(event_count, 1) over (ORDER BY event_count DESC) as percentage_survival_by_step
+
+  FROM
+
+  grouped_events
+
+  ORDER BY
+
+  event_count DESC
+
+  ```
+
+
+  | event               | event_count | total_percentage | percentage_survival_by_step |
+
+  | ------------------- | ----------- | ---------------- | --------------------------- |
+
+  | lead                | 153         | 1.0              |                             |
+
+  | marketing_qualified | 71          | 0.4650           | 0.4650                      |
+
+  | sales_qualified     | 29          | 0.1895           | 0.4084                      |
+
+  | negotiated          | 13          | 0.0850           | 0.4483                      |
+
+  | customer            | 5           | 0.0327           | 0.3846                      |
+
+  | renewed             | 2           | 0.0131           | 0.4000                      |
+
+
+  Note that, at about 38%, the transition from negotiation to registration is proportionally the most serious choke point in the funnel, although serious attrition takes place at every step. An impactful intervention here might be to focus on changing negotiation  tactics used by our sales team. 
+
+
+  ## Going Forward
+
+
+  Fivetran offers [connectors across a range of business operations](https://fivetran.com/directory). Funnel analysis is one method among several that, combined with multiple connectors, will allow you to build a comprehensive representation of how your company is performing in matters of marketing, sales, customer success, recruiting, and more.
+
+
+  Check out a [demo of Fivetran](https://fivetran.com/demo) so that we can help you bring data literacy to every facet of your business.

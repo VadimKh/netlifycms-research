@@ -1,0 +1,54 @@
+header: "Now Live in Europe: Use Fivetran on EU Servers"
+featuredImage: /images/library/fivetran-eu-servers.png
+path: /blog/fivetran-eu-servers
+description: Learn how to migrate your Fivetran service to EU servers.
+pageTitle: "Now Live in Europe: Use Fivetran on EU Servers"
+pageDescription: Learn how to migrate your Fivetran service to EU servers.
+date: 2019-01-10
+published: 1
+featured: 0
+authorsName:
+  - ciara
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >
+  We are excited to announce that Fivetran connectors can now be used on EU
+  region servers. We know how important this is for your [compliance with
+  GDPR](https://fivetran.com/blog/fivetran-is-compliant-with-the-european-unions-gdpr-privacy-law)
+  and we are here to help. You can learn more about it in our
+  [documentation](https://fivetran.com/docs/getting-started/core-concepts#fivetranservers).
+
+
+  To migrate your Fivetran service to the EU, follow the below steps:
+
+
+  1. **Whitelist our IP addresses in your source system or warehouse for select vendors.** All Fivetran connectors will now originate from a new set of fixed IP addresses. For the European region, these IPs are 35.235.32.144/29, 35.205.2.0/29 and 52.0.2.4/32. To use Fivetran on EU servers, you must update your IP whitelists for the following data sources and warehouses:
+
+      - AWS Redshift
+      - Azure SQL Data Warehouse
+      - MariaDB
+      - MongoDB
+      - MySQL
+      - Oracle
+      - PostgreSQL
+      - Snowflake
+      - SQL Server
+
+  2. **In Fivetran, change the Region in the Warehouse tab from your dashboard.**
+
+
+  ![Screenshot](/images/library/eu-servers.png)
+
+
+  Once you complete Step 2, connectors will automatically start running on Fivetran servers in the EU region.
+
+
+  If you have any questions please reach out to our [support team](mailto:support@fivetran.com). If you wish to learn more about Fivetran, our product specialists can present a [demo of our service](https://fivetran.com/demo).
+
+
+  **About Fivetran:** Our standardised technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organisations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardised cloud pipelines are fully managed and zero-maintenance.

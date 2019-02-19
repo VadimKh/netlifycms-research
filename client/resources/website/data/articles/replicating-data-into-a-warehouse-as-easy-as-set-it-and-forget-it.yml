@@ -1,0 +1,102 @@
+header: |
+  Replicating Data Into a Warehouse as Easy as "Set It and Forget It"
+featuredImage: /images/library/srcaypu4s3ofeatured.png
+path: /blog/urban-airship-says-fivetran-replicates-data-into-a-warehouse-as-easy-as-set-it-and-forget-it
+description: Fivetran immediately added value for Urban Airship by transferring its
+  corporate data from a legacy third-party system to a SQL Server relational
+  database.
+pageTitle: Urban Airship says Fivetran easily replicates data into a warehouse | Fivetran
+pageDescription: Fivetran immediately added value to Urban Airship by transferring Urban
+  Airship’s corporate data from a legacy third-party system into their SQL
+  Server relational database. And that was just the start of the improvements.
+tags:
+  - case study
+  - sql server
+  - amazon rds
+date: 2018-05-14
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+redirects:
+  - /urban-airship-says-fivetran-replicates-data-into-a-warehouse-as-easy-as-set-it-and-forget-it-fd76c7dcb356
+isDownload: false
+content: >
+  **Key Takeaways**
+
+  - Always-on customer support
+
+  - Enables the “2,000-foot view”
+
+  - Frees up engineering sources
+
+  - Fivetran UI is "simple and streamlined”
+
+
+  Urban Airship offers a platform for mobile growth services, from mobile push, email to text — all with orchestration and AI-based optimization solutions. In short, Urban Airship delivers hyper-personalized messages in real time on any channel in a customer’s martech stack.
+
+
+  [Fivetran](https://fivetran.com/) immediately added value to [Urban Airship](https://www.urbanairship.com/) by transferring Urban Airship’s corporate data from a legacy third-party system into Urban Airship’s SQL Server [Amazon RDS](https://aws.amazon.com/rds/)  relational database. Fivetran had the right connectors at hand and obliged immediately.
+
+
+  Olv Grolle, the director of business systems at Urban Airship, says that the service level, knowledge and support from Fivetran “was very impressive.”
+
+
+  “Service, that was one of the factors that won our evaluation over Stitch," Grolle says. "It went down to the level of setting up a Slack channel with us as a means to directly connect to our Fivetran support engineers. That was very compatible with our modus operandi. We’re very happy customers. The level of support and nurturing we get is astonishing.”
+
+
+  This is yet another textbook example of the Fivetran always-on customer support credo. What’s more, it underscores that users of Fivetran gain ownership of their application data, even if they stop using that application.
+
+
+  All in all, Fivetran replicates business applications, databases, events and file storage into a high-performance data warehouse. The Fivetran cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  ### **"Set It and Forget It"**
+
+
+  Before Urban Airship settled on Fivetran, the company evaluated other platforms, but none of them met their needs. “We kept running into a myriad of problems,” says Ed Zanelli, the Urban Airship data architect.
+
+
+  One problem Fivetran solved was that Urban Airship couldn’t get transaction lines from its NetSuite application, one of [dozens of business applications that Fivetran supports](https://fivetran.com/directory/). Fivetran not only supports those transaction lines, but also offers sync frequency [down to 5 minutes](https://blog.fivetran.com/fivetran-announces-5-minute-syncing-f61c788573a1) for all of its connectors.
+
+
+  “If you can’t get the transaction lines, you’re not getting anything with NetSuite,” Zanelli says. “With Fivetran, we just set it and forget it."
+
+
+  Zanelli says the out-of-the-box [connectors](https://fivetran.com/directory/) Fivetran has built for business applications function without a hitch. And, with a setup that took just minutes, Fivetran enabled Urban Airship to begin the data flow immediately.
+
+
+  “We are now able to correlate data across core business systems that we were not able to do before,” Zanelli says. “We’re now able to cross reference data from different business systems in a coherent way, to take that 2,000-foot view.”
+
+
+  ### **Focus on Data Instead of Replication**
+
+
+  Urban Airship has chosen several Fivetran pre-built app “connectors.” They include [Netsuite](https://fivetran.com/directory/netsuite), [Salesforce](https://fivetran.com/directory/salesforce), [Stripe](https://fivetran.com/directory/stripe) and [Zuora](https://fivetran.com/directory/zuora).
+
+
+  “Fivetran has experts in house who have managed to understand the architecture of a lot of business tools,” says Zanelli. “So now we don’t need to deal with the engineering technical side. We can actually focus on the business data."
+
+
+  Zanelli added, "We were able to free up all resources working on dedicated data replication."
+
+
+  Grolle weighed in as well: “If we hadn’t switched to Fivetran, I think we would still be building connections from scratch instead of understanding our business operations data. The Fivetran UI is simple and streamlined.”
+
+
+  Grolle echoes what many satisfied Fivetran customers say: “Fivetran just works. You set up your replication point, and source, and target system, and that’s virtually it. It has proven very valuable. Fivetran has developed a great solution."
+
+
+  ***(The Fivetran sales team is available to present a demo, and provide a free trial. Sign up [here](https://fivetran.com/demo?utm_campaign=urban-airship-story&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).)***
+
+
+  **About Fivetran**: Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a five-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights with the business intelligence tools of your choice.

@@ -1,0 +1,50 @@
+header: "Webinar: Outsystems, Snowflake Computing and Fivetran"
+featuredImage: /images/library/xamvsxce4s6featured.png
+path: /blog/webinar-outsystems-snowflake-computing
+description: In this webinar, Outsystems explains why it choose to work with Fivetran in
+  unison with Snowflake Computing.
+pageTitle: "Webinar: Outsystems, Snowflake Computing and Fivetran | Fivetran.com"
+pageDescription: "In this webinar, Outsystems, the #1 low-code platform for application
+  development, explains why they choose to work with Fivetran in unison with
+  Snowflake Computing."
+tags:
+  - webinar
+  - video
+  - dwh
+  - snowflake
+date: 2017-09-11
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Webinar
+categories:
+  - Videos
+redirects:
+  - /webinar-outsystems-snowflake-computing-e7152c46b720
+isDownload: false
+content: >
+  <center><iframe width="560" height="315"
+  src="https://www.youtube.com/embed/dDPSIcce6yk" frameborder="0"
+  allowfullscreen></iframe></center>
+
+
+  ### About Outsystems:
+
+
+  OutSystems provides the #1 low-code platform for application development. Accelerating digital transformation, OutSystems is the fastest and most comprehensive way to create, deploy, change, and manage custom mobile and web applications — delivered seamlessly across all devices.
+
+
+  ### About Snowflake:
+
+
+  Snowflake is the leading data warehouse built for the cloud. Its unique architecture delivers proven breakthroughs in performance, concurrency and simplicity. For the first time, multiple groups can access petabytes of data at the same time, up to 200 times faster and 10 times less expensive than solutions not built for the cloud. Snowflake is a fully-managed service with a pay-as-you-go-model that works on structured and semi-structured data.
+
+
+  ### About Fivetran:
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business.
+
+
+  ![Webinar: Outsystems, Snowflake Computing and Fivetran](/images/library/1_ozBsqAhYWPOQ5aIZzvGoag.png)

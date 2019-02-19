@@ -1,0 +1,219 @@
+header: "Build vs. Buy: Some Back-of-the-Envelope Costs"
+featuredImage: /images/library/build-vs-buy.png
+path: /blog/build-vs-buy
+description: A few simple calculations illustrate why it's ill-advised to build your own
+  data pipeline.
+pageTitle: "Build vs. Buy Data Pipelines: Some Back-of-the-Envelope Costs | Fivetran Blog"
+pageDescription: Why it's ill-advised to build your own data pipeline
+date: 2018-11-01
+published: 1
+featured: 1
+authorsName:
+  - charles
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >
+  There's a good chance your company is among the more than 150,000 global
+  customers of Salesforce. Chances are also strong that you use services like
+  Marketo, Zendesk, Jira and Zuora to gain a comprehensive view of your business
+  operations.
+
+
+  The research and advisory firm Gartner estimates that [70% to 80% of business intelligence efforts fail](https://www.cio.com/article/3221430/business-intelligence/4-reasons-most-companies-fail-at-business-intelligence.html), in part because of outdated technology, clunky processes, and inaccessibility. The path to failure can be expensive, too, and the goal of this article is to present some of the costs in money, time, and anguish associated with building a bespoke business intelligence solution.
+
+
+  ## Building Your Own Connectors Is Complicated and Expensive
+
+
+  Suppose you use the five connectors listed above, and want to build connectors to automatically ingest the API endpoints and store the data in a data warehouse. Here are some slightly optimistic calculations for monetary costs: 
+
+
+  Each of five connectors will take about five weeks for an engineer to build:
+
+
+  _(5 connectors) \* (5 personWeeks)_
+
+
+  Based on what Fivetran has found through previous experience, each connector will likely need a dedicated week of maintenance work per quarter, adding up to four weeks per year:
+
+
+  _(5 connectors) \* (5 personWeeks + 4 personWeeks)_
+
+
+  _(5 connectors) \* (9 personWeeks) = 45 personWeeks_
+
+
+  That makes 45 weeks out of 52 weeks in a year. Multiply that fraction by a typical software engineer salary ($120,000) to see **how much building your own connectors will cost during your first year**:
+
+
+  _(45 weeks/52 weeks) \* ($120,000) = **$103,846.15**_
+
+
+  In subsequent years, your engineer will continue to update each quarter (four weeks) and handle bugs and edge cases as they crop up (one week), for a total of five person-weeks of work per connector.
+
+
+  _(5 connectors) \* (5 personWeeks) = 25 personWeeks_
+
+
+  That makes 25 weeks out of 52 weeks in a year, all dedicated to ongoing maintenance. This is **how much maintaining your own connectors will cost in subsequent years**:
+
+
+  _(25 weeks/52 weeks) \* ($120,000) = **$57,692.31**_
+
+
+  I won’t give the game away in terms of the pricing model for Fivetran connectors, but a yearly subscription to the five connectors listed earlier will cost far less than either of the figures above. These costs will, of course, scale in direct proportion to the number of data sources you use.  
+
+
+  ## Manual Reporting Takes Too Long and Turns Your Analysts into Bottlenecks
+
+
+  The alternative to constructing a sophisticated and maintenance-intensive business intelligence and data science infrastructure is to assemble reports and analyses manually. An analyst from one of our customers estimated that their manual reports routinely took “a month,” or 160 hours of work. 
+
+
+
+  Consider the following workflow:
+
+
+  120 hours <br/>
+
+  - Collect files manually (spreadsheets, CSVs, JSON files) <br/>
+      - Consult managers <br/>
+      - Wait on replies <br/>
+  - Run API ingestion scripts
+
+
+  40 hours <br/>
+
+  - Clean, format, and transform data <br/>
+
+  - Perform analysis <br/>
+
+  - Build visualizations <br/>
+
+  - Write report
+
+
+  = **160 hours**
+
+
+  Such a lengthy workflow effectively limits the frequency of reports and findings, needlessly consumes an analyst’s time, and makes simple metrics inaccessible to the business users who need them to make decisions.
+
+
+  When our customer switched to Fivetran, the time commitment for each report shrank to less than a week, more than quadrupling the speed at which the company could make data-driven decisions. [Another customer](https://fivetran.com/images/library/case-study-label-insight.pdf) similarly lopped off 140 hours of work every week, and estimates that they gained a 200% ROI by switching to Fivetran.
+
+
+  Now, the workflow looks more like:
+
+
+  40 hours <br/>
+
+  - Clean, format, and transform data <br/>
+
+  - Perform analysis <br/>
+
+  - Build visualizations <br/>
+
+  - Write report
+
+
+  = **40 hours**
+
+
+  Furthermore, there is now time to dedicate to more sophisticated analyses. The flow could be something like this:
+
+
+  60 hours <br/>
+
+  - Clean, format, and transform data <br/>
+
+  - Perform analysis <br/>
+
+  - Build visualizations <br/>
+
+  - **Machine learning and statistical modeling** <br/>
+
+  - Write report
+
+
+  = **60 hours**
+
+
+  Those of us who are familiar with agile methodology, [OODA loops](https://www.businessinsider.com/ooda-loop-decision-making-2017-8), or [competitive esports](https://medium.com/@mkrajew/some-starcraft-2-stats-7a32ece48caf) understand that it is always advantageous to make informed decisions more rapidly. Imagine only being able to act on data once a month!
+
+
+  ## Morale Is Hard to Quantify but Very Important
+
+
+  If you want to keep your analysts, engineers, and managers happy, you should consider the following problems associated with building your own connectors or manual reporting:
+
+
+  1. Diversion from other software engineering, data science, or analytics duties — this is a very common irritant among new data scientists at understaffed organizations and leads to turnover
+
+  2. Frustration and exhaustion from the complexity of maintaining data integrity, particularly by persons lacking the appropriate training
+
+  3. Continually increasing complexity (and downtime) as additional sources of data are added
+
+  4. Misguided decisions caused by lags between requests for business intelligence and delivery of actionable insights — insights that might be stale by the time they arrive
+
+
+  An engineer friend of mine jokes that “database maintenance” is the worst chore he has ever encountered in his career.
+
+
+  It isn’t a very funny joke.
+
+
+  ## Learning Curves Can Be Steep; Let the Experts Handle It
+
+
+  The five-week estimates I introduced earlier refer to APIs that are straightforward or user-friendly. But not all APIs are straightforward: some ignore [best practices](https://fivetran.com/blog/api-pitfalls), some are poorly documented, and some are [just very complex](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/data_model.htm).
+
+
+  One of the most popular connectors Fivetran offers is the [NetSuite connector](https://fivetran.com/blog/netsuite-connector-article). It took Fivetran **six months** to build out the initial version. The second iteration **took a year**, and the third took **yet another a year**. Only then did we have a truly mature, stable, and well-functioning piece of software. 
+
+
+  Q4 2015 <br/>
+
+  | 0.5 year <br/>
+
+  | <br/>
+
+  Q2 2016 <br/>
+
+  | 1 year <br/>
+
+  | <br/>
+
+  | <br/>
+
+  | <br/>
+
+  Q2 2017 <br/>
+
+  | 1 year <br/>
+
+  | <br/>
+
+  | <br/>
+
+  | <br/>
+
+  Q2 2018 <br/>
+
+  = **2.5 years**
+
+
+  The Netsuite connector is popular largely because so many companies attempting to use the API have been stymied by its complexity. The DIY approach to the NetSuite connector is not advisable. At Fivetran, on the other hand, we have people who have spent the last two and a half years thinking about how to crack this particular nut.
+
+
+  ## Make the Division of Labor Work in Your Favor
+
+
+  The division of labor is directly responsible for humanity’s greatest commercial, scientific, and technological accomplishments. 
+
+
+  But many of the data engineering skills necessary to construct data pipelines are not formally taught in academic programs, boot camps, or training programs. It is scarce human capital that is often developed the hard and expensive way — through experience, trial, and error. People in adjacent roles — analysts, software engineers, and data scientists — often find themselves performing these duties poorly and against their druthers.
+
+
+  Given the value of labor specialization, there’s no reason for you and the thousands of other companies using Salesforce, Marketo, and other software to build your own API connectors when an off-the-shelf solution exists. Fivetran has already climbed/scaled the learning curve for you so that you can spend your time and energy building your core product and making sense of your operations.

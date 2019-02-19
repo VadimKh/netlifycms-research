@@ -1,0 +1,135 @@
+header: Startup Embraces Fivetran, Sees Data-Driven Culture Blossom
+featuredImage: /images/library/mmexci9n7lhfeatured.png
+path: /blog/after-embracing-fivetran-a-data-driven-culture-blossoms-at-applicant-tracking-startup-fountain
+description: Applicant-tracking startup Fountain replaced its burdensome ETL methodology
+  with Fivetran, and now painlessly replicates all its data into a modern cloud
+  warehouse.
+pageTitle: After embracing Fivetran, a data-driven culture blossoms at Fountain
+pageDescription: Applicant-tracking startup Fountain chose Fivetran to avoid performing its
+  burdensome ETL routine and can now painlessly replicate its data into a data
+  warehouse instead.
+tags:
+  - case study
+  - bigquery
+  - salesforce
+  - zendesk
+  - facebook ad insights
+  - linkedin ad analytics
+  - google sheets
+  - looker
+  - dwh
+  - bi
+date: 2018-03-15
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+redirects:
+  - /after-embracing-fivetran-a-data-driven-culture-blossoms-at-applicant-tracking-startup-fountain-2762fb05d81f
+isDownload: false
+content: >
+  ### Key Takeaways
+
+  + Zero configuration
+
+  + Minimized reliance on “gut” instinct
+
+  + Sustainable
+
+  + “You don’t have to be technical to manage this”
+
+
+  [Fountain](https://get.fountain.com) is an applicant-tracking SaaS startup in the growing hiring space. The San Francisco business offers a software platform for companies — large and small — that manages, tracks and performs much of the hiring backend process, helping businesses secure hourly workers in the retail, hospitality, restaurant, manufacturing, delivery and other sectors.
+
+
+  As with any company on the path to growing success, [Fountain](https://www.fountain.com/) realized that, in today’s competitive and data-driven climate, it needed to conduct advanced analytics to gain deep and fresh insights into its customers and business model — all in a bid to keep growing and secure new clients by offering a better product.
+
+
+  But Fountain didn't want to waste precious engineering resources on the burdensome ETL routine of culling data from each of its business applications to create reports that quickly grew stale. That’s why Fountain chose [Fivetran](https://fivetran.com/), which made it painless to replicate data into a data warehouse — in near real time. After all, Fountain employs about 30 workers, so the more time it could spend on its core product, the better, says Mark Schindler, Fountain’s head of analytics and business intelligence.
+
+
+  > **"Fivetran provides us something that didn’t exist for us before. We didn’t even have an easy way to access customer behavior. This is going to give us good insights into our own product."**
+
+
+  “We’ve got plenty of other things to focus on, instead of using our resources to put our data into a warehouse," Schindler says. “We have a data scientist who is building product-based features in the machine-learning area."
+
+
+  As a relatively new company, Fountain finds the ability to perform advanced analytics eye-opening. Shindler notes that this is a fundamental shift in the way the company does business: "What Fivetran is providing us, it’s something that didn’t exist for us before. We didn’t even have an easy way for our team to access how our customers were doing certain things. This is going to give us good insights into our own product."
+
+
+  ## Analytics Operating Table
+
+
+  Schindler says he wanted his company’s business data replicated into a warehouse, which he likens to an operating table, and ready for advanced-analytics "surgery." He didn’t want to concern himself or his staff with how the data reached his warehouse (Google’s [BigQuery](https://fivetran.com/directory/bigquery)).
+
+
+  Fivetran, he says, was an easy solution. Fivetran transformed the normally vexing and complicated process of replicating data into a warehouse into a “no brainer.”
+
+
+  “We could do the ETL ourselves, but it would be a lot of headaches,” Schindler says. “We investigated Stitch and Fivetran. Fivetran was so easy to trial and set up. It was a no-brainer. The Fivetran team did a great job, too. We easily and quickly got our data into BigQuery."
+
+
+  ## Data Management
+
+
+  Fivetran offers [100+](https://fivetran.com/directory) data connectors for everyday business applications. With the press of a button, their data can be replicated via Fivetran into a company's data warehouse. Fountain is using the Fivetran connectors for [Salesforce](https://fivetran.com/directory/salesforce), [Zendesk](https://fivetran.com/directory/zendesk), [Facebook Ad Insights](https://fivetran.com/directory/facebook_ads_insights), [LinkedIn](https://fivetran.com/directory/linkedin) and [Google Sheets](https://fivetran.com/directory/google_sheets). Fivetran can sync connectors [every five minutes](https://blog.fivetran.com/fivetran-announces-5-minute-syncing-f61c788573a1), giving analysts fresh, up-to-date data to query.
+
+
+  > **“There’s a cultural aspect to using Looker and Fivetran. It’s inviting people to answer questions with data and helps bring the cultural mindset of a data-informed decision-making team at the company level."**
+
+
+  “This is a very sustainable product we can continue to use for the future,” Schindler says of Fivetran. “The setup process, I did on a quick telephone call. I heard that it was going to be easy. It was easier than I expected."
+
+
+  What’s more, Schindler says, he’s impressed with the web-based Fivetran user interface: “The interface is really easy. You don’t have to be technical to manage this. I appreciate that. I have no gripes.”
+
+
+  ## Business Intelligence
+
+
+  At the end of the Fivetran pipeline, companies can deploy the business intelligence (BI) tool of their choice to perform advanced analytics in a bid to gain deep insights into their customers and their own product. Schindler has opted to decipher company data using the BI tool Looker. A Fivetran business partner, [Looker](https://fivetran.com/directory/looker) simplifies the data-crunching process and helps businesses easily create insightful dashboards.
+
+
+  ## Counterculture
+
+
+  Combining Fivetran and Looker, Schindler says, has revolutionized Fountain’s work culture. It has become a data-driven workforce, and Fivetran has opened up the data spigot to Fountain staffers to access and manipulate, regardless of their technical capabilities.
+
+
+  >**"The easy setup with Fivetran was one thing — we did it in just a few clicks — but the zero-maintenance piece moving forward is arguably even more valuable."**
+
+
+  “There’s a cultural aspect to using Looker and Fivetran," Schindler says. "It’s inviting people to answer questions with data. This has brought in a cultural mindset for our team to develop, and to grow into a data-informed decision-making team at a company level."
+
+
+  ## “Gut” Instincts vs. Data-Driven Decisions
+
+
+  As Fountain’s head of analytics and BI, Schindler says Looker and Fivetran have fundamentally altered the decision-making equation. Now important issues like corporate direction are being addressed more scientifically.
+
+
+  “We’ve gone a lot on gut," he says. "This new focus on data allows for more of a consistent, and a little bit more of a reliable and valid way of making decisions. And it is reducing the risk of the gut feeling process. If people are trusting their decisions, we won’t have too many missteps."
+
+
+  ## Zero Maintenance, Zero Configuration
+
+
+  Two of the many Fivetran core features are zero maintenance and zero configuration. Schindler says the Fountain team is capitalizing on both of them. Without Fivetran, he observes, it might have taken months for Fountain to build a data pipeline. And they would still be stuck wasting time supporting that pipeline.
+
+
+  "We didn’t have the team to build out the ETL," Schindler says. "My concern was also that, we didn’t have the team to maintain it, even if we could build it initially. The easy setup with Fivetran was one thing. We set up BigQuery with just a few clicks. And the zero-maintenance piece moving forward is arguably even more valuable."
+
+
+  ### About Fivetran
+
+
+  Our mission is to democratize data, make companies data-driven, and give analysts easy access to disparate data sources to perform advanced analytics. With as little as a five-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights with the business intelligence tools of your choice.
+
+
+  For a Fivetran demo, reach out to our team at sales@fivetran.com.

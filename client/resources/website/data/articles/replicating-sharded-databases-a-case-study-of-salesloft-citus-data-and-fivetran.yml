@@ -1,0 +1,73 @@
+header: "Replicating Sharded Databases: A Case Study of SalesLoft, Citus Data and
+  Fivetran"
+featuredImage: /images/library/es5vqvnsv4featured.png
+path: /blog/replicating-sharded-databases-a-case-study-of-salesloft-citus-data-and-fivetran
+description: When SalesLoft faced a daunting challenge — combining sharded tables in AWS
+  Redshift — it turned to Fivetran.
+pageTitle: "Replicating Sharded Databases: A Study of SalesLoft, Citus Data & Fivetran"
+pageDescription: Find out how SalesLoft used Fivetran’s ETL pipeline management to meet the
+  challenge of combining sharded tables in a columnar data warehouse, AWS
+  Redshift.
+tags:
+  - case study
+  - redshift
+  - postgressql
+date: 2018-05-22
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+redirects:
+  - /replicating-sharded-databases-a-case-study-of-salesloft-citus-data-and-fivetran-b8a5c44e3778
+isDownload: false
+content: >
+  SalesLoft is among the world's leading sales engagement platforms. One of its
+  key mottos is: “We Believe in Sales.” With that credo in mind, SalesLoft says
+  it “created the Modern Sales Engagement Platform.” The data infrastructure
+  that supports this is a Citus Data sharded Postgres cluster, says Mike Sandt,
+  a SalesLoft engineer.
+
+
+  “Citus Data provides SalesLoft with a hosted, multi-tenant, Postgres environment without the overhead of implementing the technology ourselves. We deal with large data volumes at SalesLoft,” Sandt says. “In order to help scale our technology as we drive towards the enterprise, we identified a need to tenant our systems. Citus made this process easier on us by providing the appropriate libraries and operational infrastructure.”
+
+
+  SalesLoft’s challenge was how to combine the sharded tables in a columnar data warehouse, [AWS Redshift](https://fivetran.com/directory/redshift), in order to perform advanced analytics. The [Fivetran](https://fivetran.com/) off-the-shelf solution was to replicate every database in the cluster individually by using a standard Fivetran [Postgres connector](https://fivetran.com/directory/postgresql). As a result, SalesLoft didn’t have to spend time or resources building or maintaining custom infrastructure to replicate sharded data.
+
+
+  “Fivetran solved the problem of getting the data into our warehouse without having to run the gambit of rolling custom infrastructure for such tasks,” Sandt says. “Fivetran effectively centralized the data for us so that we can provide insight into customer usage.”
+
+
+  The general strategy for replicating sharded databases is simple: Replicate each individual database into its own schema, then use a VIEW to re-combine the tables at query time. This side-steps combining the sharded data in the ETL pipeline, avoiding tricky logic that is difficult to debug and maintain. The data analysts working with the data queries the VIEW as a single logical table even though it’s physically split on disk.
+
+
+  ### [Replicating Sharded Databases: A Case Study of SalesLoft, Citus Data and Fivetran](/images/library/1_2wfVYpYjExCwYN25sEU37w.png)
+
+
+  This strategy leverages the fact that modern data warehouses natively handle computations across tables sharded over multiple nodes — it’s how data is stored under the hood. In practice, querying VIEWs that are UNION SELECT’s of the underlying sharded tables is highly performant. The data warehouse query planner is smart enough to avoid materializing the intermediary VIEW.
+
+
+  The final piece to this strategy is automating this whole process.
+
+
+  Fivetran handles the difficult parts by automatically detecting and syncing new schemas and tables in the source databases. A simple Python script was all that was necessary to automate keeping the VIEWs up-to-date as new schemas and tables are created in the Citus Data cluster. This can be scheduled by cron or run on AWS Lambda. [Here’s a link to the VIEW creation script](https://gist.github.com/fraserharris/43a93220a39fe9277a98346a34dd12e9)
+
+
+  “Fivetran makes it stupid simple to get data from disparate source systems into a centralized warehouse,” Sandt Says. “Fivetran has a very complete vision of the space they operate in, and the required competency with underlying database systems to get us up and running quickly."
+
+
+  The Fivetran Postgres connector is just one of the [dozens of connectors](https://fivetran.com/directory) Fivetran offers. These connectors are the data from your business applications, and databases, that Fivetran syncs into a data warehouse for you.
+
+
+  **About Fivetran**: Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file storage into a high-performance data warehouse. Our cloud data pipelines are zero-configuration, zero-maintenance and fully managed by Fivetran.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights using SQL or the business intelligence (BI) tools of choice.
+
+
+  ***(The Fivetran sales team is available to present a demo, and provide a free trial. Sign up [here](https://fivetran.com/demo?utm_campaign=citus-salesloft-sharded%20story&utm_medium=&utm_source=&utm_content=&utm_term=).)***

@@ -1,0 +1,44 @@
+header: Data Source to Dashboard in an Afternoon
+featuredImage: /images/library/rhx481qthumfeatured.png
+path: /blog/looker-fivetran-data-source-to-dashboard-in-an-afternoon
+description: Prepping data for analysis can be a daunting process, especially with
+  traditional ETL. But what used to take days or weeks can now can be done in an
+  afternoon with Looker and Fivetran.
+pageTitle: Data Source to Dashboard in an Afternoon | Fivetran.com
+pageDescription: Prepping data for analysis can be a daunting process, especially when an ETL
+  process is involved. What used to take days or weeks can now can be completed
+  in an afternoon with Looker and Fivetran.
+tags:
+  - video
+date: 2017-09-11
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Video
+categories:
+  - Videos
+redirects:
+  - /looker-fivetran-data-source-to-dashboard-in-an-afternoon-a6eb90efc5a7
+isDownload: false
+content: >
+  See the Looker-Fivetran setup process yourself with this short five-minute
+  video.
+
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/fWfyVtAQ6WI" frameborder="0" allowfullscreen></iframe></center>
+
+
+  ### About Looker:
+
+
+  Looker is an inventive software company that’s pioneering the next generation of business intelligence (BI). We believe that businesses can only thrive when data is consistently defined and easily accessible across the entire organization. Our web-based platform powers the work of data analysts while fueling (and fulfilling) the business user’s curiosity. Looker is creating true discovery-driven businesses and unlocking the value of their data, one customer at a time.
+
+
+  ### About Fivetran:
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business.
+
+
+  ![Data Source to Dashboard in an Afternoon](/images/library/1_3X-w2aNp-2fY68BP_nVr4A.png)

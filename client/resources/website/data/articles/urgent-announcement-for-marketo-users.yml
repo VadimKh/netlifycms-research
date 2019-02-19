@@ -1,0 +1,50 @@
+header: Urgent Announcement for Marketo Users
+featuredImage: /images/library/marketo-data-retention.png
+path: /blog/marketo-data-retention
+description: "If you already use Fivetran, you have nothing to fear. If not, pay attention:
+  Marketo’s new data retention policy may result in the loss of valuable
+  activity data unless you take the proper actions."
+pageTitle: Urgent Announcement for Marketo Users
+pageDescription: Marketo’s new data retention policy may result in the loss of valuable
+  activity data if the proper actions are not taken.
+tags:
+  - announcement
+  - marketo
+  - source
+date: 2018-07-20
+published: 1
+featured: 0
+authorsName:
+  - nick
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >+
+  If you are a Marketo user already with Fivetran, you have nothing to fear. If
+  you're not, then pay attention: Marketo’s new data retention policy may result
+  in the loss of valuable activity data if the proper actions are not taken.
+
+
+  ## Marketo to Delete Valuable Data
+
+
+  Beginning on August 15th, Marketo will no longer store Lead Activity and Campaign Membership data older than 25 months, and certain high-volume activity data, like website visits and clicks, will only be stored for 90 days.  To put that into perspective, when this new policy takes effect all the activity data collected before July 16th, 2016, as well as high-volume activity data collected before May 17th, 2018, will be deleted.  These retention windows are on rolling periods, so data older than 25 months or 90 days will continuously be deleted.
+
+
+  It is important to emphasize that this new policy will only affect activity data – it will not affect the storage of marketing assets.  But what this does mean is that reports that run on activities will exclude data past the retention periods.  For most companies, it is crucially important to have a complete history of interaction with a customer to make informed decisions on marketing approaches and attribution models. With this new data retention policy, vital pieces of information like lead, marketing, and email data are in danger of being lost forever, potentially corrupting your company’s understanding of its customers.
+
+
+  ## There Is a Solution: Fivetran
+
+  With Fivetran, you don’t have to worry about the loss of your data – first we replicate your full Marketo history, then we capture future changes. And we store everything in your data warehouse so that you will **always own your data.**  Fivetran supports a variety of warehouses like Amazon Redshift, Google BigQuery, Microsoft Azure, and Snowflake, and connecting Fivetran to your warehouse should take less than ten minutes.  Once that is done, all you have to do is supply us with the relevant information for your Marketo instance, and we take it from there. Not only is the process easy and painless, we organize your Marketo data into a relational data model, which can speed up your queries and make data easier for your analysts to work with.
+
+
+  ## Take Action Now, Before It's Too Late
+
+
+  That being said, we recommend beginning this process **immediately** to ensure no data is lost. It's possible that we can complete your historical sync within a few hours, but large Marketo instances may take much longer. Depending on the size of your Marketo instance, and because the policy takes effect in a few weeks, we urge you to get in touch today.
+
+
+  Visit our [website](https://fivetran.com/) to begin harnessing the power of centralized data, and if you have any questions or concerns, send us an [email](https://fivetran.com/) at sales@fivetran.com.  You can also [click here](https://fivetran.com/docs/applications/marketo) to find out more about our pre-built Marketo connector.
+

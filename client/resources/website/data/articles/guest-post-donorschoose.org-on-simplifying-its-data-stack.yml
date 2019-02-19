@@ -1,0 +1,83 @@
+header: "Guest Post: DonorsChoose.Org on Simplifying Its Data Stack"
+featuredImage: /images/library/nw45oqnvprcfeatured.png
+path: /blog/repost-donorschoose-org-data-stack-case-study
+description: null
+pageTitle: "Guest Post: DonorsChoose.org on Simplifying Its Data Stack | Fivetran"
+pageDescription: Learn how DonorsChoose.org used Fivetran to integrate with their business apps
+  and services, centralize their data, manage their data stack, and produce
+  advanced analytics to drastically improve their business intelligence.
+tags:
+  - case study
+  - postgressql
+  - zendesk
+  - salesforce
+  - heap
+  - redshift
+  - looker
+date: 2017-10-11
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Case Study
+categories:
+  - Case Studies
+redirects:
+  - /repost-donorschoose-org-data-stack-case-study-ad3b85a3577d
+isDownload: false
+content: >
+  _This blog post was originally published and produced by DonorsChoose.org._
+
+
+  Over the past year, we’ve taken steps to centralize our data and to simplify our data stack. Previously, my colleague wrote [this post](http://data.donorschoose.org/data-science-pipeline/) on how we integrate predictive Data Science with traditional Business Intelligence, giving everybody in the org access to predictive analytics. For our Data Science team to be able to build predictive models or generate insights, we needed access to all of our data in one place. Here’s a story of how we put it all together.
+
+
+  ## What We Wanted
+
+
+  * We wanted to centralize all of our data from all 3rd party sources and cloud services in a single data warehouse.
+
+
+  * We wanted to have a simple, easy to manage data stack.
+
+
+  * We wanted to avoid ETL (Extract, Transform, Load). It takes time to set up, manage and debug. We wanted 3rd party application to manage our ETL for us.
+
+
+  * We needed support for uploading custom CSV files into our warehouse.
+
+
+  * We wanted to get a full picture of our interactions with our teachers, partners and donors. For example, before embarking on this project, we couldn’t tie all these pieces of data together:
+
+
+  * Projects that Ms. Smith has posted (our PostgreSQL database)
+
+
+  * Customer service inquiries our team solved for Ms. Smith (Zendesk)
+
+
+  * Ms. Smith’s responses to our survey on student-led projects expansion (Qualtrix)
+
+
+  * NPS (Net Promoter Score) that Ms. Smith gave us in a satisfaction survey (Promoter.io)
+
+
+  * Phone interview notes with Ms. Smith about a presentation at a media conference (Salesforce)
+
+
+  * Emails that we sent to Ms. Smith to share partner matching opportunities in her area (ExactTarget)
+
+
+  * Ms. Smith’s experience with submitting a project and the obstacles she might have faced in the project creation workflow (Heap)
+
+
+  All of these sources of data, when put together, tell us a lot about how well we are doing in meeting expectations and delighting our teachers. Same goes for donors and partners. Today, like never before, we are able to be more responsive to the needs of our teachers. We still have some way to go to make insights from these integrations actionable, but now we can start seeing patterns like these (this one is hypothetical): a customer service email (Zendesk) from Ms. Smith was related to a bug in project creation workflow (Heap) helped us to make sure her project qualified for a match opportunity (ExactTarget), which helped it get fully funded (PostgreSQL), which was reflected on Ms. Smith’s NPS score of 10 out of 10 (Promoter.io).
+
+
+  ## How We Did It
+
+
+  At the heart of it, [Fivetran](https://fivetran.com/) manages streaming of Salesforce, Google Analytics, Zendesk and Postgres data into our Redshift warehouse. Fivetran also handles CSV uploads. Once all that data lands into Redshift, we use [Looker](http://looker.com/) to access it and to generate insights and dashboards. Looker handles all of ETL with the help of a feature called Persistent Derived Tables. This allows us to pipe all of the data into one place and then model it inside of Looker. Fivetran and Looker proved to be a perfect combo to help us avoid ETL, custom script management and to define all of our business rules in one place.
+
+
+  ![Guest Post: DonorsChoose.org on Simplifying their Data Stack](/images/library/1_O2boipbjHgXr5HqUYS28vg.png)

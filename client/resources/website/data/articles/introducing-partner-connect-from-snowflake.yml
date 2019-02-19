@@ -1,0 +1,67 @@
+header: Introducing Partner Connect From Snowflake
+featuredImage: /images/library/featured.jpg
+path: /blog/partner-connect
+description: Easily set up Fivetran data connectors through the Snowflake UI for effortless
+  data loading. This new feature is part of our longstanding commitment to
+  eliminating the obstacles of traditional ETL.
+pageTitle: Introducing Partner Connect from Snowflake
+pageDescription: Now you can easily setup Fivetran data connectors through the Snowflake UI for
+  effortless data loading. The new feature aligns with the Fivetran commitment
+  to reduce the obstacles normally encountered with ETL.
+tags:
+  - announcement
+  - snowflake
+  - dwh
+date: 2018-08-02
+published: 1
+featured: 0
+authorsName:
+  - lawrence
+categoryTitle: Announcements
+categories:
+  - Articles
+isDownload: false
+content: >
+  The Fivetran team is always looking for new ways to make data centralization
+  as painless as possible for our users, so we're especially excited to
+  introduce Partner Connect, a new workflow for Snowflake users. This initiative
+  involves integrating Fivetran data connectors into the Snowflake user
+  interface so that with a few simple clicks, customers can start loading data
+  for immediate analysis.
+
+
+  The process is incredibly easy and user-friendly.  Within the Snowflake web interface, you will find a “Partner Connect” tab that will bring you to a list of Snowflake’s data integration partners.  On this page you can find Fivetran and click the “Connect” button to create a free trial account with a pre-configured Snowflake connection.  This process helps you avoid the tricky and tedious work of setting up data warehouses and pipelines, but do note that this will create new database, warehouse and user objects inside Snowflake for these partner applications to interact with.
+
+
+  ### Watch setup demo video:
+
+
+  <div class="embed-responsive embed-responsive-16by9">
+
+  <iframe src="https://www.youtube.com/embed/8sO53KczJ4M?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  </div>
+
+
+  ## Why Fivetran?
+
+
+  It is undeniable that outsourcing your ELT (or ETL) is beneficial for your business – it allows your developers to focus on more important tasks, keeps your analysts from suffering data headaches, and ultimately saves your business time and money. Fivetran accomplishes all of this and more, allowing you to immediately begin extracting insights from your data within minutes of setup.
+
+
+  One aspect Fivetran consistently receives praise for is the quality and usability of our connectors.  Each of our connectors are built in-house by our development team, and they are comprehensively designed to be resilient against a wide range of data integrity issues.  They are also log-based, which puts a low load on databases and allows us to capture deletes.  We currently offer over 100 connectors across our sources and warehouses, and we are constantly adding more each month.
+
+
+  The quality of our schemas matches that of our connectors.  In designing connectors, our development team studies each data source to provide normalized and well-documented schemas to your warehouse.  This means that the data you see in Snowflake will be an exact replica of the data in the source, automatically deduplicated and immediately ready for analytics.  We also aspire to the ideal of a “fully managed service” – we only want you to log into Fivetran when you need more connectors.  To that end, our pipelines are fully managed and dynamic to schema changes.  When the source schema changes, our connectors automatically reformat your warehouse data so that your business never skips a beat.
+
+
+  A critical pipeline failure can result in the delay of your analytics projects or your data’s integrity being compromised.  To combat this, our pipelines are rigorously tested and iterated upon, and we maintain and monitor them around the clock so that your data is correct and  available when you need it.  To ensure your data is protected securely, we offer end-to-end encryption and advanced features like SSH tunnels, and we also fully comply with HIPAA, SOC 2 and GDPR.  And we never retain your data longer than we need to – once it is loaded into your warehouse, it is deleted from our own databases and out of our hands.
+
+
+  Our method of loading data in incremental updates provides a specific advantage when working with Snowflake.  The pricing at Snowflake works on a credit system which bills you a certain amount of credits for each full hour that your compute nodes run.  By only updating changed data, Fivetran keeps the time those nodes are spinning to an absolute minimum.  With other services that offer full database replication, you can accrue a debt of upwards of thirty credits in a day; with Fivetran, many customers report using less than a credit in the same time span.
+
+
+  Finally, our pricing system is designed to be predictable and easy to budget.  Our packages are priced around the number of connectors you need, not the volume of data you want to load.  This means that your costs won’t increase as your business develops and expands, unlike the costs of other data integration services.  At Fivetran, we want to be transparent about what you are paying for, and we only want you to pay for the work that we actually do.
+
+
+  For these reasons and more, we sincerely hope that you choose Fivetran to be your Snowflake partner.  You can read more about Partner Connect on Snowflake’s [website](https://www.snowflake.net/news-items/snowflake-announces-partner-connect/), or you can see just how easy it is to get started with this quick [setup video](https://www.youtube.com/watch?v=8sO53KczJ4M&feature=youtu.be).  In the future, Snowflake also plans to add more types of services to Partner Connect, including business intelligence, advanced analytics and security, among other service providers.  Keep a lookout for these exciting possibilities, but in the meantime, connect with us through Snowflake to harness the potential of your data toward building a better business.

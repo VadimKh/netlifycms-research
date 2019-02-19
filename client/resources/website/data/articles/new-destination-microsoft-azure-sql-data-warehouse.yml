@@ -1,0 +1,44 @@
+header: "New Destination: Microsoft Azure SQL Data Warehouse"
+featuredImage: /images/library/azureblue.png
+path: /blog/azure-dwh-launch
+description: Use Fivetran to replicate and sync your applications, databases, event logs
+  and file stores into your central Microsoft Azure SQL Data Warehouse.
+pageTitle: "New Destination: Microsoft Azure SQL Data Warehouse"
+pageDescription: All-new warehouse destination. Discover how you can use Fivetran to replicate
+  and sync your applications, databases, event logs, and file stores into your
+  central Microsoft Azure SQL Data Warehouse.
+tags:
+  - announcement
+  - azure
+  - dwh
+date: 2018-08-28
+published: 1
+featured: 0
+authorsName:
+  - john
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >-
+  Now you can use Fivetran as your secure data pipeline to replicate and sync a
+  wide and expanding array of source data—applications, databases, event logs,
+  and file stores—into your central [Microsoft Azure SQL Data
+  Warehouse](https://fivetran.com/docs/warehouses/azure-warehouse). Check out
+  the [setup
+  guide](https://fivetran.com/docs/warehouses/azure-warehouse/setup-guide) and
+  get started today.
+
+
+  ## Microsoft Cloud Warehouse Steps Up Performance With Second-Generation Compute
+
+
+  Boasting superior query performance, Azure SQL Data Warehouse Gen 2 has raised the bar. With increased performance on data warehouse benchmarks ([Gigaom Research](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/#post-id-957223), 2018) and per-node data movement rates of up to [one-gigabyte per second](https://www.zdnet.com/article/microsoft-reveals-new-power-bi-and-azure-data-warehouse-capabilities/) per node (ZDNet, July 2018), Microsoft has continued to push boundaries with its cloud data warehouse technology.
+   
+  The Fivetran and Microsoft advantage: Fivetran makes it simple for business analysts and other non-engineers across your enterprise to use SQL—or any BI tool—to query Azure SQL Data Warehouse and [gain profound insight](https://azure.microsoft.com/en-us/services/sql-data-warehouse/) into the business. Fivetran automatically fetches and syncs data from more than [90 sources](https://fivetran.com/directory), including Marketo, MixPanel, Oracle on Amazon RDS, Azure Blob Storage, DoubleClick, LinkedIn Ads, Netsuite SuiteAnalytics, and Salesforce.
+
+
+  ## Why Fivetran?
+
+
+  Fivetran technology delivers data into your warehouse—the right way. Fivetran enables companywide, data-backed decisions using solutions driven by analyst needs. We’re focused, transparent, and trusted by businesses that embrace agile analytics. What’s more, we adhere to industry-leading [security standards](https://fivetran.com/docs/security) for connecting to, replicating, and loading data from all your sources into cloud based warehouses. In addition to Microsoft Azure SQL Data Warehouse, Fivetran supports loading data into Snowflake, Google BigQuery, and Amazon Redshift.

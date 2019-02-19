@@ -1,0 +1,111 @@
+header: For Advanced Analytics, Choose a Column-Oriented Data Warehouse
+featuredImage: /images/library/featured.jpeg
+path: /blog/choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics
+description: null
+pageTitle: Choose a column-oriented data warehouse for advanced analytics
+pageDescription: At Fivetran, we provide a secure data pipeline for businesses to sync and
+  replicate data into a central data warehouse. Fivetran fills the pipeline with
+  data replicated from a company’s business apps and services, resulting in
+  advanced analytics insights.
+tags:
+  - data strategy
+date: 2018-01-31
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics-5fcbc99a799a
+isDownload: false
+content: >
+  _Illustration by Steve Johnson on Flickr._
+
+
+  It may sound cliché, but nobody can deny we live in a data-driven world where analytics often functions as the backbone of business decision making. Data, it seems, is the new oil.
+
+
+  When it comes to conducting advanced business analytics, Fivetran recommends storing your data in a column-oriented warehouse. “For 99 percent of use cases, you want your warehouse to be columnar,” says[ Meel Velliste](https://www.linkedin.com/in/meel-velliste-96b51b35/), the vice president of engineering at Fivetran.
+
+
+  Because of the way a columnar warehouse stores information, data can be compressed dramatically because columns often store the same values. For advanced analytics, databases housed in a columnar manner also enjoy another benefit over the row-based alternative: Queries may take substantially less time to compute. (For a detailed analysis on column-oriented warehouse pricing and query speeds, see Fivetran CEO[ George Fraser](https://www.linkedin.com/in/george-fraser-a0219230/)’s recent[ analysis](https://blog.fivetran.com/warehouse-benchmark-dce9f4c529c1) of Amazon Redshift, Google BigQuery and Snowflake.)
+
+
+  Fivetran has partnerships with [Amazon Redshift](https://aws.amazon.com/redshift/), [Google BigQuery](https://cloud.google.com/bigquery/) and [Snowflake](https://www.snowflake.net/). We offer several other data destinations as well.
+
+
+  At Fivetran, we provide a secure data pipeline for businesses to sync and replicate data into a central data warehouse. Fivetran fills the pipeline with data replicated from a company’s business applications and services. We call these integrations “[connectors](https://fivetran.com/connector-methodology).”
+
+
+  We offer [dozens of connectors](https://fivetran.com/directory), and they’re dead easy to set up. Fivetran is unveiling new ones regularly. Our most recently released connector was [an integration with Help Scout](https://blog.fivetran.com/help-scout-is-our-latest-fivetran-connector-and-partner-a05172c3d80f)—the email-based help-desk service.
+
+
+  At the end of this Fivetran pipeline— at the data warehouse level, businesses can gain deep insights into metrics of their choosing via SQL queries, and with Business Intelligence (BI) software tools.
+
+
+  When it comes to performing these advanced analytics, a column-oriented warehouse might better serve those BI tools, SQL and other types of queries—that is, if cost-efficient and speedy results are among the endgames of your Database Management System (DBMS).
+
+
+  **“With a column store architecture, a DBMS need only read the values of columns required for processing a given query, and can avoid bringing into memory irrelevant attributes.”**
+
+
+  That quote comes from one of the seminal research papers on the topic. “[C-Store: A Column-oriented DBMS](http://people.brandeis.edu/~nga/papers/VLDB05.pdf).” (PDF) Although published in 2005, those words ring true today.
+
+
+  ## **A Deeper Dive**
+
+
+  Data is stored linearly, regardless of whether it’s housed in a row-oriented or column-oriented warehouse. Essentially, it’s all just one long string of data to the computer. What’s important for our analysis is to understand how that string of data is ordered. That’s the big distinction between row and column storage.
+
+
+  Let’s now visualize the difference:
+
+
+  Below is a simple spreadsheet representing all the employees of a hypothetical company. It includes worker identification numbers, their names, the departments they work for, and their annual salaries.
+
+
+  ![Choose a column-oriented data warehouse to perform advanced analytics](/images/library/1_QOoj9OGoLMIp6zzYs4Sh6w.png)
+
+
+  With this spreadsheet data, each row stored in a row-based warehouse might be represented to the human eye like this:
+
+
+  ![Choose a column-oriented data warehouse to perform advanced analytics](/images/library/1_Xs-IKNeasqRHepSsZc-dLA.png)
+
+
+  Now, we will query for the sum of all worker wages. The computer will begin scanning—from “Worker ID” 1, “Name” John, “Department” Accounting, and on to John’s “Salary” of 99,000. The machine will continue scanning Janie’s “Worker ID” and so on until it finally reaches Jo’s 111,000 “Salary.”
+
+
+  This scan must discard all of the irrelevant data it accumulated — and keep the annual salaries of each employee — before it finally spits out the sum of all salaries. Keep in mind that every piece of data was scanned to reach the conclusion that 99,000 + 102,000 +102,000 + 111,000 = 414,000.
+
+
+  That might not seem like a big deal because there was not much data to scan in this example. But imagine if there were hundreds, thousands, millions or even billions of rows that needed to be scanned. While that would make for an awfully large company, it also highlights the inefficiencies of a row-based database management system for conducting advanced analytics.
+
+
+  We shall now visualize the column-based storage approach with the same spreadsheet data. In essence, and at the most elementary level of explanation, the original spreadsheet’s columns are now stored as the rows:
+
+
+  ![Choose a column-oriented data warehouse to perform advanced analytics](/images/library/1_iVYkevHk4qbJlCaX7kClzg.png)
+
+
+  Now, let’s ask the same salary question again. What is the sum of all employee wages? Under this column-oriented storage scenario, the data that is scanned is the area that denotes salaries. That’s a substantially smaller scan than the one performed in the row-based storage method. And, again, consider how this is much more logical than a row-based approach, especially when advanced analytics might involve complicated queries involving a mind-boggling amount of data.
+
+
+  By now, it should be clear that, when it comes to performing advanced analytics, the column-based storage method is preferable. Data compression algorithms are more effective on columnar databases, and therefore these databases may use less disk space than a similarly sized row-based database. And, as we’ve seen, column-oriented databases are much more efficient. They can render answers to complex queries faster and more effectively than the row-based alternative.
+
+
+  ## The Disclaimer
+
+
+  It should be apparent that our explanation of row-oriented versus column-oriented databases is rudimentary at best, and for simplicity leaves out the concept of indexing altogether. That’s because this blog post is not designed for database engineers. They likely are all too familiar with data warehousing methods.
+
+
+  This brief essay was geared more for the analyst, and others, who are pondering setting up a data warehouse to conduct advanced analytics. It’s also for company executives who may be footing the bill for a data warehouse. What’s more, this was written for the intellectually curious, and for corporate decision-makers who should be aware of, at a minimum, that there are differing data warehouse storage paths to navigate.
+
+
+  To learn more about Fivetran, reach out to us for a [free demo](https://fivetran.com/).
+
+
+  **About Fivetran**: Built for the cloud, Fivetran is the smartest, fastest way to replicate and store data into your warehouse with zero configuration. Our ecosystem frees companies to easily join data sources and perform agile analytics with the tools of their choice.

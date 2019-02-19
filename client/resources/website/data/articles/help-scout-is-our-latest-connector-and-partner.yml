@@ -1,0 +1,66 @@
+header: Help Scout Is Our Latest Connector and Partner
+featuredImage: /images/library/cbwg8d5jpqnfeatured.png
+path: /blog/help-scout-is-our-latest-fivetran-connector-and-partner
+description: null
+pageTitle: Help Scout is Our Latest Fivetran Connector and Partner
+pageDescription: Fivetran provides a secure pipeline to replicate all of a company’s important
+  data into a central data warehouse. We do this by building and offering what
+  Fivetran calls “connectors” that integrate with dozens of business
+  applications and services.
+tags:
+  - announcement
+  - help scout
+  - source
+date: 2018-01-29
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /help-scout-is-our-latest-fivetran-connector-and-partner-a05172c3d80f
+isDownload: false
+content: >
+  At Fivetran, we provide a secure pipeline to replicate all of a company’s
+  important data into a central data warehouse. We do this by building and
+  offering what Fivetran calls “connectors” that integrate with dozens of
+  business applications and services — from Asana, MailChimp and all the way
+  through the alphabet to Zuora. These are the sources for the data we replicate
+  in the Fivetran pipeline and securely connect to a data warehouse. From there,
+  businesses can gain deep insights into sales trends and metrics by running SQL
+  queries, and by employing Business Intelligence (BI) software tools.
+
+
+  Our latest Fivetran[ connector](https://fivetran.com/connector-methodology) to join our ecosystem, and to partner with us, is[ Help Scout](https://fivetran.com/directory/help_scout). Welcome aboard!
+
+
+  [Help Scout](https://www.helpscout.net/) is an email-based, help-desk software company. It should come as no surprise that Help Scout, which has more than 7,000 customers, has embraced the Fivetran pipeline to conduct advanced business analytics. Help Scout’s data runs through the Fivetran pipeline where it is replicated and stored in the[ Google BigQuery](https://fivetran.com/directory/bigquery) data warehouse. Google BigQuery is a Fivetran[ technology partner](https://fivetran.com/partners), and is among several[ data destinations](https://fivetran.com/destinations) Fivetran offers. Fivetran also partners with the data warehouses [Snowflake](https://www.snowflake.net/) and [Amazon Redshift](https://aws.amazon.com/redshift/).
+
+
+  What’s more, Help Scout utilizes [Looker](https://fivetran.com/directory/looker), which is a BI tool and a Fivetran partner. There’s plenty of business intelligence services out there. [Chartio](about:blank), [Mode](https://modeanalytics.com/) and[ Periscope Data](https://www.periscopedata.com/) offer business intelligence tools, and are Fivetran partners as well.
+
+
+  With Looker, Help Scout says it has produced dashboards to view key business metrics — all of which have flowed through the Fivetran pipeline.
+
+
+  “Our data pipeline partner Fivetran makes the process of accessing your data simple and easy for Help Scout customers,” Help Scout says in a recent blog post titled “[Performing Advanced Analytics on Your Help Scout Data with Fivetran](https://www.helpscout.net/blog/fivetran-integration/).”
+
+
+  ## Have Some SQL
+
+
+  In that blog post, Help Scout data scientist, Matt Mazur, published an SQL query to calculate average resolution times for customer conversations.
+
+
+  According to Help Scout’s blog post: _If your eyes gloss over when seeing this, have no fear — your data analysts will love it because it means they have access to all of your company’s row-level Help Scout data — which means **it’s possible to ask and answer just about any data-related question.** They can drill in beyond standard metrics, join together data from multiple services, and compare historical data from any point in time._
+
+
+  Here is the link to the Help Scout [setup guide](https://blog.fivetran.com/help-scout-is-our-latest-fivetran-connector-and-partner-a05172c3d80f) from our support pages.
+
+
+  To learn more about Fivetran, reach out and get a [free demo](https://fivetran.com/).
+
+
+  **About Fivetran**: Built for the cloud, Fivetran is the smartest, fastest way to replicate and store data into your warehouse with zero configuration. Our ecosystem frees companies to easily join data sources and perform agile analytics with the tools of their choice.

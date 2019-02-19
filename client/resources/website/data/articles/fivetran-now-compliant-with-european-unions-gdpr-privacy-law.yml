@@ -1,0 +1,61 @@
+header: Fivetran Now Compliant With European Union’s GDPR Privacy Law
+featuredImage: /images/library/5awasa4q7clfeatured.png
+path: /blog/fivetran-is-compliant-with-the-european-unions-gdpr-privacy-law
+description: null
+pageTitle: Fivetran is compliant with the European Union’s GDPR privacy law
+pageDescription: Fivetran is committed to data privacy and is compliant with the General Data
+  Protection Regulation (GDPR) that takes force in the EU on May 25, 2018.
+tags:
+  - announcement
+date: 2018-02-27
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Announcement
+categories:
+  - Articles
+redirects:
+  - /fivetran-is-compliant-with-the-european-unions-gdpr-privacy-law-a3bd82dc120
+isDownload: false
+content: >
+  Fivetran is committed to data privacy. So we wanted to inform our clients and
+  prospective clients in the European Union (EU) and across the globe that
+  Fivetran is compliant with the General Data Protection Regulation (GDPR) that
+  takes force in the EU on May 25.
+
+
+  At its core, the [GDPR](http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN), which replaces the 1995 Data Protection Directive, says that people living in the EU own their data — not corporations. At Fivetran, we agree with that credo.
+
+
+  The GDPR law, which covers the use, transfer, storage and collection of data, essentially says that companies are custodians of consumers’ data. Consumers are empowered with several rights to their personal data, which includes IP addresses, device IDs, social profiles, logs, home addresses, and essentially anything that can be used (in part or in combination) to identify an individual EU resident.
+
+
+  ![Fivetran is compliant with the European Union’s GDPR privacy law](/images/library/1_vd0QfaXKJ1HudKYPG6x_lQ.png)
+
+
+  As part of GDPR compliance, businesses must have the demonstrated ability to delete data and associated historical activities and logs — the right to be forgotten. Companies must also supply consumers copies of their data upon request. The GDPR allows for steep fines for companies unable to comport with the new privacy law. What’s more, the new regulations establish a host of data consent requirements, breach notification rules and liabilities, and they demand that companies perform privacy impact assessments.
+
+
+  Fivetran, with the help of the security professionals at [EAmmune](https://www.eammune.com/), has conducted an internal review of data flows to ensure we comport with the GDPR. When it comes to temporary (cached) storage, we utilize AES-256 encryption, and Fivetran permanently deletes the data within 24 hours.
+
+
+  ### Privacy Shield
+
+
+  But that’s not all, Fivetran has signed GDPR-compliant data processing agreements with its sub-processors.
+
+
+  Fivetran has also registered with the [Privacy Shield](https://www.privacyshield.gov/Program-Overview) program established to ensure that the level of protection a participating US company offers is essentially equivalent to the one guaranteed by the EU legislation.
+
+
+  To our fellow startups, and competitors alike, the UK’s Information Commissioner’s Office has published a [checklist ](https://ico.org.uk/for-organisations/resources-and-support/data-protection-self-assessment/getting-ready-for-the-gdpr/)on what companies need to do to comport with the new legal framework. And take heed: Your company might be obligated to comply with the GDPR even if it doesn’t have operations in the EU. That’s because the GDPR applies to any company, regardless of their location, if they process the data of [EU residents](https://www.gov.uk/eu-eea).
+
+
+  **About Fivetran:** Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  Fivetran builds zero-configuration, zero-maintenance and fully-managed cloud data pipelines for businesses big and small. With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file stores into a high-performance data warehouse. Analysts query this centralized data with their business intelligence tools of choice and SQL.
+
+
+  We’re part of a growing ecosystem that gives businesses complete control and ownership of their data. With Fivetran, it’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights.

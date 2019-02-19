@@ -12,7 +12,9 @@
   "dependencies": {
     "diacritics": "^1.3.0",
     "lodash": "^4.17.11",
+    "random-name": "^0.1.2",
     "sanitize-filename": "^1.6.1",
+    "uid": "0.0.2",
     "yaml": "^1.3.2"
   }
 }

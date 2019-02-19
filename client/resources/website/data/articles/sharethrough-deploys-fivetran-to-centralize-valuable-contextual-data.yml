@@ -1,0 +1,120 @@
+header: Sharethrough Deploys Fivetran to Centralize Valuable Contextual Data
+featuredImage: /images/library/y4uh32mak1hfeatured.png
+path: /blog/case-study-freed-from-etl-sharethrough-searches-for-pot-of-gold-at-end-of-fivetran-data
+description: Fivetran replicates Sharethrough’s contextual application data and pipes it
+  into a central warehouse containing a high-volume, big-data event stream.
+pageTitle: Free from ETL, Sharethrough mines gold at end of Fivetran data pipeline
+pageDescription: Fivetran replicates Sharethrough’s back-end application contextual data and
+  pipes it into Sharethrough’s central data warehouse containing a high volume,
+  big data event stream.
+tags:
+  - case study
+  - snowflake
+  - dwh
+  - salesforce
+  - google sheets
+  - microstrategy
+date: 2018-03-08
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+redirects:
+  - /case-study-freed-from-etl-sharethrough-searches-for-pot-of-gold-at-end-of-fivetran-data-40891c5e29be
+isDownload: false
+content: >-
+  **Key Takeaways**
+
+  - Fast data replication
+
+  - Easy setup without ETL
+
+  - Zero maintenance
+
+  - Business intelligence focused
+
+  - “Revolutionary”
+
+
+  Sharethrough is the industry leader when it comes to supply side, native advertising platforms. The San Francisco-based company developed the native advertising concept. Its online advertising exchange is powering more than 12 billion native ad impressions per month. It has 170 employees scattered throughout Austin, Chicago, Detroit, Los Angeles, London, New York, San Francisco and Toronto. Sharethrough’s mission is to empower publishers to control their own destiny, and they do this by developing advertising products that are consistent with the user experience of a publisher’s site or app. Sharethrough’s lengthy roster of users — both publishers and advertisers — amounts to a Who’s Who of A-listers, including ConAgra, Forbes, Intel, Microsoft, Rolling Stone, Toshiba, VICE, and a laundry list of others.
+
+
+  [Sharethrough](https://sharethrough.com/)’s advertising exchange generates a high volume, high frequency stream of event data, and its success depends on understanding this big data stream. However, these events cannot be understood without their business context. For example, a single event contains a customer ID but does not contain additional business context for that ID, such as customer name and customer configuration. Business context, required to understand the IDs and tags encoded in each event, is stored in Sharethrough’s advertising exchange back-end application databases.
+
+
+  Sharethrough uses the [Fivetran](https://fivetran.com/) secure data pipeline to make this business context available for analysis. Fivetran replicates Sharethrough’s back-end application contextual data, and pipes it into Sharethrough’s central data warehouse containing the high volume, big data event stream. With both event data and business context data available in its data warehouse, Sharethrough uses business intelligence (BI) tools and ad hoc queries to understand the performance of publisher and advertiser campaigns. Analytic insights are used both operationally and strategically to ensure success of Sharethrough and its customers. *This would not be possible without the business context obtained through the Fivetran pipeline.*
+
+
+  ## **A Simple Start: Replicate Into a Faster Database**
+
+
+  Initially, Sharethrough’s use of Fivetran was very simple: to replicate a legacy MySQL reporting database into an analytical database. The legacy MySQL database had grown and become too sluggish: Ad hoc analytic queries were too slow to be of any use. To work around MySQL analytic performance limitations, Sharethrough engineers wrote carefully tuned queries that were exposed to applications through a REST API. There was very little flexibility, and no real analysis.
+
+
+  Sharethrough started using Fivetran to replicate this legacy MySQL reporting database into [Snowflake](https://fivetran.com/directory/snowflake), a modern [column-oriented data warehouse](https://blog.fivetran.com/choose-a-column-oriented-data-warehouse-to-perform-advanced-analytics-5fcbc99a799a). Once the legacy reporting data was replicated into Snowflake using Fivetran, the data could be queried any which way, free of the query performance limitations of the source MySQL database platform.
+
+
+  This use case alone would have been sufficient justification for using Fivetran, and it was very easy to set up. For Dave Abercrombie, Sharethrough’s Senior Staff Engineer, the Fivetran pipeline “just works": “There’s no labor. You set up Fivetran once, and you’re done. It works. It just works. There’s essentially zero engineering resources put to Fivetran maintenance.”
+
+
+  ## **Join Business Context With High-Volume Event Data**
+
+
+  Abercrombie described how, before Fivetran was fully integrated, Sharethrough analysts would need to sift through the ad exchange application metadata to find the IDs and tags relevant to an analysis. For example, to analyze a customer’s use of a particular product, the analyst would first search the back-end application metadata database for the particular ID and tag values to use for analysis.
+
+
+  “Then as a second step, we would have to take those IDs and tags to the event stream database and use those to filter our event stream,” he says. “It’s cumbersome to have to look into different databases and manually pull in different information.”
+
+
+  However, with the Fivetran pipeline in place, Abercrombie says, “We can use SQL to directly join events with their metadata such as customer name and product. *We use Fivetran to provide the business context data that allows us to make sense of the IDs and coding in the event stream.”
+
+
+  ## **“Revolutionary” Rollout to All Sources of Metadata**
+
+
+  Once Fivetran had proven itself in these use cases, Sharethrough decided to use Fivetran to bring all of its many business context metadata sources into the Snowflake analytic database. These included [Salesforce](https://fivetran.com/directory/salesforce), as well as data in [Google Sheets](https://fivetran.com/directory/google_sheets), and a handful of other application databases. In short, Abercrombie says, the Fivetran data pipeline connects Sharethrough’s data from its supported business applications into one data warehouse.
+
+
+  “Fivetran allows us to unify the many databases that we used to run on our system, bringing them into a single analytic database, so that we can ask questions on a full dataset rather than on a subset,” Abercrombie says. “This was kind of revolutionary.”
+
+
+  Jennifer Xia, a senior business analyst at Sharethrough, says Fivetran does the heavy lifting, freeing company analysts to focus on analyzing, and easily changing course when necessary. “All the metadata we are able to collect now and see in one place would have been hard to unify without Fivetran,” Xia says. “Research would be slower and more difficult.”
+
+
+  What’s more, Xia says: “Our customer teams are able to zero in on problems early, allowing us to address them before they become big problems.”
+
+
+  ## **Fueling Business Intelligence**
+
+
+  Fivetran has simplified the ETL process for Sharethrough. Engineers do not need to work on moving data from one database to another. With Fivetran handling the back-end application metadata transfer, engineers can instead focus on transforming this business context metadata to make it suitable for BI tools, Abercrombie says.
+
+
+  Sharethrough has chosen [MicroStrategy](https://www.microstrategy.com/us?CID=701440000003WO2AAM&gclid=EAIaIQobChMIzOnt-eOj2QIVAo5pCh2UjgWOEAAYASAAEgLw3PD_BwE) as its BI tool to query its data that Fivetran replicates into Snowflake for Sharethrough, Abercrombie says.
+
+
+  Business intelligence tools like MicroStrategy work their magic by slicing and dicing the aggregated facts and events along business “dimensions.” Robust and relevant dimensions are key to success, Abercrombie says:  “Application metadata is not usually ideal for BI in its raw form, and usually benefits from additional transformation to bring the business context to life, and to turn it into reliable dimensions. With Fivetran handling basic data transfer, Sharethrough engineers are free to focus on the subtle logic involved in turning raw application metadata into useful and safe BI dimensions."
+
+
+  ## **The Pot of Gold: “Pivot or Persevere”**
+
+
+  Sharethrough is in a quickly changing industry, so new products and features are continually developed and tested. This is why one of Sharethrough’s core values is “action,” defined here as learning and continuously improving by doing, with a focus on decision making and learning.
+
+
+  Data analysis is obviously critical to this Sharethrough culture of “pivot or persevere.” From the perspective of raw data, experimental new products are most easily seen in the application metadata transferred by Fivetran into Sharethrough’s data warehouse of choice, Abercrombie says.
+
+
+  When a new features are developed, Fivetran will automatically start bringing the new data into the data warehouse. “With Fivetran gracefully handling basic database transfer, Sharethrough engineers can focus on transforming raw metadata of new features into usable analytic dimensions,” Abercrombie says. All in all, the data pipeline Fivetran provides for Sharethrough plays a “pivotal role” in reaching Sharethrough’s mission: “We will be able to get metrics right away to know whether to pivot or persevere. We’re very experimental. To have the ability to expose very quickly new features coming through the Fivetran metadata, that’s my pot of gold at the end of the rainbow.”
+
+
+  **About Fivetran**: Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  Fivetran builds zero-configuration, zero-maintenance and fully-managed cloud data pipelines for businesses big and small. With as little as a 5-minute setup, Fivetran replicates all your applications, databases, events and file stores into a high-performance data warehouse. Analysts query this centralized data with the business intelligence tools of their choice.
+
+
+  With Fivetran, businesses gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights with Fivetran.

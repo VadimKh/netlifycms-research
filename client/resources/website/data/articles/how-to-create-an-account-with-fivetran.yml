@@ -1,0 +1,37 @@
+header: How to Create an Account With Fivetran
+featuredImage: /images/library/d7qo065e8yufeatured.png
+path: /blog/how-to-create-an-account-with-fivetran
+description: null
+pageTitle: "How To: Create an Account with Fivetran | Data Integration | Fivetran"
+pageDescription: Setting up Fivetran takes less than 5 minutes. Watch our setup video to learn
+  more and then visit our documentation page for information about specific
+  connectors and data warehouses.
+tags:
+  - video
+date: 2017-09-12
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Video
+categories:
+  - Videos
+redirects:
+  - /how-to-create-an-account-with-fivetran-3942d357103b
+isDownload: false
+content: >
+  Setting up Fivetran takes less than five minutes. Watch our setup video to
+  learn more and then visit our documentation page for information about
+  specific connectors and data warehouses.
+
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/oCs4qmnELBg" frameborder="0" allowfullscreen></iframe></center>
+
+
+  ## About Fivetran:
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipeline, turning months of on-going development into a 5-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business. To learn more visit our website at [fivetran.com](https://fivetran.com/?utm_campaign=howto_setup_video&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ![How To: Create an Account with Fivetran](/images/library/1_YttvOZ7YgZWl381iSWrWhA.png)

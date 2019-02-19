@@ -1,0 +1,54 @@
+header: Re-Sync Your Tables With Fivetran
+featuredImage: /images/library/table-resync.png
+path: /blog/table-resync
+description: Selectively re-sync tables to get the data you need, when you need it.
+pageTitle: Re-Sync Your Tables With Fivetran
+pageDescription: Selectively re-sync tables to get the data you need, when you need it.
+date: 2018-12-06
+published: 1
+featured: 0
+authorsName:
+  - fraser
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >
+  We know you sometimes need to overwrite an existing table to make sure you
+  have everything you need — when, for example, an operation is performed on a
+  source table that our incremental replication can’t detect (e.g., TRUNCATE).
+  Until now, you could only fix the resulting data integrity issue by re-syncing
+  an entire database. 
+
+
+  That’s why we’re introducing Table Re-Sync, which gives you the ability to fix these issues at the table level whenever you see them. It’s a much simpler and more agile process.
+   
+  Table Re-Sync is available for the following connectors:
+
+
+  * Salesforce
+
+  * NetSuite
+
+  * Marketo
+
+  * MySQL
+
+  * Oracle
+
+  * Postgres
+
+  * Zuora
+
+  * SQL Server
+   
+  To use Table Re-Sync, just go to your connector details page and hover over the table you want to re-sync. Note that re-syncing a table will pause incremental updates until the historical data is loaded.  
+
+
+  ![static-instruction](/images/library/static-instruction.png)
+
+
+  Here's the full process:
+
+
+  ![animated-instruction](/images/library/animated-instruction.gif)

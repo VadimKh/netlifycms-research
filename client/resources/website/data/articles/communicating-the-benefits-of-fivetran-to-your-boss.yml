@@ -1,0 +1,75 @@
+header: Communicating the Benefits of Fivetran to Your Boss
+featuredImage: /images/library/communicating-fivetran-benefits.png
+path: /blog/communicating-fivetran-benefits
+description: Interested in Fivetran but need help getting your boss on board? Here are a
+  few business benefits of automated, fully managed pipelines to share with your
+  company’s non-technical decision-makers.
+pageTitle: Communicating the Benefits of Fivetran to Your Boss
+pageDescription: Interested in Fivetran but need help getting your boss on board? Here are a
+  few business benefits of automated, fully managed pipelines to share with your
+  company’s non-technical decision-makers.
+date: 2019-02-07
+published: 1
+featured: 0
+authorsName:
+  - lawrence
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >+
+  As a developer or data analyst who has trialed Fivetran, you’ve witnessed the
+  impact that data centralization and fully managed pipelines can have on how
+  you gather and analyze your data. While you may be ready to commit to
+  Fivetran, it can be challenging to communicate the benefits of automated,
+  fully managed data pipelines and centralized data to non-technical
+  decision-makers in your company. For that, you’ll need to show how Fivetran
+  has the potential to reduce costs, save time, increase revenue and build a
+  data-literate company. Below are a handful of business benefits you can share
+  with your boss or managers to get them excited about Fivetran.
+
+
+  **Timelier and More Accurate Reporting** 
+
+
+  With Fivetran, you gain a near real-time understanding of the state of your business and customers. Fivetran uses modern ELT to quickly load your data into your warehouse prior to transforming it, allowing you to answer your most pressing business questions without being held up by formatting issues. ELT is quickly becoming the preferred alternative to traditional ETL, which is often a long, protracted process that involves pre-aggregating and transforming data before loading it into your warehouse.
+
+
+  When your dataset changes, Fivetran only pushes the updates, avoiding the time-consuming and unnecessary process of full data replication. Having your data loaded quickly can make all the difference in deciding how to chart your business.
+
+
+  **Analysts Can Dedicate Their Time to Generating Insights**
+
+
+  Fivetran normalized schemas replicate the data from your sources into the familiar relational database format so that analysts can immediately run queries on it. Our Entity Relationship Diagrams (ERDs) for each data source, complete with primary and foreign keys for each table, make it much easier to understand how your tables connect with one another.  
+
+
+  This organizational efficiency allows analysts to put their efforts towards generating accurate, timely insights from the data rather than spending hours or even days manually extracting data to create reports.
+
+
+  **Automated, Fully Managed Pipelines Save the Time of Developers...**
+
+
+  Building data pipelines can be a [significant time investment](https://fivetran.com/blog/build-vs-buy) for a company. A good developer can design a basic connector for a data source in about two to three weeks. The more sources you pull from, the more connectors you need to build. Creating multiple, optimized connectors will quickly become a large time sink. 
+
+
+  Once developers build the connectors in-house they must also invest ample time to maintain them. Data needs to be constantly monitored for consistency and accuracy, and if there is an issue with your pipeline it needs to be fixed immediately to maintain data integrity. For instance, when changes in the source schema break your pipeline, developers have to go into the source API, understand what changed and redesign the pipeline to accommodate the change. 
+
+
+  **...And Minimize Downtime**
+
+
+  It can take weeks or months for developers to build or redesign a pipeline, and in the meantime, you won’t be running queries or conducting critical analyses. Fivetran spares you from that effort. We offer over one hundred pre-configured connectors for various data sources and set-up takes about five minutes. After that, we deal with the dirty work of monitoring and maintaining your pipelines. Our connectors are rigorously tested and designed and our 24/7 support team catches any issues as soon as they happen so you never miss out on important data insights.
+
+
+  Changes in the source schema used to routinely break pipelines, but with automatic schema migration from Fivetran, you never have to deal with this issue. When something in the source schema changes, we automatically update and reformat the tables in your warehouse, saving developers’ time, and company resources and money.
+
+
+  **The Proof is in the Numbers** 
+
+
+  The [Fivetran blog](http://fivetran.com/blog) boasts a number of case studies that share our customers’ experiences and business successes with Fivetran. For example, [Label Insight](https://cloud.google.com/customers/label-insight/) experienced a 200% ROI with Fivetran by cutting 140 hours of manual reporting weekly. Advertising platform [Sharethrough](https://fivetran.com/blog/case-study-sharethrough) now completes analysis projects 2000 times faster than it did before Fivetran and reduced its 14-layer analytics stack to a four-layer stack managed by a single employee. [HotelSpecials](https://fivetran.com/blog/case-study-hotelspecials) saw email conversion rates increase by 52% and transactions jump by 20%. [Jumeirah Hotel and Resorts](https://fivetran.com/blog/case-study-jumeirah) reduced costs per ad click by 28% on average and up to 50%-60% in certain cases. Take a look at some of our [case studies](https://fivetran.com/blog/case-studies) to better understand the short and long-term impact that Fivetran can have on your business.
+
+
+  If you as an analyst or developer love Fivetran, we want to do everything in our power to help you get your boss or others within your organization on board. Feel free to have your company’s decision makers [email](mailto:sales@fivetran.com) or call us with any questions or concerns they have. Additionally, feel free to set up a [demo](https://fivetran.com/demo) for them today. 
+

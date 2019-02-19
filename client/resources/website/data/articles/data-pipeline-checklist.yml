@@ -1,0 +1,85 @@
+header: Data Pipeline Checklist
+featuredImage: /images/library/w59cwsr6o8ifeatured.jpeg
+path: /blog/data-pipeline-checklist
+description: Seven things to look for when choosing a data integration provider.
+pageTitle: Data Pipeline Checklist | Data Integrations | Fivetran
+pageDescription: Data pipelines, also known as data connectors, ETL, or data integrations, help
+  you load data from your applications and databases into a central data
+  warehouse. Here are seven things to look for when choosing a data integration
+  provider.
+tags:
+  - data strategy
+date: 2017-09-20
+published: 1
+featured: 0
+authorsName:
+  - katie
+categoryTitle: Data Strategy
+categories:
+  - Articles
+redirects:
+  - /data-pipeline-checklist-c1824aef1804
+isDownload: false
+content: >
+  Data pipelines, also known as data connectors, ETL or data integrations, help
+  you load data from your applications and databases into a central data
+  warehouse. The differences between providers and the way they handle your data
+  can be subtle but they make a huge difference in your resulting data lake and
+  analytics. Here’s a list of considerations to get you started:
+
+
+  ### 1. Setup and Maintenance
+
+
+  When you consider data pipeline options, strongly consider the resources you have available. While setting up a pipeline may not appear to be a big task for an engineer, don’t forget about maintenance. There are more important things for your developers to be working on then running around fixing data leaks.
+
+
+  To give you a sense of scope when companies build their own ETL stack they usually have a team of at least 4–5 data engineers devoted to the project full time. On the other hand a fully managed pipeline vendor requires no developer support, not even for setup. In the middle of the spectrum there are many providers that get you half of the way there but then still require at least one full-time data engineer devoted to configuration and validation.
+
+
+  ### 2. Standard Schema
+
+
+  Companies today use more applications and data sources than ever before. Configuring a custom ETL stack is a bigger task than it used to be and continues to grow. Instead of wrangling your pipelines, we recommend using standardized connectors that mirror your source structure. Without a consistent normalization strategy, you can end up with a tangled mess of code, leaving analysts confused and frustrated with the resulting tables they depend on. Also, make sure your vendor provides well-documented schemas so that your team doesn’t waste time troubleshooting and validating their data.
+
+
+  ### 3. **Deleted Data**
+
+
+  Treatment of deleted data is a big differentiating factor between pipeline providers. For instance, some systems cannot detect when data is deleted from your source. This means you will have unmarked, deleted data in your warehouse which can impact analytics. Other vendors will hard delete data if you delete it from your source. This isn’t ideal either because you lose the ability to capture metrics from any moment in time or restore accidental deletes. Ideally your data connectors mark rows that are deleted instead in a separate column. This means you can exclude deleted data from queries when you don’t want it but still can access the data if you ever need it.
+
+
+  ### 4. **Schema Changes**
+
+
+  Schemas will change, for example your application users might add a custom field to a source table or whichever application vendor you’re using changes a data type. If this happens, your data pipeline will need to adjust so it captures everything in your warehouse. With some integration providers, the end user is responsible for monitoring and adjusting for changes. If this is the case, you will need to plan and devote resources for pipeline maintenance. [Fivetran](https://fivetran.com/?utm_campaign=pipeline_checklist&utm_medium=blog&utm_source=medium&utm_content=&utm_term=) takes care of these changes automatically. Our connectors adjust when data types change and map any new objects so you don’t have to watch for and make these edits.
+
+
+  ### 5. **Data Integrity**
+
+
+  There are many choices that are made when designing data connectors that can have a serious impact on data integrity. For example, it’s common for an API data connector to temporary disconnect when permissions change. Make sure you understand how your provider reconnects to the source when this happens to make sure you don’t end up with lost or duplicated data. Another point to consider is how your integration provider handles row updates. We’ve found that when people build their own data pipelines they often choose a daily snapshot approach because it’s easier to build. We’ll get into that in another post, but make sure if you work with a third party their connectors update incrementally.
+
+
+  ### **6. Pricing**
+
+
+  There are two major ways data pipeline providers price — by service and by volume. Depending on your business, one or the other may be preferable depending on your current data volume and growth projections. While by-service vendors can be more expensive initially, by-volume providers become more expensive over time. Estimating how your data volume may change can be difficult.
+
+
+  Remember to consider internal development requirements in your cost analysis. If a vendor requires that you manage configuration and maintenance, or you do the whole project yourself, make sure you include in-house engineering costs in your assessment. While a fully managed option may have a higher sticker price, it will cost you less considering the time saved.
+
+
+  ### 7. Support
+
+
+  Is your data connector provider a partner to your business success or a commodity product? If you only have one connector, support might not be a crucial, but in an ever complex data environment it’s nice to have someone on your side. Pipeline providers offer a variety of support packages so find one that works best to meet your needs.
+
+
+  ## About Fivetran:
+
+
+  Fivetran is the smartest way to replicate data into your warehouse. We’ve built the only zero-maintenance pipelines, turning months of ongoing development into a five-minute setup. Our connectors bring data from applications and databases into one central location so that analysts can unlock profound insights about their business. To learn more visit our website at [fivetran.com](https://fivetran.com/?utm_campaign=pipeline_checklist&utm_medium=blog&utm_source=medium&utm_content=&utm_term=).
+
+
+  ![Data Pipeline Checklist](/images/library/1_AeFK-vkPrACnzbIWAccXEA.jpeg)

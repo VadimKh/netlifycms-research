@@ -1,0 +1,46 @@
+header: Fivetran and the Hierarchy of Data Needs
+featuredImage: /images/library/hierarchy-of-data-needs.png
+path: /blog/hierarchy-of-data-needs
+description: Your business's data needs follow a hierarchy, and Fivetran can give you a
+  step up.
+pageTitle: Fivetran and the Hierarchy of Data Needs
+pageDescription: Your business's data needs follow a hierarchy, and Fivetran can give you a
+  step up.
+date: 2018-12-07
+published: 1
+featured: 0
+authorsName:
+  - charles
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >
+  In recent years, a number of data professionals have independently arrived at
+  a hierarchical model of data-related business needs. Like Maslow’s famous
+  hierarchy of psychological and emotional well-being, the needs are organized
+  from the most basic to the most rarefied, with higher needs essentially
+  dependant on lower ones.
+
+
+  ![Monica Rogati Hierarchy](/images/library/monica-rogati-hierarchy.png)
+
+  *Image by [Monica Rogati](https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007)*
+
+
+  While [there](https://www.snowflake-analytics.com/blog/infrastructure/the-digital-analytics-hierarchy-of-needs/) are [several](https://www.kdnuggets.com/2015/08/data-hierarchy-needs.html) [versions](https://medium.com/@hugh_28512/the-pyramid-of-data-needs-and-why-it-matters-for-your-career-b0f695c13f11) of this [model](https://gerardnico.com/data/hierarchy_needs), they all have major concepts in common. The models move from the the **collection of raw data** at the base, to the **storage and management of data**, to everything related to **exploratory analysis and simple analytics**, to **testing and modeling**, and, at the very top, **artificial intelligence and deep learning**.
+
+
+  The topmost activities are extremely difficult to perform without a solid foundation in data collection and management. As a result, highly qualified data professionals who are eager to test models or delve into machine learning find themselves collecting and managing data instead. It is well-known that [80% of the average data scientist’s time](https://www.infoworld.com/article/3228245/data-science/the-80-20-data-science-dilemma.html) is consumed by such activities. Many data scientists, especially at smaller or short-staffed organizations, are [shanghaied into data engineering work](https://medium.com/@rchang/a-beginners-guide-to-data-engineering-part-i-4227c5c457d7) for which they may have no particular training (or aptitude).
+
+
+  ## Fivetran helps you move up the hierarchy
+
+
+  At Fivetran, our goal is to take care of the basic needs at the bottom layers of the hierarchy: the collection of raw data, and its storage and management. Starting with our connectors, we automate and fully manage the process from the collection to the storage and management of the data. We are advocates for the [flexibility of ELT](https://fivetran.com/blog/elt_vs_etl), which consists of the large-scale collection and centralization of data prior to its transformation. Our approach [saves thousands of hours](https://fivetran.com/blog/build-vs-buy) of manual reporting, building, and maintenance work for our customers and eliminates the need for our customers’ analysts to predict every quantitative business problem that might need to be solved.
+
+
+  Although we are not a business intelligence or warehousing company, our [analyst recipes](https://fivetran.com/blog/analyst-recipes) are intended to give you just a bit of a gentle push beyond the basic needs of the hierarchy. We want you to direct your attention to exploring and analyzing your data, not wrangling with it. Longer-term, we hope you will be able to shift your attention to the pinnacles of modern data usage -- machine learning and artificial intelligence. 
+
+
+  Access to data and basic data literacy are essential starting points for any organization that hopes to contend in its industry. [Get in touch with us](https://fivetran.com/demo), and we will speed you well along your way to making the fullest use of your data, instead of fighting with it.

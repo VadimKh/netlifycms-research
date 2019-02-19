@@ -1,0 +1,50 @@
+header: Square Banks on Fivetran for Effortless Data Centralization
+featuredImage: /images/library/fce4eur5425featured.png
+path: /blog/square-case-study
+description: Payments disruptor Square uses Fivetran to remove the pressure of ongoing
+  maintenance and focus on what matters most — continued growth.
+pageTitle: Payments disruptor Square banks on Fivetran as its data pipeline solution
+pageDescription: Learn how Square uses Fivetran to remove the pressure of ongoing maintenance
+  to instead focus on what matters most—the growth of Square.
+tags:
+  - case study
+date: 2018-07-25
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >+
+  Square is a disruptor in the payment processing industry and a service that
+  many small businesses turn to when they want to start, run or grow their
+  business. It seems that everywhere consumers go, they can pay via Square. The
+  company, founded by Jack Dorsey and Jim McKelvey, has blossomed from a small
+  startup in 2009 to a well-known public company today.
+
+
+  Along the way to the San Francisco-based company's growth and success, [Square](https://squareup.com/) chose [Fivetran](https://fivetran.com/) to replicate its 3rd-party data into their data warehouse. From there, that's where advanced analytics can be performed and the Square team is able to continue to find new ways to drive innovation.
+
+
+  > "One of the biggest challenges for marketing teams is integrating data from all their global partners.  Now that we’re leveraging Fivetran, we’re able to bring data into our ecosystem quickly and safely," says Guli Zhu, Head of Marketing Analytics at Square.
+
+
+  The partnership with Fivetran means less time worrying about rebuilding infrastructure within multiple legacy systems and more time thinking about what matters most—the growth of Square. "Our data engineers and analysts are more excited about building new things, and like most in this field, have less interest in maintaining someone else’s work," Zhu says. "When you’re able to relieve yourself of the pressure of ongoing maintenance overhead of data plumbing, you can be so much more impactful to the organization. As we add partners and build out 1st-party solutions to address business needs, our infrastructure demands have increased and we have found a partner that can scale their capabilities alongside us," Zhu says.
+
+
+  Fivetran has done the heavy lifting for Square's data ingestion capabilities via API, SFTP, and other mechanisms. "It all just works," Zhu says. "It was very easy to set up Fivetran and to start ingesting many different types of data in near-real time into our data warehouse.”
+
+
+  > All in all, Zhu says, the Fivetran UI is "very simple and clear," its support staff "very accessible," and "Fivetran has made our day-to-day easier."
+
+
+  **About Fivetran:** Our mission is to democratize data, to make companies data driven, and to give analysts easy access to disparate data sources to perform advanced analytics.
+
+
+  Fivetran provides fully managed, secure data pipelines for businesses to sync and replicate data into a central data warehouse. Fivetran fills the data pipeline with data replicated from a company’s business applications and services. We call these integrations "connectors" and we support dozens of them. It's zero-maintenance, and as easy as a 5-minute setup, that will free up ETL engineers to work on other company projects. Fivetran delivers up-to-date data to a data destination of choice—both row-oriented destinations and column-based warehouses.
+
+
+  Using Fivetran, businesses big and small gain complete control and ownership of their data. It’s easy to join data sources, perform agile analytics, and ultimately discover valuable insights with the business intelligence tools of your choice.
+

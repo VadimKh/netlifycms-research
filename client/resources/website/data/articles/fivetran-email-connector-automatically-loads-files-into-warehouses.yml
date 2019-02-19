@@ -1,0 +1,76 @@
+header: Fivetran Email Connector Automatically Loads Files Into Warehouses
+featuredImage: /images/library/email-connector.png
+path: /blog/email-connector-uses
+description: Use our automated email connector to load CSV and JSON files directly into
+  your data warehouse.
+pageTitle: Fivetran Email Connector automatically sends CSV or JSON files to data
+  warehouses
+pageDescription: Learn more about how and why to use our Email Connector to load CSV or JSON
+  files into your data warehouse.
+tags:
+  - article
+  - source
+  - email connector
+  - browser uploader
+date: 2018-10-06
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Article
+categories:
+  - Articles
+isDownload: false
+content: >-
+  As the business climate becomes more and more data-centric and companies
+  continue to embrace data warehousing for advanced analytics, the last thing
+  you want to worry about is wasting time manually uploading CSV or JSON files.
+
+
+  If you use Fivetran, this manual process would become a thing of the past. That's because Fivetran can handle the workload for you, automatically, with our [Email Connector](https://fivetran.com/directory/email_ingester). It's one of a [growing number of connectors](https://fivetran.com/directory) Fivetran offers to easily get your application data and files into a [supported data warehouse](https://fivetran.com/destinations).
+
+
+  While we offer a [Browser Uploader](https://fivetran.com/docs/files/browser-upload/setup-guide#spanclassstepitemnamingtheschemaandtablespan) as well for one-off uploads or for applications that don't support scheduled email reports, our Email Connector aligns with any business application that produces CSV or JSON files and scheduled reports. It can work with an untold number of business applications that Fivetran doesn't directly support as connectors—from [amoCRM](https://www.amocrm.com/tour/leads/) to [Zoho](https://www.zoho.com/crm/?network=g&device=c&keyword=zoho&campaignid=194133572&creative=262020700723&matchtype=e&adposition=1t2&placement=&adgroup=11281210652&gclid=CjwKCAjw0JfdBRACEiwAiDTALm8rGaYrnIWfo7iAHaHIDB_cGiN2aJkaBo9KzLLBh1Ujbnrr1IDquBoCh8MQAvD_BwE).
+
+
+  "Fivetran continues to develop more and more connectors and [methods](https://fivetran.com/docs/functions/aws-lambda/setup-guide) for our customers to get data into their data warehouses. The Fivetran Email Connector is a replacement tool to perform a similar and automated function for the applications we don't support yet," said Fraser Harris, Director of Product at Fivetran. "It's super simple to setup and even easier to use."
+
+
+  ## Simple setup
+
+
+  Here's how it works: The Email Connector extracts one or more attachments from the email, parses the attachment data and uploads it into your warehouse. Emails are deleted once attachments are extracted from it. This connector is designed for scheduled email reports. And the email attachments are permanently backed-up in an S3 bucket to preserve the re-sync functionality—meaning you can easily change warehouses or sync into other databases if required. During the setup, Fivetran gives you unique email addresses. Each email is linked to a table, which is then synced to your warehouse. 
+
+
+  ## Powerful options
+
+
+  And there's powerful options to tell Fivetran how to interpret and decompress the attachment. You can control delimiters, null sequence, file patterns, folder patterns, compression, error handling and more. And you don't need to be a tech company to take advantage of the Email Connector of the Fivetran Browser Uploader.
+
+
+  ## Email Connector Uses
+
+
+  - Great for mom-and-pop businesses, startups and companies of all sizes to analyze all sorts of data like sales, inventory, productivity and more with little to no effort needed to get data to the data warehouse.
+
+  - No need to waste human capital on manually uploading important company data.
+
+  - Easily set up regular uploading schedules.
+
+  - Take the worry out of somebody forgetting to upload your business data.
+
+  - No need to bog down the data scientist, or managers, with multiple emails. 
+
+  - Emailed data is sent directly to a data warehouse, one that Fivetran can set up for you if required, for easy analysis with a Business Intelligence tool of your choice. 
+
+
+  Our Fivetran sales team is available to present a [demo](https://fivetran.com/demo) of our service, and provide a free trial. [Sign up here](https://fivetran.com/signup). 
+
+
+  ## About Fivetran
+
+
+  Our standardized technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organizations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardized cloud pipelines are fully managed and zero-maintenance.

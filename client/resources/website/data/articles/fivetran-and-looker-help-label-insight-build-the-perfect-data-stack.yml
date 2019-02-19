@@ -1,0 +1,18 @@
+header: Fivetran and Looker Help Label Insight Build the Perfect Data Stack
+featuredImage: /images/library/case-study-label-insight.png
+download: /case-study-label-insight/case-study-label-insight.pdf
+description: Label Insight leverages Fivetran data connectors to centralize all its data in
+  BigQuery and create a single source of truth for its CPG information. Now 70%
+  of its workforce uses Looker to run analytics on that data.
+tags:
+  - case study
+  - bigquery
+  - looker
+date: 2018-07-09
+published: 1
+featured: 0
+categoryTitle: Case Study
+categories:
+  - Downloads
+  - Case Studies
+isDownload: true

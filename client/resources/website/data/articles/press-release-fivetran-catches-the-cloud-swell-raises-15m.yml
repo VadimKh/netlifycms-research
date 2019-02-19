@@ -1,0 +1,82 @@
+header: "Press Release: Fivetran Catches the Cloud Swell, Raises $15M"
+featuredImage: /images/library/press-release-series-a.gif
+path: /blog/press-release-series-a
+description: Fivetran raised $15 million in Series A funding to centralize data for every
+  business and enable cloud-first Snowflake, BigQuery, Looker and more.
+pageTitle: "Press Release: Fivetran Catches the Cloud Swell"
+pageDescription: Fivetran Raises $15 Million Series A to Centralize Data for Every Business and
+  Enable Cloud-First Snowflake, BigQuery, Looker, and More
+date: 2018-12-04
+published: 1
+featured: 0
+authorsName:
+  - fivetran
+categoryTitle: Announcement
+categories:
+  - Articles
+isDownload: false
+content: >+
+  _With a growing customer base of nearly 500 businesses, including Square,
+  WeWork and Vice Media, Fivetran tripled its revenue in the past year._
+
+
+  **OAKLAND, Calif. — December 4, 2018.** [Fivetran](https://fivetran.com/), the company that is redefining data pipelines, today announced that it has raised $15 million in Series A funding to centralize data for every business, as companies continue to execute the move to the cloud. The round was led by Matrix Partners, with general partner Ilya Sukhar joining the company’s board of directors. Primarily revenue-funded since identifying strong product-market fit, Fivetran closed its first venture round after experiencing a threefold increase in revenue and twofold increase in customers over the past 12 months. Current customers include Square, WeWork, Classpass, Vice Media, Lime Scooters, Automattic, Lightspeed and Kiva. 
+
+
+  Fivetran has gained significant market traction by replacing antiquated ETL models in data warehousing with automated data connectors. Its technology is part of a larger trend towards self-driving data systems that were built for the cloud including data warehouse [Snowflake](https://www.snowflake.com/), with its recent [3.5B valuation](https://www.wsj.com/articles/snowflake-more-than-doubles-valuation-in-nine-months-1539252001), and business intelligence platform [Looker](https://looker.com/), which is now [ranked 34](https://www.forbes.com/companies/looker/?list=cloud100/#24a79d836930) on the Forbes Cloud 100 list. 
+
+
+  As an ecosystem of cloud-based products that work seamlessly with one another emerges, Fivetran is well positioned to tackle the first stage required for modern data warehousing. Its technology replicates siloed data sources into a central data warehouse, enabling companies to take advantage of powerful analytics and business intelligence tools. The company integrates effortlessly with 100+ data services including not only Snowflake and Looker, but also Google BigQuery, Microsoft Azure, Amazon Redshift, Tableau, Periscope Data, Salesforce, NetSuite PostgreSQL and more.
+
+
+  These companies are part of a shift to modern, managed services that has emerged to address issues caused by outdated technology. [Seventy-to-eighty percent](https://www.cio.com/article/3221430/business-intelligence/4-reasons-most-companies-fail-at-business-intelligence.html) of business intelligence projects fail because technology can’t keep pace with massive increases in data, as 90 percent of data in the world was generated over the past two years alone. Managed data warehousing and related services offload this burden and make it easy and affordable to use new tools that guarantee successful analytics projects. 
+
+
+  “Today’s businesses use hundreds of specialized cloud-based tools, and the old approach of highly configurable, human-powered data pipelines has become untenable,” said George Fraser, co-founder and CEO of Fivetran. “Our automated approach solves the most painstaking step of building a data-driven company: centralizing all your data. We’ve replaced a year-long, IT-driven process with a setup wizard that can be completed in minutes by a business user.” 
+
+
+  Founded in 2012 out of Y Combinator, Fivetran has emerged as a leader that shows no signs of slowing down as the cloud market continues to grow. Gartner projects that the public cloud services market will hit $206.2 billion by 2019, and IDC anticipates that cloud-based solutions will account for 60-70 percent of all software, services, and technology spending by 2020. Fivetran’s Series A funding will help the company build upon the demand for its cloud-based data replication services to scale operations and grow the number of available enterprise features and data sources.
+
+
+  “We’ve gone from companies talking about the move to the cloud to preparing to execute their plans, and the most sophisticated are making Fivetran, along with cloud data warehouses and modern analysis tools, the backbone of their analytical infrastructure,” said Ilya Sukhar, general partner at Matrix Partners and new Fivetran board member. “Fivetran has developed and refined the technology to help accelerate this change. We are excited to work with the team to help the company aggressively scale moving forward.”
+
+
+
+
+  **What Customers and Partners are Saying about Fivetran**
+
+
+  - "Snowflake and Fivetran have the same mission: to enable every organization to be data-driven. We have been partners for over three years, and we've always known Fivetran as an entrepreneurial company that also embodies our values-driven culture. I am excited to see this round of capital fuel the next phase of growth for such a significant partner to our ecosystem.”  said Bob Muglia, CEO at **Snowflake**.
+
+
+  - “Looker and Fivetran started working together in 2015," said Frank Bien, CEO of Looker.  "We shared a common purpose: to help companies finally unlock the value that is in their data. Fivetran is an important partner to Looker and we congratulate them on this round of funding,” said Frank Bien, CEO at **Looker**.
+
+
+  - "Fivetran has been a great partner in helping us build the foundation of our analytics data warehouse. Through the use of Fivetran connectors and automations, we have been able to save engineering calories and implement a dynamic business intelligence ecosystem here at ClassPass, " said Wilson Chu, Senior Manager of BI at **Classpass** and Fivetran customer.
+
+
+  - "With our data centralization and maintenance needs taken care of by Fivetran, business intelligence projects are significantly accelerated. It helps our team create a culture of agile analytics and data-backed decision making," said Patrick Przybilla, Head of Engineering, Information Systems at **Vice Media** and Fivetran customer.
+
+
+  - "Its ease of use, comprehensiveness, and data integrity are some of Fivetran's top selling points," said Loai Taha, Digital Analytics Manager at **Jumeirah Hotels & Resorts** and Fivetran customer.
+
+
+  To learn more, please visit fivetran.com.
+
+
+  **About Fivetran:**
+
+
+  Fivetran is part of an analytics data stack and the growing ecosystem of cloud-based infrastructure companies. Developed for modern companies using cloud-based software and storage, Fivetran helps organizations escape traditional ETL tools that badly underperform. By contrast, Fivetran streamlines and accelerates business intelligence projects with automated connectors that come with ready-to-query schemas; it effortlessly replicates siloed data into modern, high-performance warehouses. Fivetran is based in Oakland, CA with offices in Denver, Colorado, Dublin, Ireland and Bengaluru, India. The company is backed by Matrix Partners, Y Combinator, Otter Consulting, and Tim Draper.
+
+
+  **Media Contact:**<br/>
+
+  Megan Maxwell<br/>
+
+  GMK Communications for Fivetran<br/>
+
+  650-810-6658<br/>
+
+  megan@gmkcommunications.com
+

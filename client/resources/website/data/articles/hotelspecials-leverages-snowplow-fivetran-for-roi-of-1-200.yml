@@ -1,0 +1,125 @@
+header: HotelSpecials Leverages Snowplow + Fivetran for ROI of 1,200%
+featuredImage: /images/library/case-study-hotelspecials.png
+path: /blog/case-study-hotelspecials
+description: With a fully managed Fivetran data pipeline and open-source Snowplow,
+  HotelSpecials increases email conversion rates, cuts costs and develops
+  award-winning predictive hotel conversion score.
+pageTitle: HotelSpecials Leverages Snowplow + Fivetran for ROI of 1,200%
+pageDescription: With a fully managed Fivetran data pipeline and open-source Snowplow,
+  HotelSpecials increases email conversion rates, cuts costs and develops
+  award-winning predictive hotel conversion score.
+date: 2018-12-10
+published: 1
+featured: 0
+authorsName:
+  - david
+categoryTitle: Case Study
+categories:
+  - Case Studies
+isDownload: false
+content: >+
+  **Key takeaways:** 
+
+  - Email conversion rate increases 52%, transactions jump 20%
+
+  - With centralised data, data integrity is no longer in doubt and HotelSpecials can take advantage of the advanced features of Snowplow
+
+  - With Fivetran maintaining Snowplow connector, HotelSpecials saves hiring an additional full-time employee
+
+  - A data-driven culture becomes the norm
+
+  - After embracing Fivetran, HotelSpecials wins Dutch Search Awards in Travel/Leisure category due to its “Hotel Score” that predicts hotel conversion
+
+
+  **Data stack:**<br/>
+
+  **Pipeline**: [Fivetran](http://www.fivetran.com)<br/>
+
+  **Connectors**: [Snowplow](https://fivetran.com/docs/events/snowplow)<br/>
+
+  **Destination**: initially [MySQL](https://fivetran.com/docs/warehouses/mysql), then [Amazon Redshift](https://fivetran.com/docs/warehouses/redshift)<br/>
+
+  **BI tool**: [Microsoft Power BI](https://powerbi.microsoft.com/en-us/get-started/?&OCID=AID719832_SEM_UGv5CoXC&lnkd=Google_PowerBI_Brand&gclid=Cj0KCQjw6rXeBRD3ARIsAD9ni9B_IPOUpAWf8jFFaAWDxYSzyeG9hfEaod1MWEjfp9QKST6dVLs4thAaAjhQEALw_wcB)<br/>
+
+  **Data science tools**: [R](https://www.rstudio.com) and [Spark](https://spark.apache.org)
+
+
+  HotelSpecials is part of the BookerZzz group, a Netherlands-based company that offers over 5,000 hotels and 800 holiday parks through 12 websites. HotelSpecials specialises in finding the perfect match between their hotel partners and the customer. [HotelSpecials](http://www.hotelspecials.com) says its mission is to offer "guests the perfect stay in a hotel with more value for money, hassle-free."
+
+
+  **Stale Data Was Holding the Business Back**
+
+
+  Manuel de Francisco Vera, Head of Big Data and Analytics at HotelSpecials, says the company's home-brewed analytics setup with Adwords, Google Analytics and Bing wasn't getting the job done. He went looking for a managed ETL solution to add Snowplow into his data mix—while at the same time retaining his home-grown MySQL pipeline for Adwords, Google Analytics and Bing. After implementing Fivetran, he ultimately chose to migrate from MySQL to [Amazon Redshift](https://fivetran.com/directory/redshift) to be able to conduct more holistic analysis of all the data HotelSpecials had.
+
+
+  "We were always looking at data in the past. Now, with Fivetran, we can perform data analytics with Snowplow in almost real-time," de Francisco Vera says. "Because data was refreshed only once a day, we were spending money on marketing products that were no longer available. We were sending people to book at a hotel that was already full. Not any more."
+
+
+  **Moving From Simple Analytics to Advanced Data Science**
+
+
+  One of the other main reasons he picked Fivetran, which is compliant with GDPR, is that it offers the [Snowplow connector](https://fivetran.com/directory/snowplow) as one of its growing number of [data connectors](https://fivetran.com/directory). Snowplow is a powerful paid and open-source tool allowing companies to identify users and track the way they engage with their website or application.
+
+
+  "Before Fivetran, we were not efficient. The custom-made tool we were using was internal and the data quality much in doubt," de Francisco Vera says. "That was one of the reasons for moving to a known open-source solution like Snowplow. We were doing only basic analysis and the data was not trusted or reliable enough."
+
+
+  His goal, which he accomplished with Fivetran, was to convert HotelSpecials to a data-driven company and to drive product development based on the integration of many different data sources. **"I wanted to do some cool analytics and data science,"** he says.
+
+
+  Without Fiveran, he wouldn’t be able to take advantage of Snowplow's powerful features because of a lack of resources and engineering power. "Ingestion of Snowplow data was the big problem that Fivetran solved for us," de Francisco Vera says.
+
+
+  "Snowplow is an awesome event tracking service. When people are interacting with one of our sites, Snowplow can track that and differentiate the ways each customer interacts with a campaign or with our site. You can have multi-factor attribution to look at the broader picture of what people on the site interact with. It's more powerful than Google Analytics," he says.
+
+
+  **A Data-Ingestion Solution With Fivetran**
+
+
+  De Francisco Vera, who uses the business intelligence tool Microsoft Power BI, couldn't put all of these pieces together without Fivetran fully managing its data ingestion. "If you're able to track all of the customer journey touchpoints, then you can know that if a user interacts with certain campaigns, that they are more likely to buy. You can be more targeted in your advertising," he says.
+
+
+  He also points out that Snowplow is a paid service but that it also has open source code. HotelSpecials took that open source code and integrated it into Fivetran.
+
+
+  “The engineering benefits of moving to Fivetran were just as good as the return on investment," de Francisco Vera says. "I'm saving one full-time employee with Fivetran because we don’t need someone to maintain and constantly watch the technical part of getting the Snowplow data into our data lake." The result? A yearly ROI of 1200%.
+
+
+  **Climbing Conversion Rates**
+
+
+  Thanks to personalised recommendations based on Snowplow data, HotelSpecials modified its email strategy and achieved: 
+
+
+  - 52% increase in email conversion rate
+
+  - 20% increase in transactions
+
+  - Six times greater click-after-open ratio
+
+  - 25% increase in email reactivation rate
+
+
+  Additionally, the analytics team was able to create a "Hotel Score" that predicts hotel conversion. This Score is used in a marketing platform to optimise cost per click (CPC) spending (paid advertisement in Google Analytics and Bing). Prior to Fivetran, HotelSpecials was sending potential customers to offers that were no longer available because it was not getting its data in real time. Since engaging Fivetran, cost per object has decreased by 10% and conversion rates on CPC campaigns increased by 6%. Based on the “Hotel Score,” HotelSpecials was awarded the winning seat in the Travel/Leisure category for the [Dutch Search Awards 2017](https://dutchsearchawards.nl/winnaars-17).
+
+
+  Want to see if centralising your data can up your conversion rates? Our Fivetran product specialists are available to present a [demo of our service](https://fivetran.com/demo), or get started today with a [free trial](https://fivetran.com/signup).
+
+
+  **About Fivetran:** Our standardised technology delivers data into your warehouse the right way. Shaped by the real-world needs of data analysts, Fivetran technology supports agile analytics, enabling data-backed decisions across organisations. We’re focused, transparent and trusted by businesses that run on data.
+
+
+  After a five-minute setup, Fivetran replicates all your applications, databases, events and files into a high-performance data warehouse. Our standardised cloud pipelines are fully managed and zero-maintenance.
+
+
+  **About MySQL:** MySQL is an open source database and a cost-effective choice now developed by Oracle.
+
+
+  **About Amazon Redshift:** Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyse all of your data using your existing business intelligence tools.
+
+
+  **About Microsoft Power BI:** Microsoft Power BI is a business analytics solution that enables users to visualise data and generate and share insights.
+
+
+
