@@ -4,7 +4,12 @@ backend:
   squash_merges: true
   base_url: https://admin.fivetran.com
 publish_mode: editorial_workflow
-media_folder: "client/resources/images/library"
+media_folder: "website"
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: fivetran
+    api_key: api_key
 public_folder: "/images/library"
 site_url: https://staging.fivetran.com
 logo_url: https://static.fivetran.com/img/misc/logo-blue.svg
@@ -12,7 +17,7 @@ collections:
   - name: articles
     label: Articles
     preview_path: blog
-    folder: client/resources/website/data/blog
+    folder: client/resources/website/data/articles
     create: true
     extension: yml
     identifier_field: header
@@ -69,13 +74,13 @@ collections:
       - name: tags
         label: Tags
         widget: list
-        field: { label: Tag, name: tag, widget: string, required: false}
+        hint: Use comma to separate tags
         required: false
       - name: redirects
         label: Redirects
         widget: list
         allow_add: true
-        field: { label: Redirect, name: redirect, widget: string, required: false}
+        hint: Use comma to separate redirects
         required: false
       - name: published
         label: Published
@@ -89,7 +94,7 @@ collections:
   - name: downloads
     label: Downloads
     preview_path: blog
-    folder: client/resources/website/data/blog
+    folder: client/resources/website/data/articles
     create: true
     extension: yml
     identifier_field: header
@@ -129,7 +134,7 @@ collections:
       - name: tags
         label: Tags
         widget: list
-        field: { label: Tag, name: tag, widget: string, required: false}
+        hint: Use comma to separate tags
         required: false
       - name: published
         label: Published
